@@ -3,14 +3,14 @@ main:
   - title: "Quick-Start Guide"
     url: /docs/quick-start-guide/
   - title: "Posts"
-    url: /year-archive/
+    url: /_posts/
   - title: "Categories"
     url: /categories/
   - title: "Tags"
     url: /tags/
   - title: "Pages"
-    url: /page-archive/
+    url: /pages/
   - title: "Collections"
-    url: /collection-archive/
+    url: /collections/
   - title: "External Link"
     url: https://google.com
