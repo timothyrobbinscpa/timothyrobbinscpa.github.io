@@ -22,7 +22,7 @@ subtitle                 : # site tagline that appears below site title in masth
 name                     : "Tim Robbins"
 description              : "An amazing website."
 url                      : "https:/timothyrobbinscpa.github.io" # the base hostname & protocol for your site 
-baseurl                  : # the subpath of your site, e.g. "/blog"
+baseurl                  : ''  # the subpath of your site, e.g. "/blog"
 repository               : "timothyrobbinscpa/timothyrobbinscpa.github.io"  # GitHub username/repo-name e.g. 
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
@@ -284,7 +284,7 @@ compress_html:
 
 # Defaults
 defaults:
-  # _posts
+  - _posts
   - scope:
       path: ""
       type: posts
