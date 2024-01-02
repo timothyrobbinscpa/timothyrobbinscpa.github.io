@@ -1,5 +1,5 @@
 ---
-layout: page  # This specifies that the page layout should be used.
+layout: single  # This specifies that the page layout should be used.
 title: About Me  # The title of your page.
 permalink: /about/  # The URL where this page will be accessible.
 ---
