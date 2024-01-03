@@ -3,8 +3,6 @@ main:
 #    url: /docs/quick-start-guide/
   - title: "Home"
     url: /
-#  - title: "Posts"
-#    url: /default/ 
 #  - title: "Categories"
 #    url: /categories/
 #  - title: "Tags"
@@ -15,5 +13,7 @@ main:
     url: /contact/
   - title: "Collections"
     url: /portfolio/
+  - title: "Posts"
+    url: /posts/
 #  - title: "External Link"
 #    url: https://google.com
