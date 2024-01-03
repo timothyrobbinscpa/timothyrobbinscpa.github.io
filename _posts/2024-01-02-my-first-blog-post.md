@@ -1,8 +1,9 @@
 ---
-layout: post
+layout: posts
 title: "My First Blog Post"
 date: 2024-01-02 14:00:00 -0400
 permalink: /posts/
+
 ---
 
 
