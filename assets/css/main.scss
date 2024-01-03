@@ -7,3 +7,10 @@ search: false
 
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
+
+.homepage-image {
+    display: block;
+    margin: 0 auto;  // Centers the image
+    max-width: 100%; // Ensures the image is never wider than the container
+    height: auto;    // Keeps the image proportional
+}
