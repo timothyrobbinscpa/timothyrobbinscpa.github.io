@@ -1,7 +1,7 @@
 ---
 title:  "Customer Churn Analysis"
 date: 2020-11-20
-layout: collection
+layout: single
 header:
   teaser: /assets/images/churn.png
 excerpt: "The purpose of this project is to identify patterns in customer behavior that predict churn."

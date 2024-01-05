@@ -21,6 +21,10 @@ codekit-config.json
 # macOS
 .DS_Store
 
+# ignore .ipynb checkpoints
+.ipynb_checkpoints/
+
+
 # Jekyll generated files
 .jekyll-cache
 .jekyll-metadata
