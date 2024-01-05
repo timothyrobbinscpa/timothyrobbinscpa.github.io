@@ -1,6 +1,7 @@
 ---
 layout: single  # This specifies that the page layout should be used.
 title: About Me  # The title of your page.
+author_profile: True
 permalink: /about/  # The URL where this page will be accessible.
 ---
 
