@@ -3,6 +3,9 @@ layout: home
 title: "Welcome to My Portfolio"
 header:
   overlay_image: /assets/images/data-science-splash.jpeg  # Adjust or remove this if it's too large.
+pagination:
+  enabled: true
+
 ---
 
 ## Welcome!
