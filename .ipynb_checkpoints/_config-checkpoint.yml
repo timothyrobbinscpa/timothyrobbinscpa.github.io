@@ -11,8 +11,8 @@
 # https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/#installing-the-theme
 
 theme                    : "minimal-mistakes-jekyll"
-remote_theme             : "mmistakes/minimal-mistakes"
-minimal_mistakes_skin    : "mint" # "default", "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+# remote_theme           : "mmistakes/minimal-mistakes"
+minimal_mistakes_skin    : "air" # "default", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
 locale                   : "en-US"
@@ -108,24 +108,14 @@ author:
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "I am an **amazing** person."
   location         : "Scottsdale, AZ"
-<<<<<<< HEAD
-#  email            : "mailto:timothyrobbinscpa@gmail.com"
-=======
   email            : "timothyrobbinscpa@gmail.com"
->>>>>>> parent of 93781ba (recent changes to navigation and customer churn)
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
       url: "mailto:timothyrobbinscpa@gmail.com"
-<<<<<<< HEAD
-#    - label: "Website"
-#      icon: "fas fa-fw fa-link"
-#      url:  "https://timothyrobbinscpa.com"
-=======
     - label: "Website"
       icon: "fas fa-fw fa-link"
       url:  "https://timothyrobbinscpa.com"
->>>>>>> parent of 93781ba (recent changes to navigation and customer churn)
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
       # url: "https://twitter.com/"
@@ -279,7 +269,7 @@ category_archive:
 tag_archive:
   type: liquid
   path: /tags/
-https://github.com/jekyll/jekyll-archives
+#https://github.com/jekyll/jekyll-archives
  jekyll-archives:
    enabled:
      - categories
