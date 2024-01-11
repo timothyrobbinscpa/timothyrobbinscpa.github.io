@@ -1,55 +1,56 @@
 ---
-title:  "Predicting Customer Churn"
-date: 2020-11-20
+title:  "Predicting Customer Churn: A Telecom Case Study"
+date: 2023-06-20
 layout: single
 header:
   teaser: /assets/images/predict_churn_customers.jpg
 excerpt: "The purpose of this project is to identify patterns in customer behavior that predict churn."
+categories: portfolio data-science machine-learning churn-analysis
 ---
 
 ![Customer Churn](/assets/images/predict_churn_customers.jpg)
 
-# Customer Churn Analysis
 
-## Introduction
-In this project, we delve into the patterns and factors contributing to customer churn in [Industry/Company]. Understanding these can help us devise strategies to improve customer retention.
+## Project Overview
 
-## Objectives
-- To identify the key factors that contribute to customer churn.
-- To predict the likelihood of future churns with machine learning models.
-- To provide actionable insights to improve customer retention.
+In the competitive telecom sector, understanding customer behaviors and predicting churn can significantly impact business success. In this project, I applied data science techniques to predict customer churn using the Orange Telecom's Churn Dataset.
 
-## Methodologies
-- **Data Collection**: Description of where and how you collected your data.
-- **Data Preprocessing**: Outline the steps taken to clean and prepare the data for analysis.
-- **Exploratory Data Analysis (EDA)**: Briefly discuss how you explored the data and any initial findings.
-- **Machine Learning Models**: List the models used, such as Logistic Regression, Decision Trees, etc.
-- **Model Evaluation**: Discuss how you evaluated the models (e.g., accuracy, precision, recall).
+### Objective
 
-## Key Findings
-1. **Finding One**: Brief description of the first key finding.
-2. **Finding Two**: Brief description of the second key finding.
-3. **More Findings**: Additional findings or insights from your analysis.
+Build a predictive model to identify high-risk churn customers, providing actionable insights for targeted customer retention strategies.
 
-## Visualizations
-Include a few key visualizations that represent your findings effectively.
+### Tools & Techniques
 
-![Churn Rate](path/to/churn_rate_image.png)
-*Churn Rate Visualization*
+- **Data Analysis**: Python, Pandas, Seaborn
+- **Machine Learning**: Scikit-learn (Random Forest, Gradient Boosting)
 
-![Important Features](path/to/important_features_image.png)
-*Important Features Influencing Churn*
+## Exploratory Data Analysis
 
-## Conclusion
-Summarize the main takeaways from your project and suggest possible next steps or actions based on your findings.
+Conducted a thorough analysis to explore customer demographics, service usage, and churn indicators. Key steps included:
 
-## How to Run This Analysis
-(Optional) Provide steps on how to run your analysis, which can include how to install necessary libraries, how to run the notebook, etc.
+- Distribution analysis of numeric and categorical variables
+- Visualization of customer behavior patterns
 
-## Contact
-For more information, feel free to contact me at [Your Contact Information].
+## Feature Engineering
 
-e model found, how well it performed, and what insights were gained.
+Implemented creative feature engineering techniques to enhance model performance:
 
-[Link to full code](https://github.com/timothyrobbinscpa/new_customer_churn/blob/master/src/customer_churn.ipynb)
+- **Interaction Term**: Merged 'total_day_minutes' and 'international_plan' to examine combined effects on churn
+- **Total Minutes Aggregation**: Summed up total minutes (day, evening, night, international) for overall usage insights
 
+## Modeling and Evaluation
+
+Chose Random Forest and Gradient Boosting Models due to their robustness in handling complex datasets:
+
+- Applied hyperparameter tuning and cross-validation for optimization
+- Evaluated models based on accuracy, precision, recall, and F1 score
+
+## Insights and Conclusion
+
+The project revealed significant predictors of churn, such as customer service calls and usage patterns. While the Gradient Boosting model showed slightly superior performance, both models provided valuable insights into customer churn behaviors.
+
+### Reflection
+
+This project highlighted the importance of detailed EDA and innovative feature engineering in predictive modeling. It also underscored the nuances of model selection and evaluation in addressing real-world business challenges.
+
+[View Full Project on GitHub](#)
