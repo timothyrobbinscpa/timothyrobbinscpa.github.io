@@ -11,8 +11,8 @@
 # https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/#installing-the-theme
 
 theme                    : "minimal-mistakes-jekyll"
-# remote_theme           : "mmistakes/minimal-mistakes"
-minimal_mistakes_skin    : "air" # "default", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+remote_theme             : "mmistakes/minimal-mistakes"
+minimal_mistakes_skin    : "sunrise" # "default", "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
 locale                   : "en-US"
@@ -224,7 +224,7 @@ sass:
 # Outputting
 permalink: /:categories/:title/
 paginate: 5 # amount of posts to show
-paginate_path: /posts/page:num
+paginate_path: /page:num/
 timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 
@@ -269,17 +269,17 @@ category_archive:
 tag_archive:
   type: liquid
   path: /tags/
-#https://github.com/jekyll/jekyll-archives
- jekyll-archives:
-   enabled:
-     - categories
-     - tags
-   layouts:
-     category: archive-taxonomy
-     tag: archive-taxonomy
-   permalinks:
-     category: /categories/:name/
-     tag: /tags/:name/
+# https://github.com/jekyll/jekyll-archives
+# jekyll-archives:
+#   enabled:
+#     - categories
+#     - tags
+#   layouts:
+#     category: archive-taxonomy
+#     tag: archive-taxonomy
+#   permalinks:
+#     category: /categories/:name/
+#     tag: /tags/:name/
 
 
 
@@ -298,18 +298,10 @@ defaults:
       path: ""
       type: posts
     values:
-      layout: single
+      layout: posts
       author_profile: true
       read_time: true
       comments: true
       share: true
       related: true
-defaults:
-  # _portfolio
-  - scope:
-      path: ""
-      type: portfolio
-    values:
-      layout: single
-      author_profile: false
-      share: true
+

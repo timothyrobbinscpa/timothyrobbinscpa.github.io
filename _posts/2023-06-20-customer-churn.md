@@ -1,6 +1,6 @@
 ---
 title: "Predicting Customer Churn in the Telecom Industry: A Deep Dive"
-layout: archive
+layout: post
 date: 2023-06-20
 categories: data-science machine-learning churn-analysis
 ---
