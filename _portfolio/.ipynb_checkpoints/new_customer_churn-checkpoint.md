@@ -2,10 +2,22 @@
 title:  "Predicting Customer Churn: A Telecom Case Study"
 date: 2023-06-20
 layout: single
+classes: wide
 header:
   teaser: /assets/images/predict_churn_customers.jpg
 excerpt: "The purpose of this project is to identify patterns in customer behavior that predict churn."
-categories: portfolio data-science machine-learning churn-analysis
+categories: Churn Analysis
+tags:
+  - Data Analysis
+  - Predictive Modeling
+  - Customer Churn
+  - Machine Learning
+  - Python
+  - Jupyter Notebook
+  - Business Intelligence
+  - Customer Relationship Management
+  - Visualization
+  - Data Science
 ---
 
 ![Customer Churn](/assets/images/predict_churn_customers.jpg)
@@ -53,4 +65,5 @@ The project revealed significant predictors of churn, such as customer service c
 
 This project highlighted the importance of detailed EDA and innovative feature engineering in predictive modeling. It also underscored the nuances of model selection and evaluation in addressing real-world business challenges.
 
-[View Full Project on GitHub](#)
+[View Full Project on GitHub](https://github.com/timothyrobbinscpa/new_customer_churn)
+

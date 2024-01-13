@@ -3,11 +3,10 @@ layout: home
 title: "Welcome to My Portfolio"
 header:
   overlay_image: /assets/images/data-science-splash.jpeg  # Adjust or remove this if it's too large.
+author_profile: True
 pagination:
   enabled: true
-
 ---
-
 ## Welcome!
 I'm [Your Name], a [Your Profession/Title]. This is where I showcase my work and share my thoughts.
 

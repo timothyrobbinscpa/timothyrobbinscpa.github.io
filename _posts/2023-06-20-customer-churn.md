@@ -1,8 +1,20 @@
 ---
 title: "Predicting Customer Churn in the Telecom Industry: A Deep Dive"
-layout: post
+layout: single
+classes: wide
 date: 2023-06-20
-categories: data-science machine-learning churn-analysis
+categories: Churn-Analysis
+tags:
+  - Data Analysis
+  - Predictive Modeling
+  - Customer Churn
+  - Machine Learning
+  - Python
+  - Jupyter Notebook
+  - Business Intelligence
+  - Customer Relationship Management
+  - Visualization
+  - Data Science
 ---
 
 ## Introduction
@@ -69,6 +81,3 @@ Encountered challenges like handling an imbalanced dataset and high feature dime
 ## Closing Thoughts
 
 I hope this deep dive gives you a sense of how data science can be applied to tackle practical problems in industries like telecom. The full code and detailed analysis for this project are available in my [GitHub repository](#).
-
-
-
