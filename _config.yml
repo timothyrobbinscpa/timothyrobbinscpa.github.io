@@ -12,7 +12,7 @@
 
 theme                    : "minimal-mistakes-jekyll"
 remote_theme             : "mmistakes/minimal-mistakes"
-minimal_mistakes_skin    : "air" # "default", "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+minimal_mistakes_skin    : "sunrise" # "default", "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
 locale                   : "en-US"
@@ -20,7 +20,7 @@ title                    : "Tim's Data Science Projects"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "Tim Robbins"
-description              : "An amazing website."
+description              : 
 url                      : "https:/timothyrobbinscpa.github.io" # the base hostname & protocol for your site 
 baseurl                  : ''  # the subpath of your site, e.g. "/blog"
 repository               : "timothyrobbinscpa/timothyrobbinscpa.github.io"  # GitHub username/repo-name e.g. 
@@ -106,7 +106,7 @@ analytics:
 author:
   name             : "Tim Robbins"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "I am an **amazing** person."
+  bio              : "Data Scientist | CPA - Passionate about turning data into insights and action."
   location         : "Scottsdale, AZ"
 #  email            : "timothyrobbinscpa@gmail.com"
   links:
