@@ -1,9 +1,9 @@
 ---
-title: "Predicting Customer Churn in the Telecom Industry: A Deep Dive"
+title: "Unlocking the Secrets of Customer Churn in Telecom: A Data-Driven Journey"
 layout: single
 classes: wide
 date: 2023-06-20
-categories: Churn-Analysis
+categories: 'Customer-Churn'
 tags:
   - Data Analysis
   - Predictive Modeling
@@ -15,82 +15,82 @@ tags:
   - Customer Relationship Management
   - Visualization
   - Data Science
----
-
----
-title: "Unveiling the Intricacies of Customer Churn: A Comprehensive Data Analysis Journey"
-date: 2024-03-14
-categories: [Data Science, Machine Learning, Customer Churn]
+header:
+  overlay_image: /assets/images/predict_churn_customers.jpg
+  overlay_filter: 0.3
+  caption: "Photo credit: [**Unsplash**](URL)"
+excerpt: "Exploring the intricacies of customer churn in the telecom sector using advanced data analysis techniques."
 ---
 
 ## Introduction
+In today’s competitive market landscape, understanding and predicting customer behavior is crucial for businesses aiming to retain their clientele. One critical aspect of customer behavior is ‘customer churn’, which refers to customers who stop using a company’s products or services. This blog post delves into the intriguing world of customer churn analysis, shedding light on how businesses can leverage data to identify and mitigate the risk of losing customers.
 
-Understanding and predicting customer churn in the telecom industry is key to business sustainability. This in-depth post explores a comprehensive data science approach to unraveling the factors behind customer churn.
+## Project Overview
+The focus of this project is to conduct an in-depth analysis of customer churn. By examining various factors that contribute to customer churn, businesses can develop strategies to enhance customer retention. This analysis is not just about identifying customers at risk of churning but also understanding the underlying reasons that drive such decisions.
 
-## Initial Analysis
+## Customer Churn Analysis
+Customer churn analysis is pivotal for businesses as it helps in understanding the characteristics and behaviors of those customers who are likely to discontinue their subscriptions or services. Recognizing these patterns enables companies to take proactive steps to retain these customers, thereby maintaining a steady revenue stream and fostering long-term customer relationships.
 
-**Dataset Overview**
+## Dataset Overview
+In this project, we utilize the Orange Telecom’s Churn Dataset. This dataset provides a comprehensive view of customer activities and includes a churn label indicating whether a customer canceled their subscription. Through detailed analysis of this dataset, we aim to uncover patterns and factors that contribute to customer churn.
 
-- The analysis begins with the Orange Telecom's Churn Dataset, comprising customer activity and churn labels.
-- The dataset is divided into 'churn-80' and 'churn-20', serving as our training and testing sets respectively.
+## Data Exploration
+In the data exploration stage, I conducted a thorough analysis of the dataset to understand its structure, content, and the nature of the data we’re dealing with. This process is crucial for any data science project as it lays the foundation for all subsequent analysis.
 
-**Toolset**
+### Detailed Data Exploration
+I meticulously examined the dataset to gain a comprehensive understanding of its features and the story they tell.
 
-- The analytical journey is powered by Python, with key libraries like Pandas for data manipulation, Matplotlib and Seaborn for visualization, and scikit-learn for machine learning.
+**Dataset Overview**: The project utilized two datasets: a training set and a test set. I began by examining their dimensions to understand the scope of data available.
 
-## Exploratory Data Analysis (EDA)
+```python
+# Overview of datasets
+print(df_train.shape)
+print(df_test.shape)
+df_train.head()
+```
 
-### Univariate Analysis
+**Statistical Summary:** Next, I delved into the statistical aspects of the dataset, exploring measures like mean, median, standard deviation, and more for both numerical and categorical data. This step was crucial for identifying any anomalies or patterns that might require attention during preprocessing.
 
-- **Target Variable (Churn)**: Utilizing `sns.countplot`, the distribution of churn was visualized, highlighting an imbalance with a higher proportion of non-churning customers.
-- **Numerical Features**: Histograms and boxplots were generated for features like `total_day_minutes` and `total_eve_calls`, revealing distributions, central tendencies, and potential outliers.
+**Univariate Analysis:** I performed univariate analysis on numerical variables, which involved generating histograms and boxplots to understand the distribution and detect any outliers.
 
-### Bivariate/Multivariate Analysis
-
-- **Correlations**: Employing `sns.heatmap`, the correlations between numerical features were examined to understand interdependencies.
-- **Churn vs Features**: Analysis like `sns.barplot` showcased the relationship between churn and categorical features such as `international_plan`.
-
-### Observations
-
-- Key insights included the identification of high-churn indicators, such as international plans, and usage patterns correlating with higher churn rates.
-
-## Feature Engineering
-
-**Feature Selection and Creation**
-
-- Rigorous selection using correlation analysis and domain knowledge led to the retention of impactful features.
-- Engineered features, such as `total_charge` (combining day, eve, and night charges), were created to enhance the model's predictive power.
+```python
+def show_univariate_plots(dataframe):
+    ''' To show histograms and boxplots for numeric variables '''
+    num_cols = dataframe.select_dtypes(include=['int', 'float']).columns
+    for col in num_cols:
+        fig, axes = plt.subplots(1, 2, figsize=(12, 4))
+        sns.histplot(dataframe, x=col, bins=dataframe[col].nunique(), ax=axes[0], kde=True, color='blue')
+        sns.boxplot(data=dataframe, x=col, ax=axes[1], color='lightgreen')
+        plt.show()
+show_univariate_plots(df_train)
+```
 
 ## Preprocessing
-
-- **Encoding Categorical Variables**: Features like `state` and `area_code` were transformed using `LabelEncoder`, converting textual data into a machine-readable format.
-- **Scaling**: Numerical features underwent robust scaling using `RobustScaler` to mitigate the impact of outliers.
+Data preprocessing transformed the raw data into a format suitable for analysis, ensuring the quality and integrity of the data fed into our models.
 
 ## Model Building
+The heart of this project lies in building predictive models to identify potential churn.
 
-### Model Selection
+```python
+# Train the Random Forest model with the best parameters
+best_rf_model = RandomForestClassifier(**best_params, random_state=42)
+best_rf_model.fit(X_train_scaled, y_train)
+```
 
-**Random Forest Model**
+### In-Depth Model Building and Selection
+I explored several machine learning models, including RandomForestClassifier, SVC, and KNeighborsClassifier. These models were chosen for their ability to handle this kind of classification problem effectively.
 
-- Selected for its effectiveness in handling imbalanced datasets and providing feature importance.
-- Code snippet for model training: `RandomForestClassifier(n_estimators=100, random_state=42)`
+## Results and Interpretation
+Interpreting the results is as important as building the model.
 
-**Gradient Boosting Machine**
-
-- Chosen for its ability to build strong models from weak learners, optimizing for predictive accuracy.
-
-## Model Comparison
-
-- Models were compared based on accuracy, precision, recall, and F1 score.
-- Visualization: Bar charts created using Matplotlib showcased the comparative performance.
-
-## Feature Importances
-
-- Analysis of feature importances highlighted critical predictors like `total_day_minutes` and `customer_service_calls`.
-- Bar charts visualized the varying importance assigned by each model to the features.
+```python
+# Model evaluation code snippet
+from sklearn.metrics import classific
+ation_report, confusion_matrix
+y_pred = best_rf_model.predict(X_test)
+print(confusion_matrix(y_test, y_pred))
+print(classification_report(y_test, y_pred))
+```
 
 ## Conclusion
-
-This comprehensive analysis journey, from initial data exploration to complex predictive modeling, offers valuable insights into the dynamics of customer churn. The findings and models not only shed light on why customers leave but also serve as a strategic tool for informed decision-making aimed at enhancing customer retention.
-
-For a detailed walkthrough of the analysis with code, visualizations, and in-depth insights, please see the full Jupyter notebook. [Note: Insert link to the notebook]
+This detailed blog post showcases my journey through a complex data science project, from data exploration and preprocessing to model building and interpretation. Each step highlights my technical abilities and problem-solving skills, essential qualities for a data scientist.
