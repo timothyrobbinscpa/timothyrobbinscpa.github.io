@@ -1,11 +1,12 @@
 ---
-title:  "Predicting Customer Churn: A Telecom Case Study"
+title:  "Tackling Customer Churn in Telecom"
 date: 2023-06-20
+author_profile: true
 layout: single
 classes: wide
 header:
-  teaser: /assets/images/predict_churn_customers.jpg
-excerpt: "A focused analysis to predict customer churn in the telecom sector, leveraging data science techniques."
+  teaser: /assets/images/customer_churn/predict_churn_customers.jpg
+excerpt: "A focused analysis to predict customer churn in the telecom sector, leveraging advanced data science techniques."
 categories: Churn Analysis
 tags:
   - Data Analysis
@@ -19,55 +20,29 @@ tags:
   - Visualization
   - Data Science
 ---
+![Customer Churn](/assets/images/customer_churn/predict_churn_customers.jpg)
 
-![Customer Churn](/assets/images/predict_churn_customers.jpg)
+#### Project Overview
+In this data science project, I focused on analyzing and predicting customer churn in the telecom sector. The goal was to identify customers at risk of discontinuing services, enabling targeted strategies for retention.
 
+#### Data Used
+The analysis centered around the Orange Telecom's Churn Dataset, detailed with customer behaviors and trends. This provided a comprehensive base for understanding the factors contributing to churn.
 
-## Project Overview
+![Pie Chart of Customer Churn Distribution](/path/to/churn_pie_chart.png)
+*Pie Chart showing the distribution of customer churn in the dataset.*
 
-This project aimed at developing a predictive model for identifying customers at high risk of churn in the telecom sector, using the Orange Telecom's Churn Dataset.
+#### Techniques and Tools
+- **Exploratory Data Analysis:** Investigated factors like total day minutes and customer service calls, uncovering key trends and patterns.
+- **Predictive Modeling:** Used Stratified K-Fold Cross-Validation, Random Forest, and Gradient Boosting models. These methods were chosen for their robustness in handling imbalanced datasets like ours.
+- **Evaluation Metrics:** Emphasized recall, alongside precision and F1 score, to accurately capture churn cases.
 
-### Objective
+#### Key Findings
+- Identified high daily usage, international plans, and frequent service calls as major churn indicators.
+- The Random Forest model showed a high recall of 82.11%, indicating its effectiveness in identifying true churn cases.
+- Gradient Boosting balanced recall with a precision rate of 89.74%, highlighting its accuracy in predicting churn.
 
-Creating a robust model to predict customer churn, enabling targeted customer retention strategies.
+![Model Performance Comparison Bar Chart](/path/to/model_comparison_chart.png)
+*Bar Chart comparing the performance of Random Forest and Gradient Boosting models.*
 
-### My Role
-
-- **Data Analysis**: Employed Python and Pandas for data manipulation, Seaborn for visualization.
-- **Predictive Modeling**: Developed models using Random Forest and Gradient Boosting techniques with Scikit-learn.
-- **Innovations**: Implemented advanced feature engineering and robust scaling to enhance model accuracy.
-
-## Key Achievements
-
-- **Model Performance**: Achieved high accuracy in predicting churn, enhancing the ability to identify at-risk customers.
-- **Insightful Analysis**: Uncovered significant churn predictors, aiding in the formulation of informed retention strategies.
-- **Technical Proficiency**: Demonstrated expertise in handling complex data sets and modeling techniques.
-
-## Impact
-
-The project provided actionable insights, enabling the formulation of effective churn-prevention strategies, thereby potentially increasing customer loyalty and retention rates.
-
-### Learn More
-
-For a detailed analysis and insights on this project, please visit my [detailed blog post](#). 
-
-### Connect
-
-For collaboration or inquiries, feel free to [contact me](mailto:youremail@example.com).
-
----
-
-
-Recommended Visualizations:
-
-For your customer churn prediction project, prioritizing visualizations that effectively communicate your most significant findings and skills is essential. I would recommend these key visualizations:
-
-Model Performance Metrics: A comparison chart of your models' performance, such as ROC curves or a precision-recall curve. This effectively showcases the predictive power of your models and your skill in evaluating them.
-
-Feature Importance: A bar chart showing the most critical features identified by your models, like Random Forest. This helps in understanding what drives customer churn and demonstrates your ability to extract actionable insights from the model.
-
-Predictions vs. Actual Results: A simple visualization, like a confusion matrix, that shows the actual versus predicted churn. It gives a straightforward view of the model's effectiveness in real-world terms.
-
-These three types of visualizations collectively provide a strong overview of your project: they demonstrate the effectiveness of your models, your ability to derive insights from complex data, and the practical applicability of your work. They are also likely to be easily understood by a broad audience, including those who may not have deep technical expertise.
-
-
+#### Impact
+This project demonstrates my ability to transform data into actionable insights, showcasing skills essential for data-centric roles. The findings have implications for targeted customer retention strategies, underlining the importance of data-driven decision making in the telecom industry.
