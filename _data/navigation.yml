@@ -17,3 +17,33 @@ main:
     url: /tags/
 #  - title: "External Link"
 #    url: https://google.com
+
+cust-churn-nav:
+  - title: "Introduction"
+    url: /customer-churn/customer-churn/#introduction
+  - title: "Project Overview"
+    url: /customer-churn/customer-churn/#project-overview
+  - title: "Dataset Overview"
+    url: /customer-churn/customer-churn/#dataset-overview
+  - title: "Data Exploration and Preprocessing"
+    url: /customer-churn/customer-churn/#data-exploration-and-preprocessing
+  - title: "Exploratory Data Analysis (EDA)"
+    url: /customer-churn/customer-churn/#exploratory-data-analysis-eda
+  - title: "Model Development"
+    url: /customer-churn/customer-churn/#model-development
+  - title: "Model Selection"
+    url: /customer-churn/customer-churn/#model-selection
+  - title: "Model Performance"
+    url: /customer-churn/customer-churn/#model-performance
+  - title: "Reflection and Future Work"
+    url: /customer-churn/customer-churn/#reflection-and-future-work
+  - title: "Conclusion"
+    url: /customer-churn/customer-churn/#conclusion
+
+
+post2-nav:
+  - title: "Introduction"
+    url: /post2/introduction
+  - title: "Analysis"
+    url: /post2/analysis/
+
