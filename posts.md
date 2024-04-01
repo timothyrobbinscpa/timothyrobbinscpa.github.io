@@ -1,5 +1,6 @@
 ---
 layout: archive
+classes: wide
 title: "Posts"
 permalink: /posts/
 author_profile: true

@@ -101,12 +101,11 @@ analytics:
     tracking_id          :
     anonymize_ip         : # true, false (default)
 
-
 # Site Author
 author:
   name             : "Tim Robbins"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "Data Scientist | CPA - Passionate about turning data into insights and action."
+  bio              : "Data Scientist | CPA <br> Passionate about turning data into insights and action."
   location         : "Scottsdale, AZ"
 #  email            : "timothyrobbinscpa@gmail.com"
   links:
@@ -116,6 +115,8 @@ author:
     - label: "Website"
       icon: "fas fa-fw fa-link"
       # url:  "https://timothyrobbinscpa.com"
+    - label: "Phone"
+      icon: "fab fa-fw fa-link"
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
       # url: "https://twitter.com/"
@@ -128,6 +129,11 @@ author:
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       # url: "https://instagram.com/"
+
+# Sidebar configuration
+sidebar:
+  enabled: true
+  sticky: true
 
 # Site Footer
 footer:
@@ -303,4 +309,5 @@ defaults:
       comments: true
       share: true
       related: true
+
       

@@ -8,4 +8,8 @@ search: false
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
 
+.figure-size {
+    width: 62.5%;  /* Adjust the width as needed */
+    height: auto; /* Keeps the aspect ratio of the image */
+}
 
