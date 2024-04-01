@@ -28,8 +28,8 @@ In this data science project, I focused on analyzing and predicting customer chu
 #### Data Used
 The analysis centered around the Orange Telecom's Churn Dataset, detailed with customer behaviors and trends. This provided a comprehensive base for understanding the factors contributing to churn.
 
-![Pie Chart of Customer Churn Distribution](/path/to/churn_pie_chart.png)
-*Pie Chart showing the distribution of customer churn in the dataset.*
+![Pie Chart of Customer Churn Distribution](assets\images\customer_churn\churn_pie_chart.png)
+*Pie Chart showing the distribution of customer churn*
 
 #### Techniques and Tools
 - **Exploratory Data Analysis:** Investigated factors like total day minutes and customer service calls, uncovering key trends and patterns.
@@ -41,7 +41,7 @@ The analysis centered around the Orange Telecom's Churn Dataset, detailed with c
 - The Random Forest model showed a high recall of 82.11%, indicating its effectiveness in identifying true churn cases.
 - Gradient Boosting balanced recall with a precision rate of 89.74%, highlighting its accuracy in predicting churn.
 
-![Model Performance Comparison Bar Chart](/path/to/model_comparison_chart.png)
+![Model Performance Comparison Bar Chart](assets\images\customer_churn\model_comparison.png)
 *Bar Chart comparing the performance of Random Forest and Gradient Boosting models.*
 
 #### Impact

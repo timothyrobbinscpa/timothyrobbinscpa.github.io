@@ -105,7 +105,7 @@ analytics:
 author:
   name             : "Tim Robbins"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "Data Scientist | CPA <br> Passionate about turning data into insights and action."
+  bio              : "Data Scientist | CPA"
   location         : "Scottsdale, AZ"
 #  email            : "timothyrobbinscpa@gmail.com"
   links:
