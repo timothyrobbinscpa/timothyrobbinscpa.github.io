@@ -5,40 +5,37 @@ main:
     url: /
   - title: "About"
     url: /about/
-#  - title: "Contact"
-#    url: /contact/
+  - title: "Contact"
+    url: /contact/
   - title: "Portfolio"
     url: /portfolio/
   - title: "Posts"
     url: /posts/
-  - title: "Categories"
-    url: /categories/
-  - title: "Tags"
-    url: /tags/
+#  - title: "More"
+#    url: "#"
+#    dropdown:
+#      - title: "Categories"
+#        url: /categories/
+#      - title: "Tags"
+#        url: /tags/
 #  - title: "External Link"
 #    url: https://google.com
 
 cust-churn-nav:
-  - title: "Introduction"
-    url: /customer-churn/customer-churn/#introduction
-  - title: "Project Overview"
-    url: /customer-churn/customer-churn/#project-overview
-  - title: "Dataset Overview"
-    url: /customer-churn/customer-churn/#dataset-overview
-  - title: "Data Exploration and Preprocessing"
-    url: /customer-churn/customer-churn/#data-exploration-and-preprocessing
+  - title: "Introduction and Overview"
+    url: /customer-churn/#introduction
+  - title: "Accounting Expertise"
+    url: /customer-churn/#accounting-expertise-enhancing-data-science
   - title: "Exploratory Data Analysis (EDA)"
-    url: /customer-churn/customer-churn/#exploratory-data-analysis-eda
-  - title: "Model Development"
-    url: /customer-churn/customer-churn/#model-development
+    url: /customer-churn/#exploratory-data-analysis-eda
   - title: "Model Selection"
-    url: /customer-churn/customer-churn/#model-selection
+    url: /customer-churn/#model-selection
+  - title: "Model Development"
+    url: /customer-churn/#model-development
   - title: "Model Performance"
-    url: /customer-churn/customer-churn/#model-performance
-  - title: "Reflection and Future Work"
-    url: /customer-churn/customer-churn/#reflection-and-future-work
-  - title: "Conclusion"
-    url: /customer-churn/customer-churn/#conclusion
+    url: /customer-churn/#model-performance
+  - title: "Reflection"
+    url: /customer-churn/#reflecting-on-the-journey
 
 
 post2-nav:

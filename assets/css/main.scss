@@ -8,8 +8,13 @@ search: false
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
 
+.home .site-header {
+    height: 300px; /* Or whatever height you prefer */
+    background-size: cover; /* Or 'contain' to fit the whole image */
+    background-position: center center;
+  }  
+
 .figure-size {
     width: 62.5%;  /* Adjust the width as needed */
     height: auto; /* Keeps the aspect ratio of the image */
 }
-

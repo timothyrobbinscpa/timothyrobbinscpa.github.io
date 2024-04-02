@@ -28,8 +28,7 @@ In this data science project, I focused on analyzing and predicting customer chu
 #### Data Used
 The analysis centered around the Orange Telecom's Churn Dataset, detailed with customer behaviors and trends. This provided a comprehensive base for understanding the factors contributing to churn.
 
-![Pie Chart of Customer Churn Distribution](assets\images\customer_churn\churn_pie_chart.png)
-*Pie Chart showing the distribution of customer churn*
+<img src="/assets/images/customer_churn/churn_pie_chart.png" alt="Proportion of Customer Churn" style="width: 40%;">
 
 #### Techniques and Tools
 - **Exploratory Data Analysis:** Investigated factors like total day minutes and customer service calls, uncovering key trends and patterns.
@@ -41,8 +40,11 @@ The analysis centered around the Orange Telecom's Churn Dataset, detailed with c
 - The Random Forest model showed a high recall of 82.11%, indicating its effectiveness in identifying true churn cases.
 - Gradient Boosting balanced recall with a precision rate of 89.74%, highlighting its accuracy in predicting churn.
 
-![Model Performance Comparison Bar Chart](assets\images\customer_churn\model_comparison.png)
-*Bar Chart comparing the performance of Random Forest and Gradient Boosting models.*
+<img src="/assets/images/customer_churn/model_comparison.png" alt="Model Performance Comparison Bar Chart" style="width: 85%;" />
 
 #### Impact
 This project demonstrates my ability to transform data into actionable insights, showcasing skills essential for data-centric roles. The findings have implications for targeted customer retention strategies, underlining the importance of data-driven decision making in the telecom industry.
+
+For a more detailed analysis of this project, [click here](/customer-churn).
+
+Check out the [source code on GitHub](https://github.com/timothyrobbinscpa/new_customer_churn/blob/master/src/customer_churn.ipynb).

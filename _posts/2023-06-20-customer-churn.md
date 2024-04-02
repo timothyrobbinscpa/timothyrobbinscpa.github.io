@@ -1,9 +1,6 @@
 ---
-title: "Tackling Customer Churn in Telecom: <br> A Data-Driven Journey"
-#toc: true
-#toc_label: "Page Contents"
-#toc_icon: "cog"  # optional, to show an icon next to the ToC title
-#toc_sticky: true     # optional, to make the ToC sticky
+title: "Decoding Customer Churn: A Data Science Journey in the Telecom Industry."
+permalink: /customer-churn/
 sidebar:
   title: "Table of Contents"
   nav: "cust-churn-nav"
@@ -22,17 +19,27 @@ tags:
   - Customer Relationship Management
   - Visualization
   - Data Science
-header:
-  overlay_image: /assets/images/customer_churn/predict_churn_customers.jpg
-  overlay_filter: 0.4
-  caption: "Photo credit: [**Unsplash**](URL)"
 excerpt: "Exploring the intricacies of customer churn in the telecom sector using advanced data analysis techniques."
 ---
+
+![Customer Churn](/assets/images/customer_churn/predict_churn_customers.jpg)
+
 ## Introduction
 In the rapidly evolving telecom sector, understanding and mitigating customer churn is essential. In this project, I employed advanced data science techniques to unravel churn patterns, aiding in the development of effective strategies for customer retention and business growth. Using predictive modeling, I aimed to identify customers with a high likelihood of discontinuing their services, a crucial step for proactive customer management.
 
+## Accounting Expertise Enhancing Data Science
+Drawing from over 20 years of accounting experience, notably as a Revenue Manager, I brought a unique perspective to this data science project on telecom customer churn. My role in revenue management, with its focus on precision and strategic financial analysis, significantly enriched the project:
+
+- Analytical Accuracy: Skills honed as a Revenue Manager in ensuring data accuracy informed rigorous validation in the analysis, leading to reliable insights.
+- Revenue Perspective: Experience in revenue trend analysis helped in interpreting churn implications for business revenue, offering actionable insights.
+- Risk and Compliance Insight: My background in managing financial risks and compliance contributed to a careful evaluation of model assumptions and potential errors.
+- Business Strategy Alignment: As a Revenue Manager, aligning data with business strategy was key; I applied this to ensure that the project’s findings had practical applications.
+- Effective Communication: Proficiency in communicating complex financial concepts, developed while reporting revenue insights, was crucial in making the data science findings accessible and actionable for stakeholders.
+
+This blend of accounting, particularly in revenue management, and data science, not only heightened the project's analytical rigor but also ensured the results were directly relevant to strategic business decisions.
+
 ## Project Overview
-This project is a synthesis of extensive statistical analysis and astute business acumen. Centered on a detailed dataset from a telecom company, my aim was to develop a predictive model to accurately determine the likelihood of customer churn. Given the inherent volatility of the telecom industry's customer base, such predictive insight is of paramount importance.
+In this project, I focused on combining thorough statistical analysis with practical business knowledge. The project revolved around a comprehensive dataset from a telecom company, where I aimed to create a predictive model to accurately identify the likelihood of customer churn. Recognizing the fluctuating nature of the telecom industry's customer base, the ability to predict churn is crucial.
 
 The accompanying pie chart depicts the distribution of customer churn within the dataset, revealing that 14.6% of customers have churned, while a substantial majority of 85.4% have not. This imbalance poses a particular challenge in predictive modeling, as it requires careful consideration to ensure that the model accurately identifies the minority class of churned customers without being overwhelmed by the majority class.
 
@@ -45,71 +52,29 @@ Below is a preview of the initial dataset used in the analysis.
 
 <iframe src="/assets/images/customer_churn/dataframe_snippet.html" width="100%" height="225px" style="border:none;"></iframe>
 
-## Data Exploration and Preprocessing
-The initial stages were centered around refining the data for analysis:
-- Data Integrity: Recognizing the critical impact of data completeness and reliability, I rigorously addressed any missing or inconsistent data, ensuring a robust base for analysis.
-- Data Transformation: I converted categorical data into a numerical format, a necessary step for sophisticated modeling techniques that require quantifiable inputs.
-- Outlier Management: Implementing robust scaling was crucial to minimize the influence of outliers, which are extreme data points that can skew analysis and model predictions.
-
 ## Exploratory Data Analysis (EDA)
-In my analysis of the Orange Telecom's Churn Dataset, I delved into various aspects of the data to uncover patterns that shed light on why customers churn. I've included specific visualizations from this analysis to bring these insights to life.
+### Data Exploration and Preprocessing
+The initial stages were centered around refining the data for analysis:
+- **Data Integrity:** Recognizing the critical impact of data completeness and reliability, I rigorously addressed any missing or inconsistent data, ensuring a robust base for analysis.
+- **Data Transformation:** I converted categorical data into a numerical format, a necessary step for sophisticated modeling techniques that require quantifiable inputs.
+- **Outlier Management:** Implementing robust scaling was crucial to minimize the influence of outliers, which are extreme data points that can skew analysis and model predictions.
+
+In my thorough examination of the Orange Telecom's Churn Dataset, I explored different data facets to unearth patterns that explain customer churn. The following visualizations illustrate key insights from this analysis.
 
 ### Total Day Minutes and Churn
 <img src="/assets/images/customer_churn/day_minutes_vs_churn.png" alt="Descriptive Alt Text" class="figure-size" />
 
-I discovered that customers with higher total day minutes are more prone to churn. This box plot clearly demonstrates this trend, suggesting that heavy usage during the day might lead to customer dissatisfaction and churn.
+Analysis revealed a notable trend: customers logging more minutes during the day tended to churn at a higher rate. The accompanying box plot vividly displays this relationship, suggesting that extensive daily usage may contribute to customer dissatisfaction, possibly due to pricing or service quality issues, leading them to seek alternatives.
 
 ### International Plan and Churn
 <img src="/assets/images/customer_churn/international_plan_churn.png" alt="Descriptive Alt Text" class="figure-size" />
 
-My findings also revealed a significant increase in churn among customers with international plans. The bar graph illustrates that these customers are more likely to churn, indicating potential issues with the international plan offerings.
+Another striking finding was the higher churn rate among customers enrolled in international plans. As shown in this bar graph, these customers churn more frequently, hinting at underlying problems with international plan features, pricing, or service quality that might not meet customer expectations.
 
 ### Customer Service Calls and Churn
 <img src="/assets/images/customer_churn/cust_svc_calls_churn.png" alt="Descriptive Alt Text" class="figure-size" />
 
-The point plot presents a clear correlation between the frequency of customer service calls and churn. An increase in customer service interactions typically indicates unresolved issues, leading to greater churn risk.
-
-## Model Development
-### Stratified K-Fold Cross-Validation
-To ensure representative folds in our imbalanced dataset, Stratified K-Fold Cross-Validation was essential. This approach guarantees that each fold mirrors the overall distribution of the data, particularly important for the minority churn class.
-
-```python
-# Define stratified k-fold for both models
-stratified_kfold = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
-```
-
-### Weight Adjustment
-Weight adjustment in the Random Forest model countered the class imbalance by focusing more on the minority class (churned customers). Varying weight ratios helped in calibrating the model's sensitivity to churned customers.
-
-```
-# Define the weight ratios for RF model
-weight_ratios = np.linspace(0.1, 15.0, 50)
-class_weight_options = [{0: 1, 1: ratio} for ratio in weight_ratios]
-```
-
-### Subsampling
-Subsampling in the Gradient Boosting model helped to address the imbalance. By training on random subsets, the model could better generalize, reducing the risk of overfitting to the majority class.
-
-```
-# Parameter grid for Randomized Search with Gradient Boosting
-param_dist_gb = {
-    ...
-    'subsample': [0.5, 0.6, 0.7, 0.8, 0.9, 1.0],  # Subsampling the training set
-    ...
-}
-```
-
-### Recall Focus
-Optimizing for recall was a priority, ensuring the model effectively identifies churn cases in our imbalanced dataset. The Randomized Search was tailored to prioritize recall, crucial for minimizing false negatives.
-
-```
-# Parameter grid for Randomized Search with Gradient Boosting
-param_dist_gb = {
-    ...
-    'scoring': 'recall',  # Focus on recall
-    ...
-}
-```
+The data also indicated a strong link between the number of customer service calls and increased churn. This point plot clearly demonstrates that customers who frequently contact customer service are more likely to churn. This pattern likely reflects unresolved issues or customer frustration, emphasizing the need for effective customer service to enhance retention.
 
 ## Model Selection
 In this project, I utilized two esteemed models, Random Forest and Gradient Boosting, to predict customer churn, particularly focusing on the challenge posed by an imbalanced dataset.
@@ -124,10 +89,47 @@ In this project, I utilized two esteemed models, Random Forest and Gradient Boos
 - **Approach**: Builds the model in stages, with each successive tree improving on the previous one's errors.
 - **Strengths**: High precision, flexible across various loss functions, and excels at identifying complex interactions between features.
 
+## Model Development
+### Stratified K-Fold Cross-Validation
+Understanding the importance of accurate model validation, I employed Stratified K-Fold Cross-Validation. This approach ensures that each fold of the dataset accurately represents the overall distribution of the churn classes, which is crucial for our imbalanced data.
+
+```python
+stratified_kfold = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
+```
+
+By choosing five splits, the model training and validation phases could capture the underlying data patterns without being biased toward the majority class.
+
+### Weight Adjustment
+The Random Forest model was fine-tuned with a focus on the minority class by adjusting the class weights. This method effectively increases the penalty for misclassifying the less frequent, but critical, churn cases.
+
+```python
+weight_ratios = np.linspace(0.1, 15.0, 50)
+class_weight_options = [{0: 1, 1: ratio} for ratio in weight_ratios]
+```
+
+Experimentation with various weight ratios allowed for finding the optimal balance, enhancing the model's ability to identify churn customers accurately.
+
+### Subsampling
+Gradient Boosting was implemented with subsampling to address overfitting, a common concern with imbalanced datasets. Training on random subsets of the data aids in building a model that generalizes well on unseen data.
+
+```python
+param_dist_gb = {'subsample': [0.5, 0.6, 0.7, 0.8, 0.9, 1.0]}
+```
+This technique introduces randomness into the model training process, improving the robustness of the predictions.
+
+### Recall Optimization
+The model's performance was optimized for recall to ensure maximum identification of actual churn cases. In our business context, capturing true churn instances is more critical than achieving high precision.
+
+```python
+param_dist_gb = {'scoring': 'recall'}
+```
+
+By focusing on recall, the models are tailored to detect churn patterns effectively, even if it means slightly higher false positives, which is a trade-off in imbalanced datasets.
+
 ## Model Performance
 Our analysis highlights the importance of recall in predicting customer churn, where capturing the majority of churn cases is more critical than the precision of the prediction due to the imbalanced nature of our dataset:
 
-<img src="/assets/images/customer_churn/model_comparison.png" alt="Model Performance Comparison Bar Chart" class="figure-size" />
+<img src="/assets/images/customer_churn/model_comparison.png" alt="Model Performance Comparison Bar Chart">
 
 - **Recall**: The Random Forest model demonstrated a superior recall of 82.11%, indicating its strength in identifying true churn cases, which is crucial for minimizing the risk of false negatives.
 - **Precision**: Although Gradient Boosting had a slightly lower recall of 73.68%, its precision rate of 89.74% reflects its effectiveness in correctly labeling customers who are likely to churn.
@@ -136,7 +138,7 @@ Our analysis highlights the importance of recall in predicting customer churn, w
 ### Confusion Matrix Analysis
 The confusion matrices further illustrated the models' strengths. Random Forest correctly identified 78 churned customers but had 17 false negatives, suggesting room for improvement in churn prediction. In contrast, the Gradient Boosting model correctly predicted 70 churn instances, with 25 false negatives, showcasing its strength in pinpointing customers at risk of churn.
 
-<img src="/assets/images/customer_churn/confusion.png" alt="Fig.1: Comparative Confusion Matrices for Random Forest and GBM" class="figure-size" />
+<img src="/assets/images/customer_churn/confusion.png" alt="Comparative Confusion Matrices for Random Forest and GBM">
 
 The evaluation of our models zeroes in on recall—a crucial metric given the imbalanced nature of our churn dataset:
 
@@ -153,7 +155,7 @@ The comparison reveals that while both models are quite effective, Gradient Boos
 ### Feature Importances Comparison
 Analyzing the feature importances from our Random Forest and Gradient Boosting models gives us insight into the factors most predictive of customer churn. Both models highlight similar features as significant, but with some differences in the degree of importance attributed to each feature.
 
-<img src="/assets/images/customer_churn/feature_imp.png" alt="Feature Importances Visualization" class="figure-size" />
+<img src="/assets/images/customer_churn/feature_imp.png" alt="Feature Importances Visualization"/>
 
 - **Customer Service Calls**: The number of customer service calls is a strong predictor in both models, with a notably high importance in the Random Forest model. This suggests a direct link between service calls and churn likelihood, underscoring the importance of customer service quality.
   
@@ -165,7 +167,13 @@ Analyzing the feature importances from our Random Forest and Gradient Boosting m
 
 The bar chart comparison above provides a visual representation of these key features' importances, indicating where each model's predictive focus lies. Notably, the first four features listed are among the most critical across both models. Targeting improvements in these areas could be beneficial in reducing churn rates.
 
-## Conclusion
-Completing this customer churn project independently marks a significant advancement in my data science journey. It has demonstrated my ability to tackle intricate business challenges through rigorous predictive modeling and data analysis. This endeavor has sharpened my skills in critical areas such as model evaluation and data-driven decision-making, underlining my aptitude for deriving actionable insights from complex data scenarios.
+## Reflecting on the Journey
+### Overcoming Challenges and Personal Growth
+This project was more than just a technical task; it was a journey of personal and professional growth. The challenges faced, from understanding complex telecom data to balancing technical and business insights, have been integral to my development. They pushed me to refine my data processing and analysis skills, emphasizing the importance of adaptability and continuous learning in the dynamic field of data science.
 
-As I look to the future, my focus is on deepening my expertise through exploring advanced modeling techniques and integrating broader data sets. My dedication to continuous learning and applying cutting-edge methods like deep learning showcases my potential as a valuable asset in any data-centric role. This project is a testament to my capacity for innovative problem-solving and strategic analysis, ideally positioning me for opportunities where my analytical acumen and drive for impactful solutions can contribute to business success.
+### Project Impact and Future Directions
+Completing this customer churn project independently marks a notable milestone in my data science journey. It has not only demonstrated my ability to address complex business challenges with rigorous predictive modeling and thorough data analysis, but also sharpened my skills in model evaluation and data-driven decision-making. This experience underlines my capability to derive meaningful insights from intricate data scenarios.
+
+Looking ahead, I am excited to delve deeper into advanced modeling techniques and to work with broader datasets. My commitment to embracing cutting-edge methodologies, like deep learning, highlights my potential as a valuable contributor in data-focused roles. This project has been a testament to my innovative problem-solving and strategic analytical skills, positioning me for future opportunities where I can drive impactful business solutions.
+
+Check out the [source code on GitHub](https://github.com/timothyrobbinscpa/new_customer_churn/blob/master/src/customer_churn.ipynb).
