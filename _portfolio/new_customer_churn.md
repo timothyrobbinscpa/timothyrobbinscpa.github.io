@@ -47,4 +47,4 @@ This project demonstrates my ability to transform data into actionable insights,
 
 For a more detailed analysis of this project, [click here](/customer-churn).
 
-Check out the [source code on GitHub](https://github.com/timothyrobbinscpa/new_customer_churn/blob/master/src/customer_churn.ipynb).
+To explore the full analysis with all executed code, outputs, and visualizations, see [the complete notebook on NBViewer](https://nbviewer.org/github/timothyrobbinscpa/new_customer_churn/blob/master/src/customer_churn.ipynb).

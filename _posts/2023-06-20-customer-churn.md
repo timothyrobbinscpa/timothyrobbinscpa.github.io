@@ -30,11 +30,11 @@ In the rapidly evolving telecom sector, understanding and mitigating customer ch
 ## Accounting Expertise Enhancing Data Science
 Drawing from over 20 years of accounting experience, notably as a Revenue Manager, I brought a unique perspective to this data science project on telecom customer churn. My role in revenue management, with its focus on precision and strategic financial analysis, significantly enriched the project:
 
-- Analytical Accuracy: Skills honed as a Revenue Manager in ensuring data accuracy informed rigorous validation in the analysis, leading to reliable insights.
-- Revenue Perspective: Experience in revenue trend analysis helped in interpreting churn implications for business revenue, offering actionable insights.
-- Risk and Compliance Insight: My background in managing financial risks and compliance contributed to a careful evaluation of model assumptions and potential errors.
-- Business Strategy Alignment: As a Revenue Manager, aligning data with business strategy was key; I applied this to ensure that the project’s findings had practical applications.
-- Effective Communication: Proficiency in communicating complex financial concepts, developed while reporting revenue insights, was crucial in making the data science findings accessible and actionable for stakeholders.
+- **Analytical Accuracy:** Skills honed as a Revenue Manager in ensuring data accuracy informed rigorous validation in the analysis, leading to reliable insights.
+- **Revenue Perspective:** Experience in revenue trend analysis helped in interpreting churn implications for business revenue, offering actionable insights.
+- **Risk and Compliance Insight:** My background in managing financial risks and compliance contributed to a careful evaluation of model assumptions and potential errors.
+- **Business Strategy Alignment:** As a Revenue Manager, aligning data with business strategy was key; I applied this to ensure that the project’s findings had practical applications.
+- **Effective Communication:** Proficiency in communicating complex financial concepts, developed while reporting revenue insights, was crucial in making the data science findings accessible and actionable for stakeholders.
 
 This blend of accounting, particularly in revenue management, and data science, not only heightened the project's analytical rigor but also ensured the results were directly relevant to strategic business decisions.
 
@@ -167,6 +167,23 @@ Analyzing the feature importances from our Random Forest and Gradient Boosting m
 
 The bar chart comparison above provides a visual representation of these key features' importances, indicating where each model's predictive focus lies. Notably, the first four features listed are among the most critical across both models. Targeting improvements in these areas could be beneficial in reducing churn rates.
 
+#### Strategic Actions to Mitigate Customer Churn
+##### Enhancing Customer Support
+- **Focus on Service Quality:** With customer service calls being a leading indicator of churn, invest in training and resources to improve the quality of customer support.
+- **Proactive Problem Resolution:** Implement robust follow-up procedures to ensure customer issues are resolved promptly, reducing the need for multiple service calls.
+  
+##### Pricing Plan Optimization
+- **Flexible Pricing Plans:** Given the significance of total day minutes and charges, introduce flexible pricing plans that adapt to customer usage patterns, potentially with tiered pricing or pay-as-you-go options.
+- **Incentivize High Usage:** Develop discounts or special offers that reward high usage, making the pricing more appealing and encouraging customer loyalty.
+  
+#### International Plan Competitiveness
+- **Review Plan Offerings:** Analyze the competitiveness of international plans. Customer churn associated with these plans suggests a need for more attractive offerings.
+- **Attractive International Rates:** Consider offering better international rates or bundled minutes to appeal to customers who frequently use international services.
+  
+#### Implementing Data-Driven Actions
+- Use the insights from the data to inform strategic decisions, ensuring that actions taken are data-driven and targeted at reducing churn.
+- Continually monitor the impact of these strategies and adjust as necessary based on customer feedback and ongoing data analysis.
+
 ## Reflecting on the Journey
 ### Overcoming Challenges and Personal Growth
 This project was more than just a technical task; it was a journey of personal and professional growth. The challenges faced, from understanding complex telecom data to balancing technical and business insights, have been integral to my development. They pushed me to refine my data processing and analysis skills, emphasizing the importance of adaptability and continuous learning in the dynamic field of data science.
@@ -176,4 +193,4 @@ Completing this customer churn project independently marks a notable milestone i
 
 Looking ahead, I am excited to delve deeper into advanced modeling techniques and to work with broader datasets. My commitment to embracing cutting-edge methodologies, like deep learning, highlights my potential as a valuable contributor in data-focused roles. This project has been a testament to my innovative problem-solving and strategic analytical skills, positioning me for future opportunities where I can drive impactful business solutions.
 
-Check out the [source code on GitHub](https://github.com/timothyrobbinscpa/new_customer_churn/blob/master/src/customer_churn.ipynb).
+To explore the full analysis with all executed code, outputs, and visualizations, see [the complete notebook on NBViewer](https://nbviewer.org/github/timothyrobbinscpa/new_customer_churn/blob/master/src/customer_churn.ipynb).
