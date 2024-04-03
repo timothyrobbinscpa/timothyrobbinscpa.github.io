@@ -31,11 +31,13 @@ The analysis centered around the Orange Telecom's Churn Dataset, detailed with c
 <img src="/assets/images/customer_churn/churn_pie_chart.png" alt="Proportion of Customer Churn" style="width: 40%;">
 
 #### Techniques and Tools
+
 - **Exploratory Data Analysis:** Investigated factors like total day minutes and customer service calls, uncovering key trends and patterns.
 - **Predictive Modeling:** Used Stratified K-Fold Cross-Validation, Random Forest, and Gradient Boosting models. These methods were chosen for their robustness in handling imbalanced datasets like ours.
 - **Evaluation Metrics:** Emphasized recall, alongside precision and F1 score, to accurately capture churn cases.
 
 #### Key Findings
+
 - Identified high daily usage, international plans, and frequent service calls as major churn indicators.
 - The Random Forest model showed a high recall of 82.11%, indicating its effectiveness in identifying true churn cases.
 - Gradient Boosting balanced recall with a precision rate of 89.74%, highlighting its accuracy in predicting churn.
@@ -44,6 +46,7 @@ The analysis centered around the Orange Telecom's Churn Dataset, detailed with c
 
 #### Impact
 This project demonstrates my ability to transform data into actionable insights, showcasing skills essential for data-centric roles. The findings have implications for targeted customer retention strategies, underlining the importance of data-driven decision making in the telecom industry.
+
 
 For a more detailed analysis of this project, [click here](/customer-churn).
 
