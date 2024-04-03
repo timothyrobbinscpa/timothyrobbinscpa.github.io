@@ -20,4 +20,4 @@ Welcome to the core of my professional landscape, where data-driven insights mer
   - [Read My Posts](/posts/)
 
 ### Let's Connect
-Interested in collaborating or discussing the fascinating intersection of data science and finance? I’d love to hear from you. [Get in touch](mailto:timothyrobbinscpa@gmail.com) or connect with me on [LinkedIn](Your-LinkedIn-Profile-URL).
+Interested in collaborating or discussing the fascinating intersection of data science and finance? I’d love to hear from you. [Get in touch](mailto:timothyrobbinscpa@gmail.com).
