@@ -2,7 +2,7 @@
 layout: home
 title: "Insightful Analytics with Tim Robbins: Navigating Data Trends in Business and Finance"
 header:
-  overlay_image: assets\images\Home Page\1702582742262.png # Adjust or remove this if it's too large.
+  overlay_image: /assets/images/Home Page/1702582742262.png # Adjust or remove this if it's too large.
 author_profile: True
 ---
 ## Welcome to My World of Data and Insights
