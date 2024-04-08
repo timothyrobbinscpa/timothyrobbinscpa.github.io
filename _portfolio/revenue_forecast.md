@@ -1,5 +1,5 @@
 ---
-title: "Predicting Cinema Revenue: A Machine Learning Approach"
+title: "Predicting Cinema Revenue"
 layout: single
 classes: wide
 author_profile: true
@@ -7,7 +7,9 @@ read_time: false
 comments: false
 header:
   teaser: assets/images/ticket_sales/movie_infographic.jpg
+excerpt: Discover how I harness machine learning to transform cinema sales data into strategic insights, driving business success.
 ---
+![Cinema Sales](/assets/images/ticket_sales/movie_infographic.jpg)
 
 ## Introduction
 In this project, I explored cinema sales data using advanced machine learning techniques to identify the factors that most significantly drive revenue.
