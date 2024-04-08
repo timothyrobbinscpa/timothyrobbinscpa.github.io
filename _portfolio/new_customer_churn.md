@@ -1,12 +1,13 @@
 ---
-title:  "Tackling Customer Churn in Telecom"
+title:  "Decoding Telecom Churn: Strategies for Retaining Customers through Data Science"
 date: 2023-06-20
 author_profile: true
 layout: single
 classes: wide
 header:
   teaser: /assets/images/customer_churn/predict_churn_customers.jpg
-excerpt: "A focused analysis to predict customer churn in the telecom sector, leveraging advanced data science techniques."
+excerpt: "Unlocking the Secrets of Customer Loyalty: A Data-Driven Journey into Telecom Churn"
+
 categories: Churn Analysis
 tags:
   - Data Analysis
