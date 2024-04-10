@@ -3,6 +3,8 @@ layout: single  # This specifies that the page layout should be used.
 classes: wide
 title: About Me  # The title of your page.
 permalink: /about/  # The URL where this page will be accessible.
+header:
+  image: /assets/images/Home Page/1.-Influence-of-Data-Science-and-Analytics-Skills-in-Finance-and-Accounting.jpg
 author_profile: True
 ---
 ## Introduction
@@ -34,6 +36,3 @@ My technical proficiency encompasses a range of tools and methodologies, key amo
 Beyond my professional endeavors, I have a passion for exploring a variety of personal interests that enrich my life. I am an avid hiker, finding both inspiration and rejuvenation on the trails. The serenity and challenge of hiking offer a perfect counterbalance to the analytical and structured world of data science. Traveling the world is another pursuit close to my heart. Experiencing diverse cultures, landscapes, and cuisines fuels my creativity and broadens my perspective, enhancing my professional work with a unique global view.
 
 These personal pursuits, from hiking through serene landscapes to exploring global cuisines, reflect my love for discovery and continuous learning. They not only provide balance to my life but also inspire fresh perspectives and ideas that I bring into my professional role.
-
-
-
