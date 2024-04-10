@@ -3,10 +3,13 @@
 search: false
 ---
 
+@import "custom.css";
+
 @charset "utf-8";
 
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
+
 
 .home .site-header {
     height: 300px; /* Or whatever height you prefer */

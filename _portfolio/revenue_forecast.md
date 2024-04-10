@@ -1,5 +1,5 @@
 ---
-title: "Predicting Cinema Revenue"
+title: "Unveiling the Secrets of Cinema Revenue Success."
 layout: single
 classes: wide
 author_profile: true
