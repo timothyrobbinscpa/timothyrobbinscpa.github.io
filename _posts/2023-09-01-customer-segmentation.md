@@ -1,6 +1,6 @@
 ---
 title: "Customer Segmentation"
-permalink: /customer-churn/
+permalink: /customer-segmentation/
 #sidebar:
  # title: "Table of Contents"
  # nav: "cust-churn-nav"

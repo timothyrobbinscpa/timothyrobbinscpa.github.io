@@ -6,9 +6,8 @@ layout: single
 classes: wide
 header:
   teaser: /assets/images/customer_churn/download (1).jfif
-excerpt: "Discover how data science transforms customer retention and drives loyalty."
-
-categories: Churn Analysis
+excerpt: "An in-depth look at how data science techniques can unveil the key drivers of customer churn."
+categories: Customer-Churn
 tags:
   - Data Analysis
   - Predictive Modeling
@@ -21,34 +20,32 @@ tags:
   - Visualization
   - Data Science
 ---
-![Customer Churn](/assets/images/customer_churn/predict_churn_customers.jpg)
+![Customer Churn](/assets/images/customer_churn/download (1).jfif)
 
-#### Project Overview
-In this data science project, I focused on analyzing and predicting customer churn in the telecom sector. The goal was to identify customers at risk of discontinuing services, enabling targeted strategies for retention.
+## The Quest to Unravel Churn Patterns
+**Overview**: Tackling customer churn, a critical challenge across business landscapes, became the core of my mission. Blending data science with nuanced insights from my accounting background, I aimed to reveal the underlying factors of customer turnover and devise retention-enhancing strategies.
 
-#### Data Used
-The analysis centered around the Orange Telecom's Churn Dataset, detailed with customer behaviors and trends. This provided a comprehensive base for understanding the factors contributing to churn.
+## Deep Dive into the Churn Phenomenon
+**Investigating Customer Dynamics**: With the Orange Telecom’s Churn Dataset at my disposal, I embarked on an analytical expedition. This wasn't just about crunching numbers; it was about piecing together a story from data, transforming figures into a comprehensive narrative on customer retention.
 
-<img src="/assets/images/customer_churn/churn_pie_chart.png" alt="Proportion of Customer Churn" style="width: 40%;">
+## Navigating Data Complexities
+**Facing an imbalanced dataset with significant outliers and skewness**, I employed targeted data science techniques for robust analysis. Stratified K-Fold Cross-Validation, robust scaling, and model optimizations like weight ratio adjustments and subsampling were pivotal for accurate churn prediction.
 
-#### Techniques and Tools
+## Unveiling the Drivers of Churn
+**Identifying Key Factors and Feature Importances**: Analysis revealed that customer service calls, total day charge, international plan subscriptions, and other factors were key indicators of churn. The Random Forest model emphasized service calls, while Gradient Boosting highlighted day charges and international plans, guiding our strategy development. A visual comparison of the top feature importances between the Random Forest and Gradient Boosting models can be seen below:
 
-- **Exploratory Data Analysis:** Investigated factors like total day minutes and customer service calls, uncovering key trends and patterns.
-- **Predictive Modeling:** Used Stratified K-Fold Cross-Validation, Random Forest, and Gradient Boosting models. These methods were chosen for their robustness in handling imbalanced datasets like ours.
-- **Evaluation Metrics:** Emphasized recall, alongside precision and F1 score, to accurately capture churn cases.
+[Insert feature importance bar chart]
 
-#### Key Findings
+## Turning Insights into Strategies
+**Crafting Solutions for Retention**: Based on these insights, I proposed enhancing customer service quality and revising pricing plans. Considering the significance of international plans, reevaluating these offerings could also be a crucial step in reducing churn.
 
-- Identified high daily usage, international plans, and frequent service calls as major churn indicators.
-- The Random Forest model showed a high recall of 82.11%, indicating its effectiveness in identifying true churn cases.
-- Gradient Boosting balanced recall with a precision rate of 89.74%, highlighting its accuracy in predicting churn.
+## Reflecting on the Analytical Journey
+**Skill Development**: This project significantly advanced my skills in advanced predictive modeling. I learned to navigate complex data characteristics and fine-tune machine learning models, a crucial ability for translating intricate data patterns into actionable business strategies.
 
-<img src="/assets/images/customer_churn/model_comparison.png" alt="Model Performance Comparison Bar Chart" style="width: 85%;" />
-
-#### Impact
-This project demonstrates my ability to transform data into actionable insights, showcasing skills essential for data-centric roles. The findings have implications for targeted customer retention strategies, underlining the importance of data-driven decision making in the telecom industry.
+This newly developed expertise is essential for making informed, data-driven decisions in today’s business landscape.
 
 
-For a more detailed analysis of this project, [click here](/customer-churn).
+**Explore the Complete Analysis**: Delve into the full story of this churn analysis [here](/customer-churn/).
 
-To explore the full analysis with all executed code, outputs, and visualizations, see [the complete notebook on NBViewer](https://nbviewer.org/github/timothyrobbinscpa/new_customer_churn/blob/master/src/customer_churn.ipynb).
+**Technical Deep Dive**: View the detailed methodology, code, and visualizations in [the project notebook on NBViewer](https://nbviewer.org/github/timothyrobbinscpa/new_customer_churn/blob/master/src/customer_churn.ipynb).
+
