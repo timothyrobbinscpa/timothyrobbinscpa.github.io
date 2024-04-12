@@ -1,11 +1,9 @@
 // Reapplying bold styling to specific elements
-h1, h2, h3 {
-  font-weight: bold;  // Ensuring main headings are bold
+h1, h2, h3, h4, h5, h6, strong, b {
+  font-weight: bold;  // Ensuring headings and bold tags are bold
 }
 
-strong, b {
-  font-weight: bold;  // Ensuring semantic bolding is maintained
+// Other elements where bold might be appropriate
+.nav-menu, .footer-links, .button {
+  font-weight: bold;
 }
-
-
-  

@@ -1,4 +1,9 @@
-// Resetting bold formatting across all elements
-*, h1, h2, h3, h4, h5, h6, strong, b {
+// Make all elements bold
+* {
+    font-weight: bold;
+}
+
+// Set main text to normal font weight
+p, .main-content {
     font-weight: normal;
 }
