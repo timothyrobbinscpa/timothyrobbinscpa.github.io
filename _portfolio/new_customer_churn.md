@@ -15,6 +15,7 @@ tags:
   - Predictive Modeling
   - Telecom
 ---
+![Customer Churn](/assets/images/customer_churn/download (1).jfif)
 
 ## From Numbers to Insights: My Journey
 
