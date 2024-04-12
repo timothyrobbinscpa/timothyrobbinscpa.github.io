@@ -1,7 +1,11 @@
-/* Retain bold for strong and b */
+// Reapplying bold styling to specific elements
+h1, h2, h3 {
+  font-weight: bold;  // Ensuring main headings are bold
+}
+
 strong, b {
-  font-weight: bold;
+  font-weight: bold;  // Ensuring semantic bolding is maintained
 }
-}
+
 
   
