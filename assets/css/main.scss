@@ -3,7 +3,7 @@
 search: false
 ---
 
-@import "custom.css";
+@import "reset"; // This line imports the reset styles at the top
 
 @charset "utf-8";
 
@@ -26,3 +26,7 @@ search: false
   color: #3498db; /* Replace with your desired color */
 }
 
+.author__bio {
+  font-size: 25px; /* Or whatever size you prefer */
+  font-weight: bold; /* makes the text bold */
+}
