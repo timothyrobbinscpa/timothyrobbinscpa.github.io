@@ -50,7 +50,7 @@ Venturing into telecom churn analysis showcased a powerful combination of data s
 
 ## Discover the Full Story
 
-Dive into the comprehensive analysis [here](/projects/customer-churn-analysis).
+Dive into the comprehensive analysis [here](/customer-churn/).
 
 ## Explore the Technical Journey
 
