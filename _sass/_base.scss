@@ -1,5 +1,7 @@
-// _base.scss
-  strong, b {
-    font-weight: bold;  // Ensuring that bold is actually bold
-  }
+
+/* Explicitly set bold styles for strong and b tags */
+strong, b {
+  font-weight: bold;
+}
+
   
