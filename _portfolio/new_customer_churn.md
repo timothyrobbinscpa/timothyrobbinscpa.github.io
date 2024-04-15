@@ -1,14 +1,14 @@
 ---
-title: "Project Showcase: Transforming Telecom with Data Insights"
+title: "Turning the Tide on Telecom Churn: A Data-Centric Approach"
 date: 2023-06-20
 author_profile: true
 layout: single
 classes: wide
 header:
   teaser: /assets/images/customer_churn/download (1).jfif
-excerpt: "A deep dive into how data science and accounting expertise combine to tackle customer churn in the telecom industry."
+excerpt: "Explore how I tackle telecom churn with innovative data science techniques for improved customer loyalty."
 categories:
-  - Data Analysis
+  - Customer-Churn
 tags:
   - Customer Churn
   - Data Science
@@ -19,7 +19,7 @@ tags:
 
 ## From Numbers to Insights: My Journey
 
-**Overview**: In the telecom sector’s dynamic landscape, deciphering customer churn patterns became my mission. Blending data science expertise with strategically applied accounting experience, I set out to unravel the reasons behind customer turnover, aiming to forge strategies that enhance customer retention and drive business growth.
+**Overview**: In the dynamic landscape of the telecom sector, deciphering customer churn patterns became my mission. Utilizing Python as my primary tool, I blended data science expertise with strategically applied accounting experience to unravel the reasons behind customer turnover, aiming to forge strategies that enhance customer retention and drive business growth. This project represents not only a technical challenge but also a perfect fusion of my analytical skills with real-world business applications.
 
 ## The Data Story
 
