@@ -54,4 +54,4 @@ Dive into the comprehensive analysis [here](/customer-churn/).
 
 ## Explore the Technical Journey
 
-For a detailed breakdown, including code and visuals, view the project notebook on [NBViewer](https://nbviewer.org/github/yourusername/yourrepo/blob/master/notebooks/customer_churn_analysis.ipynb).
+For a detailed breakdown, including code and visuals, view the project notebook on [NBViewer](https://nbviewer.org/github/timothyrobbinscpa/new_customer_churn/blob/master/src/customer_churn.ipynb).
