@@ -5,6 +5,8 @@ main:
     url: /
   - title: "About"
     url: /about/
+  - title: "My Journey"
+    url: /my_journey/
   - title: "Contact"
     url: /contact/
   - title: "Portfolio"
