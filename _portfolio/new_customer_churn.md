@@ -15,6 +15,7 @@ header:
   teaser: /assets/images/customer_churn/download (1).jfif
   image_description: "An illustrative graphic showing trends in customer churn and retention."
 ---
+![Customer Churn](/assets/images/customer_churn/download (1).jfif)
 
 ## Unveiling Churn Dynamics: A Data-Driven Exploration
 With extensive experience in assessing the impact of customer churn on revenue and accounts receivable, I leveraged Python to dissect and analyze complex patterns of customer churn. My Master's in Data Science further enabled me to transform these detailed analyses into actionable insights for reducing churn and enhancing customer retention strategies.
