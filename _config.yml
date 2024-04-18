@@ -133,6 +133,10 @@ sidebar:
   enabled: true
   sticky: true
 
+# UI Text (added this section)
+ui-text:
+  return_to_top: "Return to top"  # Ensures the button/text is visible and set
+
 # Site Footer
 footer:
   links:
