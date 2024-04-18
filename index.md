@@ -1,12 +1,14 @@
 ---
-layout: splash
-classes: wide
+layout: home
+#classes: wide
 title: "Welcome to My World of Data and Insights"
 header:
   image: /assets/images/home_page/a data scientist at work providing analytics and insights to investment professionals2.jpg
   overlay_image: /assets/images/home_page/a data scientist at work providing analytics and insights to investment professionals2.jpg
   overlay_filter: 0.3 # An optional overlay filter to darken the image for better text readability
 author_profile: True
+pagination:
+  enabled: true
 ---
 # Tim Robbins: CPA & Data Scientist
 

@@ -1,11 +1,14 @@
 ---
 title: "Decoding Customer Churn: A Data Science Journey in the Telecom Industry."
 permalink: /customer-churn/
-sidebar:
-  title: "Table of Contents"
-  nav: "cust-churn-nav"
+toc: true
+toc_label: "Table of Contents"
+toc_sticky: true
+#sidebar:
+#  title: "Table of Contents"
+#  nav: ".sidebar__right"
 layout: single
-classes: wide
+#classes: wide
 date: 2023-06-20
 categories: "Customer-Churn"
 tags:
@@ -21,13 +24,12 @@ tags:
   - Data Science
 excerpt: "Exploring the intricacies of customer churn in the telecom sector using advanced data analysis techniques."
 ---
-
 ![Customer Churn](/assets/images/customer_churn/download (1).jfif)
 
 # Introduction
 In the rapidly evolving telecom sector, understanding and mitigating customer churn is essential. In this project, I employed advanced data science techniques to unravel churn patterns, aiding in the development of effective strategies for customer retention and business growth. Using predictive modeling, I aimed to identify customers with a high likelihood of discontinuing their services, a crucial step for proactive customer management.
 
-# Accounting Expertise Enhancing Data Science
+## Accounting Expertise Enhancing Data Science
 Drawing from over 20 years of accounting experience, notably as a Revenue Manager, I brought a unique perspective to this data science project on telecom customer churn. My role in revenue management, with its focus on precision and strategic financial analysis, significantly enriched the project:
 
 - **Analytical Accuracy:** Skills honed as a Revenue Manager in ensuring data accuracy informed rigorous validation in the analysis, leading to reliable insights.
@@ -38,14 +40,14 @@ Drawing from over 20 years of accounting experience, notably as a Revenue Manage
 
 This blend of accounting, particularly in revenue management, and data science, not only heightened the project's analytical rigor but also ensured the results were directly relevant to strategic business decisions.
 
-# Project Overview
+## Project Overview
 In this project, I focused on combining thorough statistical analysis with practical business knowledge. The project revolved around a comprehensive dataset from a telecom company, where I aimed to create a predictive model to accurately identify the likelihood of customer churn. Recognizing the fluctuating nature of the telecom industry's customer base, the ability to predict churn is crucial.
 
 The accompanying pie chart depicts the distribution of customer churn within the dataset, revealing that 14.6% of customers have churned, while a substantial majority of 85.4% have not. This imbalance poses a particular challenge in predictive modeling, as it requires careful consideration to ensure that the model accurately identifies the minority class of churned customers without being overwhelmed by the majority class.
 
 <img src="/assets/images/customer_churn/churn_pie_chart.png" alt="Proportion of Customer Churn" style="width: 50%;">
 
-# Dataset Overview
+## Dataset Overview
 The backbone of this analysis was the Orange Telecom's Churn Dataset, rich with intricate details about customer behaviors and churn trends. The dataset was bifurcated into training and testing segments, ensuring a comprehensive approach to model development and validation.
 
 Below is a preview of the initial dataset used in the analysis.
@@ -126,7 +128,7 @@ param_dist_gb = {'scoring': 'recall'}
 
 By focusing on recall, the models are tailored to detect churn patterns effectively, even if it means slightly higher false positives, which is a trade-off in imbalanced datasets.
 
-## Model Performance
+# Model Performance
 Our analysis highlights the importance of recall in predicting customer churn, where capturing the majority of churn cases is more critical than the precision of the prediction due to the imbalanced nature of our dataset:
 
 <img src="/assets/images/customer_churn/model_comparison.png" alt="Model Performance Comparison Bar Chart">
@@ -135,14 +137,14 @@ Our analysis highlights the importance of recall in predicting customer churn, w
 - **Precision**: Although Gradient Boosting had a slightly lower recall of 73.68%, its precision rate of 89.74% reflects its effectiveness in correctly labeling customers who are likely to churn.
 - **F1 Score & Accuracy**: Both models performed comparably in F1 Score, with Random Forest at 81.25% and Gradient Boosting slightly lower at 80.92%. Despite the focus on recall, both models achieved high accuracy, with Gradient Boosting slightly ahead.
 
-### Confusion Matrix Analysis
+## Confusion Matrix Analysis
 The confusion matrices further illustrated the models' strengths. Random Forest correctly identified 78 churned customers but had 17 false negatives, suggesting room for improvement in churn prediction. In contrast, the Gradient Boosting model correctly predicted 70 churn instances, with 25 false negatives, showcasing its strength in pinpointing customers at risk of churn.
 
 <img src="/assets/images/customer_churn/confusion.png" alt="Comparative Confusion Matrices for Random Forest and GBM">
 
 The evaluation of our models zeroes in on recall—a crucial metric given the imbalanced nature of our churn dataset:
 
-### Precision-Recall Curve Comparison
+## Precision-Recall Curve Comparison
 The Precision-Recall Curve is a model evaluation metric that graphically demonstrates the trade-off between the precision of a predictive model and its recall (true positive rate) at different threshold settings. The area under the curve (AUC) provides a single metric to compare models. In our churn prediction project, this metric is particularly insightful due to the class imbalance inherent in the dataset.
 
 <img src="/assets/images/customer_churn/pr_curve.png" alt="Precision-Recall Curve" class="figure-size" />
@@ -152,7 +154,7 @@ The Precision-Recall Curve is a model evaluation metric that graphically demonst
 
 The comparison reveals that while both models are quite effective, Gradient Boosting edges out slightly in terms of the area under the Precision-Recall Curve. This suggests that for this particular dataset, Gradient Boosting may be the more appropriate choice when optimizing for a balance between identifying as many true churn cases as possible (recall) while maintaining precision.
 
-### Feature Importances Comparison
+## Feature Importances Comparison
 Analyzing the feature importances from our Random Forest and Gradient Boosting models gives us insight into the factors most predictive of customer churn. Both models highlight similar features as significant, but with some differences in the degree of importance attributed to each feature.
 
 <img src="/assets/images/customer_churn/feature_imp.png" alt="Feature Importances Visualization"/>
@@ -167,28 +169,28 @@ Analyzing the feature importances from our Random Forest and Gradient Boosting m
 
 The bar chart comparison above provides a visual representation of these key features' importances, indicating where each model's predictive focus lies. Notably, the first four features listed are among the most critical across both models. Targeting improvements in these areas could be beneficial in reducing churn rates.
 
-#### Strategic Actions to Mitigate Customer Churn
-##### Enhancing Customer Support
+## Strategic Actions to Mitigate Customer Churn
+### Enhancing Customer Support
 - **Focus on Service Quality:** With customer service calls being a leading indicator of churn, invest in training and resources to improve the quality of customer support.
 - **Proactive Problem Resolution:** Implement robust follow-up procedures to ensure customer issues are resolved promptly, reducing the need for multiple service calls.
   
-##### Pricing Plan Optimization
+### Pricing Plan Optimization
 - **Flexible Pricing Plans:** Given the significance of total day minutes and charges, introduce flexible pricing plans that adapt to customer usage patterns, potentially with tiered pricing or pay-as-you-go options.
 - **Incentivize High Usage:** Develop discounts or special offers that reward high usage, making the pricing more appealing and encouraging customer loyalty.
   
-#### International Plan Competitiveness
+### International Plan Competitiveness
 - **Review Plan Offerings:** Analyze the competitiveness of international plans. Customer churn associated with these plans suggests a need for more attractive offerings.
 - **Attractive International Rates:** Consider offering better international rates or bundled minutes to appeal to customers who frequently use international services.
   
-#### Implementing Data-Driven Actions
+### Implementing Data-Driven Actions
 - Use the insights from the data to inform strategic decisions, ensuring that actions taken are data-driven and targeted at reducing churn.
 - Continually monitor the impact of these strategies and adjust as necessary based on customer feedback and ongoing data analysis.
 
-## Reflecting on the Journey
-### Overcoming Challenges and Personal Growth
+# Reflecting on the Journey
+## Overcoming Challenges and Personal Growth
 This project was more than just a technical task; it was a journey of personal and professional growth. The challenges faced, from understanding complex telecom data to balancing technical and business insights, have been integral to my development. They pushed me to refine my data processing and analysis skills, emphasizing the importance of adaptability and continuous learning in the dynamic field of data science.
 
-### Project Impact and Future Directions
+## Project Impact and Future Directions
 Completing this customer churn project independently marks a notable milestone in my data science journey. It has not only demonstrated my ability to address complex business challenges with rigorous predictive modeling and thorough data analysis, but also sharpened my skills in model evaluation and data-driven decision-making. This experience underlines my capability to derive meaningful insights from intricate data scenarios.
 
 Looking ahead, I am excited to delve deeper into advanced modeling techniques and to work with broader datasets. My commitment to embracing cutting-edge methodologies, like deep learning, highlights my potential as a valuable contributor in data-focused roles. This project has been a testament to my innovative problem-solving and strategic analytical skills, positioning me for future opportunities where I can drive impactful business solutions.
