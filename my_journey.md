@@ -3,12 +3,14 @@ layout: single  # This specifies that the page layout should be used.
 classes: wide
 title: My Journey  # The title of your page.
 # permalink: my_journey  # The URL where this page will be accessible.
-header:
-  image: /assets/images/home_page/1.-Influence-of-Data-Science-and-Analytics-Skills-in-Finance-and-Accounting.jpg
-  overlay_image: /assets/images/home_page/1.-Influence-of-Data-Science-and-Analytics-Skills-in-Finance-and-Accounting.jpg
-  overlay_filter: 0.3 # An optional overlay filter to darken the image for better text readability
+#header:
+ # image: /assets/images/my_journey/transition from accountant to data scientist.webp
+  #overlay_image: /assets/images/my_journey/transition from accountant to data scientist.webp
+ # overlay_filter: 0.3 # An optional overlay filter to darken the image for better text readability
 author_profile: True
 ---
+![My Journey](/assets/images/my_journey/transition from accountant to data scientist.webp)
+
 # Timothy Robbins: From Numbers to Narratives - A Journey from Accounting to Data Science
 
 ## Introduction: A Foundation in Accounting

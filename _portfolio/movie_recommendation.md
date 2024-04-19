@@ -6,8 +6,8 @@ author_profile: true
 read_time: false
 comments: false
 header:
-  teaser: assets\images\movie_recommentation\Imagen_destacada_film-scaled.jpg
+  teaser: /assets/images/movie_recommentation/movie_recommendation.webp
   excerpt: ""
 ---
-![Movie Recommendation](/assets/images/movie_recommendation/Imagen_destacada_film-scaled.jpg)
+![Movie Recommendation](/assets/images/movie_recommentation/movie_recommendation.webp)
 

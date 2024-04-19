@@ -6,10 +6,10 @@ author_profile: true
 read_time: false
 comments: false
 header:
-  teaser: /assets/images/ticket_sales/movie_infographic.jpg
+  teaser: /assets/images/ticket_sales/generated image.webp
 excerpt: Discover how I harness machine learning to transform cinema sales data into strategic insights, driving business success.
 ---
-![Cinema Sales](/assets/images/ticket_sales/movie_infographic.jpg)
+![Cinema Sales](/assets/images/ticket_sales/generated image.webp)
 
 ## Introduction
 
