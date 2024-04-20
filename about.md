@@ -5,8 +5,8 @@ title: About Me  # The title of your page.
 permalink: /about/  # The URL where this page will be accessible.
 header:
   image: /assets/images/home_page/1.-Influence-of-Data-Science-and-Analytics-Skills-in-Finance-and-Accounting.jpg
-  overlay_image: /assets/images/home_page/1.-Influence-of-Data-Science-and-Analytics-Skills-in-Finance-and-Accounting.jpg
-  overlay_filter: 0.3 # An optional overlay filter to darken the image for better text readability
+ # overlay_image: /assets/images/home_page/1.-Influence-of-Data-Science-and-Analytics-Skills-in-Finance-and-Accounting.jpg
+ # overlay_filter: 0.3 # An optional overlay filter to darken the image for better text readability
 author_profile: True
 ---
 ## Introduction
