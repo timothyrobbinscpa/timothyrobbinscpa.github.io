@@ -1,6 +1,5 @@
 ---
-title: "Turning the Tide on Customer Churn: Data Science Strategies for Enhancing Customer Loyalty"
-date: 2023-06-20
+title: "Turning the Tide on Customer Churn"
 author_profile: true
 layout: single
 classes: wide
@@ -10,10 +9,10 @@ tags:
   - Customer Churn
   - Data Science
   - Predictive Modeling
-excerpt: "Discover how advanced data science techniques effectively tackle customer churn, significantly enhancing business sustainability and customer loyalty."
 header:
   teaser: /assets/images/customer_churn/download (1).jfif
   image_description: "An illustrative graphic showing trends in customer churn and retention."
+excerpt: "Discover how advanced data science techniques effectively tackle customer churn, significantly enhancing business sustainability and customer loyalty."
 ---
 ![Customer Churn](/assets/images/customer_churn/download (1).jfif)
 

@@ -1,5 +1,5 @@
 ---
-title: "Driving Business Decisions Through Customer Segmentation: A Hierarchical Clustering Approach"
+title: "Driving Business Decisions Through Customer Segmentation"
 date: 2024-04-23
 layout: single
 classes: wide
@@ -10,7 +10,7 @@ header:
   teaser: /assets/images/customer_segmentation/segmentation.webp
 excerpt: "Dive into my Customer Segmentation & Marketing Insights project to see how data transforms customer understanding and strategy!"
 categories:
-  - Data Science
+  - Customer-Segmentation
 tags:
   - Customer Segmentation
   - Hierarchical Clustering
