@@ -18,7 +18,7 @@ tags:
   - Data Visualization
   - Business Strategy
 ---
-![Customer Segmentation Graphic](/assets/images/customer_segmentation/segmentation.webp)
+![Customer Segmentation Graphic](/assets/images/customer_segmentation/customer_segmentation_icon.webp)
 
 ## Introduction
 
@@ -42,11 +42,28 @@ The project involved several key phases:
 - **Data Preprocessing:** Standardizing data and handling missing values to prepare for analysis.
 - **Exploratory Data Analysis (EDA):** Gaining insights into the dataset through visual and statistical methods to identify patterns and relationships.
 - **Customer Segmentation:** Applying the k-means clustering algorithm to categorize customers into distinct groups based on similar traits and behaviors.
+
+<figure class="align-center">
+  <img src="/assets/images/customer_segmentation/pca_clustered.png" alt="Cluster Visualization with PCA" style="width:80%;">
+  <figcaption></figcaption>
+</figure>
+
 - **Evaluation:** Assessing the effectiveness of different segmentation schemes through silhouette scores and cluster analysis.
+
+<figure class="align-center">
+  <img src="/assets/images/customer_segmentation/silhouette_scores.png" alt="Comparative performance of Random Forest and Gradient Boosting models" style="width:80%;">
+  <figcaption></figcaption>
+</figure>
 
 ## Actionable Strategies and Key Insights
 
 - **Targeted Marketing Campaigns:** Developed strategies for personalized marketing based on the characteristics of each segment, significantly increasing conversion rates.
+
+<figure class="align-center">
+  <img src="/assets/images/customer_segmentation/snake_plot.png" alt="Comparative performance of Random Forest and Gradient Boosting models" style="width:80%;">
+  <figcaption></figcaption>
+</figure>
+
 - **Customer Retention Tactics:** Identified at-risk segments and devised retention strategies tailored to their specific needs and preferences.
 
 ## Challenges and Learning Experiences
