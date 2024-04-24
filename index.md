@@ -1,17 +1,16 @@
 ---
-layout: home
-#classes: wide
-title: "Bridging the Gap between Finance and Data Science"
+layout: splash
+classes: wide
+title: "Tim Robbins: Bridging the Gap between Finance and Data Science"
 header:
   image: /assets/images/home_page/a data scientist at work providing analytics and insights to investment professionals2.jpg
 #  overlay_image: /assets/images/home_page/a data scientist at work providing analytics and insights to investment professionals2.jpg
 #  overlay_filter: 0.3 # An optional overlay filter to darken the image for better text readability
-author_profile: True
+excerpt: '<span style="color: white; text-shadow: 2px 2px 8px rgba(0,0,0,0.6);">Discover my journey from accounting to data science.</span>'
+author_profile: false
 pagination:
   enabled: true
 ---
-# Tim Robbins: CPA & Data Scientist
-
 With over 20 years in accounting and a recent focus on data science, I bridge the gap between financial expertise and advanced data analytics. As a CPA and Data Scientist, my goal is to utilize data to enhance financial intelligence and strategic decision-making.
 
 ## Professional Highlights

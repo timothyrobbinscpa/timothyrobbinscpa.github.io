@@ -16,9 +16,9 @@ minimal_mistakes_skin    : "air" # "default", "air", "aqua", "contrast", "dark",
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Insightful Analytics with Tim Robbins"
-title_separator          : "-"
-subtitle                 : "Navigating Data Trends in Business and Finance" # site tagline that appears below site title in masthead
+title                    : "Tim Robbins: Bridging the Gap between Finance and Data Science"
+title_separator          : ":"
+#subtitle                 : "Navigating Data Trends in Business and Finance" # site tagline that appears below site title in masthead
 name                     : "Tim Robbins"
 description              : 
 url                      : "https:/timothyrobbinscpa.github.io" # the base hostname & protocol for your site 
