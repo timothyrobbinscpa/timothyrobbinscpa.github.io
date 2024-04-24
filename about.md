@@ -1,16 +1,16 @@
 ---
 layout: single  # Specifies the single page layout.
 classes: wide
-title: About Me - My Journey
+title: About Me
 permalink: /about/  # The URL where this page will be accessible.
 header:
-  image: /assets/images/my_journey/transition from accountant to data scientist.webp
-  overlay_image: /assets/images/my_journey/transition from accountant to data scientist.webp
-  overlay_filter: 0.3 # An optional overlay filter to darken the image for better text readability
+ # overlay_image: /assets/images/my_journey/transition from accountant to data scientist.webp
+ # overlay_filter: 0.3 # An optional overlay filter to darken the image for better text readability
 author_profile: True
 ---
+![My Journey](/assets/images/my_journey/transition from accountant to data scientist.webp)
 
-# About Timothy Robbins: From Numbers to Narratives - A Journey from Accounting to Data Science
+# From Numbers to Narratives - A Journey from Accounting to Data Science
 
 ## Introduction
 
