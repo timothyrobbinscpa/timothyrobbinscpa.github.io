@@ -1,7 +1,7 @@
 ---
 layout: home
 #classes: wide
-title: "Welcome to My World of Data and Insights"
+title: "Bridging the Gap between Finance and Data Science"
 header:
   image: /assets/images/home_page/a data scientist at work providing analytics and insights to investment professionals2.jpg
 #  overlay_image: /assets/images/home_page/a data scientist at work providing analytics and insights to investment professionals2.jpg
