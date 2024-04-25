@@ -32,6 +32,12 @@ Enhanced by my recent certification as a Certified Data Science Professional in 
 
 Through extensive exploratory analysis, I identified crucial patterns and variables, ensuring the accuracy of data type conversions and analyses, which are fundamental to the success of this project.
 
+The line graph below illustrates the patterns in our daily total sales data, revealing how different times of the year, movie releases, and other factors influence cinema revenue.
+
+![Daily Total Sales Over Time](/assets/images/ticket_sales/sales_over_time.png)
+*Figure 1: The line graph traces daily total sales, offering insight into the sales trends over time and helping to identify periods of high and low demand.*
+
+
 ### Data Preprocessing
 
 Significant adjustments made to ensure data quality included:
@@ -47,7 +53,10 @@ I employed robust machine learning models such as Random Forest and Gradient Boo
 
 ## Actionable Strategies and Key Insights
 
-Visualization of feature importances played a crucial role in formulating strategic recommendations, guiding decision-making processes effectively:
+When evaluating the impact of different cinema features on sales performance, it's crucial to identify which variables play pivotal roles. The chart below aggregates feature importances from both Random Forest (RF) and Gradient Boosting (GB) models, shedding light on the predictors that are most influential in forecasting sales.
+
+![Aggregated Feature Importances from RF and GB Models](/assets/images/ticket_sales/feature_importances.png)
+*Figure 2: Bar chart displaying aggregated feature importances from RF and GB models, highlighting the predictive power of features such as capacity, ticket price, and cinema code.*
 
 - **Pricing Optimization:** Recommended dynamic pricing models to maximize earnings based on time and film type.
 - **Capacity Utilization:** Provided strategic scheduling recommendations to enhance seat utilization.
