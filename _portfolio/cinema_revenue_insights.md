@@ -45,6 +45,20 @@ Significant adjustments made to ensure data quality included:
 - **Filling Missing Values:** Addressing gaps in the 'capacity' data by applying average values. My background in financial forecasting and analysis was crucial in determining the most statistically appropriate method for handling missing data.
 - **Adjusting Show Times:** Standardizing show times to a 24-hour format, leveraging my expertise in ensuring data accuracy and compliance with financial standards.
 - **Handling Overcapacity:** Correcting any instances where occupancy percentages exceeded plausible limits, a task aligned with financial auditing practices where accuracy and regulatory compliance are paramount.
+
+```python
+# Calculate the mean capacity for each cinema_code, excluding negative values
+mean_capacity_per_cinema = df[df['capacity'] > 0].groupby('cinema_code')['capacity'].mean()
+
+# Fill negative capacity values with the mean capacity of the corresponding cinema_code
+df.loc[df['capacity'] < 0, 'capacity'] = df.loc[df['capacity'] < 0, 'cinema_code'].apply(
+    lambda x: mean_capacity_per_cinema.get(x, np.nan)
+)
+
+# Handle cases where mean capacity is not available
+df['capacity'].fillna(df['capacity'].mean(), inplace=True)
+```
+
 - **Encoding Categorical Variables:** Converting categorical data into numeric formats, a skill honed through my experience with financial databases and ensuring compliance with data standards.
 
 ### Model Selection
@@ -68,6 +82,20 @@ When evaluating the impact of different cinema features on sales performance, it
 Handling complex data structures and ensuring the integrity of predictive models required sophisticated data manipulation strategies:
 
 - **Binary Encoding:** Implementing binary encoding to manage high cardinality features and later reverting encoded features to their original formats to preserve interpretability.
+
+```python
+# Use category encoders to encode categorical variables; otherwise too many features to handle (over 300)
+import category_encoders as ce
+
+# List of categorical columns to be binary encoded
+categorical_columns = ['film_code', 'cinema_code', 'month', 'day']
+
+# Create a binary encoder
+binary_encoder = ce.BinaryEncoder(cols=categorical_columns)
+
+# Fit and transform to produce binary encoded dataFrame
+df_encoded = binary_encoder.fit_transform(df)
+```
 
 ## Reflections and Looking Ahead
 
