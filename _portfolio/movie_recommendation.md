@@ -26,8 +26,6 @@ The project utilizes two key datasets:
 - **Movies Dataset**: Includes essential details such as movie titles, genres, and unique identifiers.
 - **Ratings Dataset**: Comprises user ratings for movies, which are crucial for training the recommendation model.
 
-These datasets are foundational for creating a robust model that understands both user behavior and content attributes.
-
 ## Technologies and Tools Used
 
 The project was developed in Python, utilizing libraries such as Pandas for data manipulation and Scikit-learn for predictive modeling. The `Surprise` library, which specializes in recommendation systems, was particularly instrumental due to its efficient implementation of the SVD algorithm.
@@ -35,16 +33,32 @@ The project was developed in Python, utilizing libraries such as Pandas for data
 ## Data Preprocessing
 
 Data quality and preparation were key focuses:
-- **Missing Value Handling**: Ensured the dataset was complete by addressing missing entries effectively.
-- **Normalization of Ratings**: Standardized ratings to a common scale to avoid biases related to user rating behaviors.
+- **Missing Value Handling**: I ensured the dataset was complete by addressing missing entries effectively.
+- **Normalization of Ratings**: I standardized ratings to a common scale to avoid biases related to user rating behaviors.
+
+## Exploratory Data Analysis (EDA)
+
+During the exploratory data analysis phase, I focused on understanding the distribution of movie genres and user ratings, which provided insights into user preferences and movie popularity.
+
+![Genre Popularity](/assets/images/movie_recommendation/most_popular_genres.png)
+
+*Figure 1: Genre Popularity - This bar chart shows the frequency of movies across different genres, illustrating which genres are most popular in the dataset. Understanding these trends helps in tailoring the recommendations to popular tastes.*
+
+![Distribution of Ratings](/assets/images/movie_recommendation/ratings_distributions.png)
+
+*Figure 2: Distribution of Ratings - This histogram displays how users have rated movies across different rating scales. It highlights the general tendency of users to rate movies favorably, which is crucial for calibrating the recommendation model to user preferences.*
 
 ## Model Selection and Implementation
 
-The SVD model was chosen for its effectiveness in matrix factorization, which is particularly suited for the sparse matrices typically found in user-item interaction data. The model was trained to minimize prediction errors, and parameters were finely tuned to achieve the best performance.
+The SVD model was chosen for its effectiveness in matrix factorization, which is particularly suited for the sparse matrices typically found in user-item interaction data. I trained the model to minimize prediction errors, and parameters were finely tuned to achieve the best performance.
 
 ## Evaluation and Results
 
 The model's performance was rigorously evaluated using metrics such as RMSE (Root Mean Square Error) and MAE (Mean Absolute Error), demonstrating high accuracy in predicting how much a user would enjoy a given movie. These metrics confirmed the effectiveness of the SVD model in enhancing recommendation accuracy.
+
+**Placeholder for Result Graph**
+
+*Figure 3: SVD Model Results - This graph (to be added) will illustrate the effectiveness of the SVD model in improving recommendation accuracy, showing actual vs. predicted ratings.*
 
 ## Key Insights and Business Impact
 
