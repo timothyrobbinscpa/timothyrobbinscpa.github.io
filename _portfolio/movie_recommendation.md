@@ -40,11 +40,11 @@ Data quality and preparation were key focuses:
 
 During the exploratory data analysis phase, I focused on understanding the distribution of movie genres and user ratings, which provided insights into user preferences and movie popularity.
 
-![Genre Popularity](/assets/images/movie_recommendation/most_popular_genres.png)
+![Genre Popularity](/assets/images/movie_recommentation/most_popular_genres.png)
 
 *Figure 1: Genre Popularity - This bar chart shows the frequency of movies across different genres, illustrating which genres are most popular in the dataset. Understanding these trends helps in tailoring the recommendations to popular tastes.*
 
-![Distribution of Ratings](/assets/images/movie_recommendation/ratings_distributions.png)
+![Distribution of Ratings](/assets/images/movie_recommentation/ratings_distributions.png)
 
 *Figure 2: Distribution of Ratings - This histogram displays how users have rated movies across different rating scales. It highlights the general tendency of users to rate movies favorably, which is crucial for calibrating the recommendation model to user preferences.*
 
