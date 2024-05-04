@@ -1,5 +1,5 @@
 ---
-title: "Enhancing Movie Recommendations with SVD Model"
+title: "Enhancing Movie Recommendations with SVD"
 layout: single
 classes: wide
 author_profile: true
