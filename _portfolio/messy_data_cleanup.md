@@ -7,9 +7,11 @@ author_profile: true
 read_time: false
 comments: false
 header:
-  teaser: /assets/images/messy_data_cleanup/data_cleaning.jpg
+  teaser: /assets/images/messy_data_cleanup/messy_data_splash.webp
 excerpt: "Discover how extensive data cleaning techniques can transform messy, raw datasets into clean, ready-to-analyze data."
 ---
+
+![Messy Data Image](/assets/images/messy_data_cleanup/messy_data_splash.webp)
 
 ## Introduction
 
