@@ -37,7 +37,7 @@ I utilized the following technologies and tools:
 
 ```python
 def clean_and_split_contract(entry):
-    '''
+'''
     - Two Years Found: Sets both years respectively.
     - One Year Found: Assumes it is the start year and also the end year unless 'On Loan' is present.
     - Contains 'Free': Marks both years as 'Free'.
@@ -88,7 +88,6 @@ def manual_normalize_club_names(club_names, mapping):
         normalized_names[name] = new_name
     return normalized_names
 ```
-
 
 5. **Dealing with Outliers**: Identifying and handling outliers to improve data quality.
 6. **Dropping Irrelevant Columns**: Removing columns that are not needed for analysis to simplify the dataset and focus on relevant data.
