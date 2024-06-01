@@ -1,81 +1,80 @@
 ---
-title: "Enhancing Movie Recommendations with SVD"
+title: "Building Robust Recommendation Systems: A Data Science Approach"
+date: 2024-05-28
 layout: single
 classes: wide
 author_profile: true
 read_time: false
 comments: false
 header:
-  teaser: /assets/images/movie_recommentation/movie_recommendation.webp
-excerpt: "Leveraging Singular Value Decomposition (SVD) to refine and personalize movie recommendations."
+  teaser: /assets/images/recommendation_systems/recommendation_system_splash.webp
+excerpt: "Discover how advanced data science techniques can create powerful recommendation systems for personalized user experiences."
 ---
 
-![Movie Recommendations](/assets/images/movie_recommentation/movie_recommendation.webp)
+![Recommendation System Image](/assets/images/recommendation_systems/recommendation_system_splash.webp)
 
 ## Introduction
 
-With over two decades of experience in accounting and a robust expertise in data science, I have developed a sophisticated movie recommendation system using Singular Value Decomposition (SVD). This system effectively personalizes movie suggestions, enhancing user experience by tailoring choices to individual preferences.
+In today's data-driven world, recommendation systems are crucial for enhancing user experiences across various platforms. With a solid foundation in data science and extensive experience in accounting and revenue management, I have developed a sophisticated hybrid recommendation system. This project highlights my technical skills in data analysis, machine learning, and algorithm development, aimed at providing personalized movie recommendations.
 
-## Project Objectives
+## Overview
 
-The primary goal of this project was to implement an SVD-based recommendation system that accurately predicts user preferences and suggests movies that users are likely to enjoy. This approach aims to improve user engagement and satisfaction by providing highly relevant and personalized content.
-
-## Datasets
-
-The project utilizes two key datasets:
-- **Movies Dataset**: Includes essential details such as movie titles, genres, and unique identifiers.
-- **Ratings Dataset**: Comprises user ratings for movies, which are crucial for training the recommendation model.
+The goal of this project is to develop a recommendation system that integrates both collaborative filtering (CF) and content-based filtering (CBF) techniques. By leveraging my expertise in data science and my proficiency in Python, I have built a robust system that delivers highly accurate and relevant recommendations.
 
 ## Technologies and Tools Used
 
-The project was developed in Python, utilizing libraries such as Pandas for data manipulation and Scikit-learn for predictive modeling. The `Surprise` library, which specializes in recommendation systems, was particularly instrumental due to its efficient implementation of the SVD algorithm.
+- **Python**: For data manipulation, machine learning, and automation.
+- **Pandas and NumPy**: For data manipulation and numerical operations.
+- **Matplotlib**: For data visualization.
+- **Surprise Library**: For collaborative filtering algorithms.
+- **SQL**: For data extraction and manipulation.
 
-## Data Preprocessing
+## Project Highlights
 
-Data quality and preparation were key focuses:
-- **Missing Value Handling**: I ensured the dataset was complete by addressing missing entries effectively.
-- **Normalization of Ratings**: I standardized ratings to a common scale to avoid biases related to user rating behaviors.
+### Data Loading and Preprocessing
 
-## Exploratory Data Analysis (EDA)
+- **Data Integration**: Loaded and preprocessed movie and ratings datasets, merging them for a comprehensive view of user interactions.
+- **Feature Engineering**: Extracted release years from titles, one-hot encoded genres, and normalized features for better performance.
 
-During the exploratory data analysis phase, I focused on understanding the distribution of movie genres and user ratings, which provided insights into user preferences and movie popularity.
+### Time Decay and Normalization
 
-![Genre Popularity](/assets/images/movie_recommentation/most_popular_genres.png)
+- **Time Decay Application**: Applied time decay to ratings, prioritizing recent interactions for more relevant recommendations.
+- **Score Normalization**: Ensured consistency in scores, normalizing them to a 0.5-5.0 scale for fair comparison.
 
-*Figure 1: Genre Popularity - This bar chart shows the frequency of movies across different genres, illustrating which genres are most popular in the dataset. Understanding these trends helps in tailoring the recommendations to popular tastes.*
+### Collaborative Filtering
 
-![Distribution of Ratings](/assets/images/movie_recommentation/ratings_distributions.png)
+- **Algorithm**: Utilized SVD (Singular Value Decomposition) for collaborative filtering.
+- **Hyperparameter Tuning**: Employed GridSearchCV for optimal model parameters.
+- **Evaluation Metrics**: Assessed model performance using RMSE, MAE, and additional metrics such as precision, recall, and F1 score.
 
-*Figure 2: Distribution of Ratings - This histogram displays how users have rated movies across different rating scales. It highlights the general tendency of users to rate movies favorably, which is crucial for calibrating the recommendation model to user preferences.*
+### Content-Based Filtering
 
-## Model Selection and Implementation
+- **Cosine Similarity**: Calculated similarity between items based on feature vectors.
+- **Hybrid Scoring**: Combined CF and CBF scores using a weighted sum to generate final recommendations.
 
-The SVD model was chosen for its effectiveness in matrix factorization, which is particularly suited for the sparse matrices typically found in user-item interaction data. I trained the model to minimize prediction errors, and parameters were finely tuned to achieve the best performance.
+### Evaluation and Results
 
-## Evaluation and Results
+- **Outlier Detection**: Identified and managed outliers to maintain recommendation accuracy.
+- **Comprehensive Evaluation**: Evaluated model using hit rate, mean reciprocal rank (MRR), and average precision at K (AP@K).
 
-The model's performance was rigorously evaluated using metrics such as RMSE (Root Mean Square Error) and MAE (Mean Absolute Error), demonstrating high accuracy in predicting how much a user would enjoy a given movie. These metrics confirmed the effectiveness of the SVD model in enhancing recommendation accuracy.
+## Results
 
-**Placeholder for Result Graph**
-
-*Figure 3: SVD Model Results - This graph (to be added) will illustrate the effectiveness of the SVD model in improving recommendation accuracy, showing actual vs. predicted ratings.*
-
-## Key Insights and Business Impact
-
-The SVD model significantly improved the precision of movie recommendations, leading to higher user engagement and satisfaction. Insights drawn from the model's feature importances also provided strategic value in understanding key factors that drive user preferences.
-
-## Challenges and Learning Experiences
-
-Handling sparse data and optimizing the SVD algorithm were challenging aspects of this project. Advanced techniques in data preprocessing and model tuning were crucial in overcoming these challenges and ensuring the model's robustness and scalability.
+- **Model Performance**: Achieved competitive RMSE and MAE scores, indicating high accuracy in predicted ratings.
+- **Comparison with Industry Standards**: Evaluated model metrics against industry benchmarks, demonstrating superior performance in several areas.
+- **Visualization**: Plotted distributions of scores before and after normalization, providing insights into the effectiveness of the normalization process.
 
 ## Conclusion
 
-This project exemplifies the power of integrating advanced data science techniques with user-centric recommendation systems. The SVD-based model has proven to be highly effective in delivering personalized content, thereby enhancing the overall user experience on the platform.
+This project showcases my ability to design and implement sophisticated recommendation systems using advanced data science techniques. Through careful preprocessing, feature engineering, and model evaluation, I created a robust hybrid recommendation system that can significantly enhance user experiences by providing highly relevant movie recommendations. My goal is to leverage these skills to contribute to innovative projects and drive impactful solutions in the field of data science.
 
-## Discover the Full Story
+## Detailed Analysis and Technical Breakdown
 
-Explore the comprehensive analysis and dive deeper into the data, methodology, and insights by visiting the detailed project page [here](/movie-recommendation-insights/).
+For a comprehensive analysis and a detailed breakdown, including code and visuals, view the project notebook on [NBViewer](https://nbviewer.org/github/yourusername/yourrepo/blob/master/notebooks/customer_churn_analysis.ipynb).
 
-## Explore the Technical Journey
+---
 
-For those interested in the technical details, including the complete code and methodologies, view the project notebook on [NBViewer](https://nbviewer.org/github/yourusername/yourrepo/blob/master/notebooks/movie_recommendation_system.ipynb).
+Feel free to reach out to me via [email](mailto:your-email@example.com) or connect with me on [LinkedIn](https://www.linkedin.com/in/your-profile).
+
+---
+
+Thank you for exploring my portfolio! I look forward to connecting with you to discuss potential opportunities and collaborations.
