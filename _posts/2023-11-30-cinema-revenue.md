@@ -1,6 +1,7 @@
 ---
 layout: single
-title: "Predicting Cinema Revenue: A Data Science Approach"
+permalink: /cinema-revenue-post/
+title: "Unveiling Key Drivers of Cinema Revenue: A Data Science Approach"
 date: 2024-05-31
 categories: [Data Science, Entertainment]
 tags: [cinema revenue, machine learning, data analysis, Python, revenue management]
@@ -11,31 +12,32 @@ toc_sticky: true
 read_time: true
 share: true
 header:
-  overlay_image: /path/to/header-image.jpg
-  overlay_filter: rgba(0, 0, 0, 0.5)
-  caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
+#  overlay_image: /assets/images/ticket_sales/generated image.webp
+#  overlay_filter: rgba(0, 0, 0, 0.5)
 ---
+
+![Cinema Sales](/assets/images/ticket_sales/generated image.webp)
 
 ## Introduction
 
-With over two decades of experience in accounting and revenue management, I have now transitioned into the realm of data science. This project, focused on predicting cinema revenue, exemplifies my ability to apply rigorous analytical techniques and machine learning models to solve complex business problems. Leveraging my CPA background and expertise in data science, I aim to uncover the factors that drive sales in the cinema industry.
+As a seasoned professional with over two decades of experience in accounting and robust expertise in data science, I bring a unique analytical perspective to financial analysis. This project on cinema sales data draws from my extensive background in financial management and revenue recognition, applying advanced analytics to uncover key drivers of cinema sales and optimize business strategies.
 
 ## Enhancing the Project with Professional Experience
 
 My extensive experience in accounting and revenue management significantly enhanced the execution of this project:
 
-- **Revenue Management Expertise**: Managing revenue for SaaS and software companies required rigorous data analysis and forecasting skills, directly applicable to predicting cinema revenue.
+- **Revenue Management Expertise**: Managing revenue for SaaS and software companies required rigorous data analysis and forecasting skills, directly applicable to analyzing cinema revenue.
 - **Automation and Efficiency**: Leading software implementations and automating accounting processes honed my ability to streamline workflows and handle large datasets, which was critical in this project.
 - **Analytical Skills**: My background in performing variance analysis, revenue forecasts, and fair value assessments provided a strong foundation for developing and interpreting machine learning models.
 - **Technical Proficiency**: Proficiency in SQL, Python, and R, gained through years of professional experience and data science education, enabled me to efficiently clean, preprocess, and model the cinema data.
 
-## Objective
+## Project Objectives
 
-The primary objective of this project is to identify variables that significantly impact cinema sales. By employing advanced machine learning methods such as Random Forest and Gradient Boosting, I aim to provide actionable insights into consumer behavior and ticket sales trends.
+This project aims to leverage deep insights from accounting and data science to understand and amplify the factors influencing cinema sales, thereby boosting revenue potential.
 
 ## Dataset Overview
 
-The dataset for this project was sourced from Kaggle at [Cinema Ticket Offers](https://www.kaggle.com/datasets/arashnic/cinema-ticket/dataoffers). It provides a comprehensive view of cinema sales across multiple venues during 2018, including various data points from ticket sales to seating capacities.
+The dataset for this project was sourced from Kaggle at [Cinema Ticket Offers](https://www.kaggle.com/datasets/arashnic/cinema-ticket/dataoffers). It encompasses detailed records of ticket sales, seating capacities, show timings, and other pertinent data, amounting to over 142,000 transaction records across various cinema and film codes. This rich dataset provides the foundation for a comprehensive analysis aimed at uncovering underlying sales drivers.
 
 ### Key Features Include:
 
@@ -54,60 +56,128 @@ The dataset for this project was sourced from Kaggle at [Cinema Ticket Offers](h
 - **quarter**: Business quarter of each screening event.
 - **day**: Day of the week the film was shown.
 
+## Technologies and Tools Used
+
+Enhanced by my recent certification as a Certified Data Science Professional in Python from DataCamp, my advanced Python skills were pivotal in this project. Utilizing libraries like NumPy, pandas, matplotlib, scikit-learn, and Seaborn, I conducted sophisticated data manipulations, statistical modeling, and insightful visualizations.
+
 ## Methodology
 
 ### Exploratory Data Analysis (EDA)
 
-The EDA begins with importing the necessary libraries and loading the dataset. Initial statistics reveal the range of values for identifiers like film_code and cinema_code, along with sales and ticket details. Given my extensive background in handling large datasets and automating accounting procedures, I applied similar rigor to cleaning and preprocessing the data for analysis.
+Through extensive exploratory analysis, I identified crucial patterns and variables, ensuring the accuracy of data type conversions and analyses, which are fundamental to the success of this project.
 
-**Visualization Placeholder: Distribution of Total Sales**
+![Distribution of Total Sales](/assets/images/ticket_sales/total_sales.png)
+*Figure 1: Histogram and boxplot showing the distribution of total sales.*
 
-The initial analysis showed that total sales varied significantly across different screenings, with some shows generating substantially higher revenue than others.
+The histogram shows a right-skewed distribution. Most cinema showings have relatively low total sales, with a few showings achieving very high sales. The box plot reveals numerous outliers on the higher end of total sales. These outliers represent cinema showings with exceptionally high sales compared to the typical range. The skewness in the distribution suggests that while most of the cinema showings generate modest revenue, there are a significant number of showings (possibly big-ticket films or special screenings) that generate much higher sales. The presence of outliers indicates that certain events or movies might be extremely popular, driving exceptionally high sales.
 
-**Visualization Placeholder: Average Ticket Price by Day of the Week**
+![Daily Total Sales Over Time](/assets/images/ticket_sales/sales_over_time.png)
+*Figure 2: The line graph traces daily total sales, offering insight into the sales trends over time and helping to identify periods of high and low demand.*
 
-The average ticket price also varied by day of the week, with higher prices typically observed on weekends.
+The plot shows the number of records in the dataset resampled by day. It illustrates the daily distribution of the data, providing a visual indication of any fluctuations or trends in the number of records over time.
 
-### Data Cleaning and Preprocessing
+### Data Preprocessing
 
-Data cleaning involved handling missing values, correcting data types, and removing duplicates. Preprocessing steps included normalizing numerical features and encoding categorical variables to prepare the data for modeling.
+Significant adjustments made to ensure data quality included:
 
-For instance, missing values in the **occu_perc** (occupancy percentage) column were imputed with the median value, and categorical variables like **day** and **month** were encoded using one-hot encoding to facilitate their inclusion in the models.
+- **Filling Missing Values:** Addressing gaps in the 'capacity' data by applying average values. My background in financial forecasting and analysis was crucial in determining the most statistically appropriate method for handling missing data.
 
-### Feature Engineering
+- **Adjusting Show Times:** Standardizing show times to a 24-hour format, leveraging my expertise in ensuring data accuracy and compliance with financial standards.
 
-Feature engineering involved creating new variables that could provide additional insights for the models. For example, calculating the average ticket price and occupancy rates, and deriving time-based features such as the day of the week and month.
+[showtime placeholder]
 
-A key feature created was the **revenue per seat** (total_sales divided by capacity), which provided a normalized measure of revenue performance across different cinema venues.
+- **Handling Overcapacity:** Correcting any instances where occupancy percentages exceeded plausible limits, a task aligned with financial auditing practices where accuracy and regulatory compliance are paramount.
+
+```python
+# Calculate the mean capacity for each cinema_code, excluding negative values
+mean_capacity_per_cinema = df[df['capacity'] > 0].groupby('cinema_code')['capacity'].mean()
+
+# Fill negative capacity values with the mean capacity of the corresponding cinema_code
+df.loc[df['capacity'] < 0, 'capacity'] = df.loc[df['capacity'] < 0, 'cinema_code'].apply(
+    lambda x: mean_capacity_per_cinema.get(x, np.nan)
+)
+
+# Handle cases where mean capacity is not available
+df['capacity'].fillna(df['capacity'].mean(), inplace=True)
+```
+
+- **Encoding Categorical Variables:** Converting categorical data into numeric formats, a skill honed through my experience with financial databases and ensuring compliance with data standards.
+
+```python
+# Use category encoders to encode categorical variables
+import category_encoders as ce
+
+# List of categorical columns to be binary encoded
+categorical_columns = ['film_code', 'cinema_code', 'month', 'day']
+
+# Create a binary encoder
+binary_encoder = ce.BinaryEncoder(cols=categorical_columns)
+
+# Fit and transform to produce binary encoded DataFrame
+df_encoded = binary_encoder.fit_transform(df)
+
+# Display the first few rows of the encoded DataFrame
+df_encoded.head()
+```
+
+- **Eliminating Highly Correlated Features:** Identifying and removing features with high correlation to prevent multicollinearity, ensuring the model's robustness and interpretability.
+
+![Correlation Matrix](/assets/images/ticket_sales/correlation_matrix.png)
+*Figure 3: The correlation heatmap highlights the multicollinearity among features.*
 
 ### Modeling
 
 Various machine learning models were employed to predict cinema revenue, including Random Forest and Gradient Boosting. Model selection was based on performance metrics such as R-squared and Mean Absolute Error (MAE). Hyperparameter tuning was conducted to optimize model performance.
 
-**Visualization Placeholder: Feature Importance from Random Forest Model**
+```python
+# Define parameter grid for random forest
+param_grid = {
+    'n_estimators': [100, 300, 500], 
+    'max_features': ['sqrt', 'log2'],  
+    'max_depth': [5, 10, 20, 50],  
+    'min_samples_split': [2, 3, 5, 10],  
+    'min_samples_leaf': [1, 2, 3, 4],  
+    'bootstrap': [True, False]  # Limited to one option for simplicity
+}
 
-The Random Forest model highlighted that ticket price, occupancy percentage, and show timing were among the most important features influencing cinema revenue.
+# Create base model to tune
+rf = RandomForestRegressor()
 
-**Visualization Placeholder: Predicted vs Actual Sales Scatter Plot**
+# Set Randomized Search parameters
+rf_random = RandomizedSearchCV(estimator=rf, param_distributions=param_grid, n_iter=20, cv=3, verbose=2, random_state=42, n_jobs=-1)  # later increase iterations
 
-The model's predictions closely matched the actual sales, with the Random Forest model achieving the highest accuracy and demonstrating its effectiveness in handling the complexity of the dataset.
+# Fit the random search model
+rf_random.fit(X_train, y_train)
 
-### Key Insights and Results
+# Print the best parameters
+best_params = rf_random.best_params_
+print(f"Best Parameters: {best_params}")
+```
 
-The models provided valuable insights into the factors influencing cinema revenue. Key features such as ticket price, occupancy rate, and show timing were identified as significant predictors of revenue. The Random Forest model achieved an R-squared value of 0.82, indicating a strong fit.
+### Model Results
 
-1. **Film and Cinema Codes**: These identifiers show a wide range of values, indicating diverse films and cinema venues. This is similar to managing multiple-element arrangements in revenue recognition.
-2. **Sales and Tickets**: The total_sales variable shows significant variation, highlighting the importance of ticket sales and cancellations, akin to my experience with revenue forecasts and variance analysis.
-3. **Occupancy and Pricing**: The occu_perc and ticket_price variables provide insights into audience behavior and pricing strategies, paralleling the pricing models and fair value analysis I conducted in various roles.
+![Actual vs Forecasted Total Sales](/assets/images/ticket_sales/sales_actual_vs_forecast.png)
 
-## Business Implications and Recommendations
+The figure visually demonstrates that both Random Forest and Gradient Boosting models provide reasonable predictions of total sales, with similar trends and levels of accuracy. The regression lines and the scatter plots help in understanding the models' predictive behavior and areas where they may need further tuning or improvement.
 
-Based on the key insights, the following business implications and recommendations are proposed:
+![MSE and R2 for the two Models](/assets/images/ticket_sales/mse_r2.png)
+*Figure 5: Bar plot displaying MSE and R-squared for the RF and GB models.*
 
-1. **Dynamic Pricing**: Implement dynamic pricing strategies to adjust ticket prices based on demand, time, and occupancy rates. This can optimize revenue by capturing higher willingness to pay during peak times and offering discounts during off-peak times to fill more seats.
-2. **Targeted Marketing**: Focus marketing efforts on filling seats during off-peak times to improve overall occupancy rates. Marketing campaigns can be tailored to different audience segments based on their preferred viewing times.
-3. **Enhanced Scheduling**: Optimize the scheduling of films to align with peak viewing times, such as weekends and evenings. This ensures maximum occupancy and revenue generation.
-4. **Customer Experience**: Enhance the overall customer experience by providing value-added services during peak times and special promotions during off-peak times. Improved customer satisfaction can lead to repeat business and positive word-of-mouth.
+The MSE for the Random Forest model is marginally higher than for the Gradient Boosting model. Since MSE measures the average squared difference between the predicted and actual values, a lower MSE is better. This suggests that the Gradient Boosting model has a slight edge in terms of predictive accuracy.  Both models have very similar R2 scores, with the Gradient Boosting model having a slight advantage.
+
+The models provided valuable insights into the factors influencing cinema revenue. Key features such as ticket price, occupancy rate, and show timing were identified as significant predictors of revenue.
+
+![Aggregated Feature Importances from RF and GB Models](/assets/images/ticket_sales/feature_importances.png)
+*Figure 4: Bar chart displaying aggregated feature importances from RF and GB models, highlighting the predictive power of features such as capacity, ticket price, and cinema code.*
+
+From these results, we can infer that the physical constraints and pricing (capacity and ticket price) are the most influential predictors. However, the specific cinema and showtime also play a role, potentially due to different cinema sizes, locations, or time-specific demand.  Furthermore, while the film itself and the day of the showing have some predictive power, they are less critical than the aforementioned features. Lastly, the month seems to have the least predictive power, which might suggest that the target variable is not strongly seasonal, or other features already capture the variance that month would otherwise explain.
+
+## Key Insights and Actionable Strategies
+
+- **Pricing Optimization:** Recommended dynamic pricing models to maximize earnings based on time and film type.
+- **Capacity Utilization:** Provided strategic scheduling recommendations to enhance seat utilization.
+- **Targeted Marketing:** Developed marketing strategies focused on the most influential factors affecting customer attendance and preferences.
+- **Show-Time Optimization:** Proposed adjustments to show times based on patterns that maximize attendance and revenue.
 
 ## Challenges and Learning Experience
 
@@ -115,7 +185,6 @@ This project was a valuable learning experience, highlighting the intersection o
 
 - **Data Quality**: Ensuring the accuracy and completeness of the dataset required extensive preprocessing and validation.
 - **Model Selection**: Selecting the appropriate machine learning models and tuning hyperparameters to achieve the best performance was an iterative process.
-- **Feature Engineering**: Identifying and creating meaningful features from the raw data was critical to the success of the predictive models.
 - **Integration of Domain Knowledge**: Applying my extensive background in revenue management to frame the data science problem provided a unique perspective and enhanced the model’s relevance.
 - **Advanced Analytics**: Utilizing machine learning models such as Random Forest and Gradient Boosting deepened my understanding of their capabilities and limitations.
 - **Communication of Insights**: Translating complex model outputs into actionable business recommendations reinforced the importance of clear and concise communication in data science.
@@ -125,7 +194,5 @@ This project was a valuable learning experience, highlighting the intersection o
 This analysis provides a detailed look at the factors driving cinema sales, utilizing a comprehensive dataset and advanced machine learning methods. The insights gained can help optimize ticket pricing, scheduling, and overall cinema management strategies. My transition from a CPA to a data scientist allows me to combine financial acumen with technical expertise, offering a unique perspective on data-driven decision-making.
 
 ## Discover the Full Story
-
-Explore the comprehensive analysis and dive deeper into the data, methodology, and insights by visiting the detailed project page [here](/cinema-revenue-post/).
 
 For those interested in the technical details, including the complete code and methodologies, view the project notebook on [NBViewer](https://nbviewer.org/github/yourusername/yourrepo/blob/master/notebooks/cinema_revenue_project.ipynb).

@@ -35,8 +35,7 @@ Through extensive exploratory analysis, I identified crucial patterns and variab
 The line graph below illustrates the patterns in our daily total sales data, revealing how different times of the year, movie releases, and other factors influence cinema revenue.
 
 ![Daily Total Sales Over Time](/assets/images/ticket_sales/sales_over_time.png)
-*Figure 1: The line graph traces daily total sales, offering insight into the sales trends over time and helping to identify periods of high and low demand.*
-
+*Figure 2: The line graph traces daily total sales, offering insight into the sales trends over time and helping to identify periods of high and low demand.*
 
 ### Data Preprocessing
 
@@ -103,7 +102,7 @@ Merging financial management with data science in this project highlighted the p
 
 ## Discover the Full Story
 
-Dive into the comprehensive analysis [here](/revenue-forecast/).
+Dive into the comprehensive analysis [here](/cinema-revenue-post/).
 
 ## Explore the Technical Journey
 
