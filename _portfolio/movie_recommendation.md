@@ -1,8 +1,10 @@
 ---
 title: "Building Robust Recommendation Systems: A Data Science Approach"
 date: 2024-05-28
+published: false  # temporarily suppress project for appearing on website
 layout: single
 classes: wide
+published: false  # temporarily suppress project for appearing on website
 author_profile: true
 read_time: false
 comments: false

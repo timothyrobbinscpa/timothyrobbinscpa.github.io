@@ -2,7 +2,8 @@
 layout: single
 title: "Showcasing My Data Science Skills: A Journey from Accounting to Machine Learning"
 date: 2024-05-28
-categories: 
+published: false  # temporarily suppress project for appearing on website
+Categories: 
   - Data Science
 tags: 
   - Machine Learning
