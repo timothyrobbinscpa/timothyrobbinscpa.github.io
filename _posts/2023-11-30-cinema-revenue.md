@@ -31,6 +31,10 @@ My extensive experience in accounting and revenue management significantly enhan
 - **Analytical Skills**: My background in performing variance analysis, revenue forecasts, and fair value assessments provided a strong foundation for developing and interpreting machine learning models.
 - **Technical Proficiency**: Proficiency in SQL, Python, and R, gained through years of professional experience and data science education, enabled me to efficiently clean, preprocess, and model the cinema data.
 
+## Technologies and Tools Used
+
+Enhanced by my recent certification as a Certified Data Science Professional in Python from DataCamp, my advanced Python skills were pivotal in this project. Utilizing libraries like NumPy, pandas, matplotlib, scikit-learn, and Seaborn, I conducted sophisticated data manipulations, statistical modeling, and insightful visualizations.
+
 ## Project Objectives
 
 This project aims to leverage deep insights from accounting and data science to understand and amplify the factors influencing cinema sales, thereby boosting revenue potential.
@@ -56,10 +60,6 @@ The dataset for this project was sourced from Kaggle at [Cinema Ticket Offers](h
 - **quarter**: Business quarter of each screening event.
 - **day**: Day of the week the film was shown.
 
-## Technologies and Tools Used
-
-Enhanced by my recent certification as a Certified Data Science Professional in Python from DataCamp, my advanced Python skills were pivotal in this project. Utilizing libraries like NumPy, pandas, matplotlib, scikit-learn, and Seaborn, I conducted sophisticated data manipulations, statistical modeling, and insightful visualizations.
-
 ## Methodology
 
 ### Exploratory Data Analysis (EDA)
@@ -84,41 +84,15 @@ Significant adjustments made to ensure data quality included:
 
 - **Adjusting Show Times:** Standardizing show times to a 24-hour format, leveraging my expertise in ensuring data accuracy and compliance with financial standards.
 
-[showtime placeholder]
+Placeholder for code snippet to adjust show times
 
 - **Handling Overcapacity:** Correcting any instances where occupancy percentages exceeded plausible limits, a task aligned with financial auditing practices where accuracy and regulatory compliance are paramount.
 
-```python
-# Calculate the mean capacity for each cinema_code, excluding negative values
-mean_capacity_per_cinema = df[df['capacity'] > 0].groupby('cinema_code')['capacity'].mean()
-
-# Fill negative capacity values with the mean capacity of the corresponding cinema_code
-df.loc[df['capacity'] < 0, 'capacity'] = df.loc[df['capacity'] < 0, 'cinema_code'].apply(
-    lambda x: mean_capacity_per_cinema.get(x, np.nan)
-)
-
-# Handle cases where mean capacity is not available
-df['capacity'].fillna(df['capacity'].mean(), inplace=True)
-```
+Placeholder for code snippet to handle overcapacity
 
 - **Encoding Categorical Variables:** Converting categorical data into numeric formats, a skill honed through my experience with financial databases and ensuring compliance with data standards.
 
-```python
-# Use category encoders to encode categorical variables
-import category_encoders as ce
-
-# List of categorical columns to be binary encoded
-categorical_columns = ['film_code', 'cinema_code', 'month', 'day']
-
-# Create a binary encoder
-binary_encoder = ce.BinaryEncoder(cols=categorical_columns)
-
-# Fit and transform to produce binary encoded DataFrame
-df_encoded = binary_encoder.fit_transform(df)
-
-# Display the first few rows of the encoded DataFrame
-df_encoded.head()
-```
+Placeholder for code snippet to encode categorical variables
 
 - **Eliminating Highly Correlated Features:** Identifying and removing features with high correlation to prevent multicollinearity, ensuring the model's robustness and interpretability.
 
@@ -129,48 +103,26 @@ df_encoded.head()
 
 Various machine learning models were employed to predict cinema revenue, including Random Forest and Gradient Boosting. Model selection was based on performance metrics such as R-squared and Mean Absolute Error (MAE). Hyperparameter tuning was conducted to optimize model performance.
 
-```python
-# Define parameter grid for random forest
-param_grid = {
-    'n_estimators': [100, 300, 500], 
-    'max_features': ['sqrt', 'log2'],  
-    'max_depth': [5, 10, 20, 50],  
-    'min_samples_split': [2, 3, 5, 10],  
-    'min_samples_leaf': [1, 2, 3, 4],  
-    'bootstrap': [True, False]  # Limited to one option for simplicity
-}
-
-# Create base model to tune
-rf = RandomForestRegressor()
-
-# Set Randomized Search parameters
-rf_random = RandomizedSearchCV(estimator=rf, param_distributions=param_grid, n_iter=20, cv=3, verbose=2, random_state=42, n_jobs=-1)  # later increase iterations
-
-# Fit the random search model
-rf_random.fit(X_train, y_train)
-
-# Print the best parameters
-best_params = rf_random.best_params_
-print(f"Best Parameters: {best_params}")
-```
+Placeholder for code snippet to define parameter grid and fit the random search model
 
 ### Model Results
 
 ![Actual vs Forecasted Total Sales](/assets/images/ticket_sales/sales_actual_vs_forecast.png)
+*Figure 4: Scatter plot comparing predicted sales against actual sales, demonstrating the accuracy of the Random Forest model.*
 
 The figure visually demonstrates that both Random Forest and Gradient Boosting models provide reasonable predictions of total sales, with similar trends and levels of accuracy. The regression lines and the scatter plots help in understanding the models' predictive behavior and areas where they may need further tuning or improvement.
 
 ![MSE and R2 for the two Models](/assets/images/ticket_sales/mse_r2.png)
 *Figure 5: Bar plot displaying MSE and R-squared for the RF and GB models.*
 
-The MSE for the Random Forest model is marginally higher than for the Gradient Boosting model. Since MSE measures the average squared difference between the predicted and actual values, a lower MSE is better. This suggests that the Gradient Boosting model has a slight edge in terms of predictive accuracy.  Both models have very similar R2 scores, with the Gradient Boosting model having a slight advantage.
+The MSE for the Random Forest model is marginally higher than for the Gradient Boosting model. Since MSE measures the average squared difference between the predicted and actual values, a lower MSE is better. This suggests that the Gradient Boosting model has a slight edge in terms of predictive accuracy. Both models have very similar R2 scores, with the Gradient Boosting model having a slight advantage.
 
 The models provided valuable insights into the factors influencing cinema revenue. Key features such as ticket price, occupancy rate, and show timing were identified as significant predictors of revenue.
 
 ![Aggregated Feature Importances from RF and GB Models](/assets/images/ticket_sales/feature_importances.png)
-*Figure 4: Bar chart displaying aggregated feature importances from RF and GB models, highlighting the predictive power of features such as capacity, ticket price, and cinema code.*
+*Figure 6: Bar chart displaying aggregated feature importances from RF and GB models, highlighting the predictive power of features such as capacity, ticket price, and cinema code.*
 
-From these results, we can infer that the physical constraints and pricing (capacity and ticket price) are the most influential predictors. However, the specific cinema and showtime also play a role, potentially due to different cinema sizes, locations, or time-specific demand.  Furthermore, while the film itself and the day of the showing have some predictive power, they are less critical than the aforementioned features. Lastly, the month seems to have the least predictive power, which might suggest that the target variable is not strongly seasonal, or other features already capture the variance that month would otherwise explain.
+From these results, we can infer that the physical constraints and pricing (capacity and ticket price) are the most influential predictors. However, the specific cinema and showtime also play a role, potentially due to different cinema sizes, locations, or time-specific demand. Furthermore, while the film itself and the day of the showing have some predictive power, they are less critical than the aforementioned features. Lastly, the month seems to have the least predictive power, which might suggest that the target variable is not strongly seasonal, or other features already capture the variance that month would otherwise explain.
 
 ## Key Insights and Actionable Strategies
 
@@ -183,8 +135,6 @@ From these results, we can infer that the physical constraints and pricing (capa
 
 This project was a valuable learning experience, highlighting the intersection of data science and business strategy. Some of the key challenges and learnings include:
 
-- **Data Quality**: Ensuring the accuracy and completeness of the dataset required extensive preprocessing and validation.
-- **Model Selection**: Selecting the appropriate machine learning models and tuning hyperparameters to achieve the best performance was an iterative process.
 - **Integration of Domain Knowledge**: Applying my extensive background in revenue management to frame the data science problem provided a unique perspective and enhanced the model’s relevance.
 - **Advanced Analytics**: Utilizing machine learning models such as Random Forest and Gradient Boosting deepened my understanding of their capabilities and limitations.
 - **Communication of Insights**: Translating complex model outputs into actionable business recommendations reinforced the importance of clear and concise communication in data science.
