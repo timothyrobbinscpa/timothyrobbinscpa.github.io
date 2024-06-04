@@ -12,3 +12,20 @@
 {% endcase %}
 
 {% endif %}
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+{% if site.google_analytics.id %}
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics.id }}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', '{{ site.google_analytics.id }}');
+
+    // Set the custom dimension for internal traffic
+    gtag('event', 'page_view', {
+      'traffic_type': 'internal'  // Use the value defined in your internal traffic rule
+    });
+  </script>
+{% endif %}
