@@ -215,4 +215,4 @@ Implementing machine learning for fraud detection significantly enhances the abi
 
 ## Discover the Full Story
 
-To explore the full analysis with all executed code, outputs, and visualizations, see [the complete notebook on NBViewer](https://nbviewer.org/github/timothyrobbinscpa/new_customer_churn/blob/master/src/customer_churn.ipynb).
+To explore the full analysis with all executed code, outputs, and visualizations, see [the complete notebook on NBViewer](https://nbviewer.org/github/timothyrobbinscpa/fraud_analysis/blob/master/src/fraud_detection_FINAL_FINAL_documented.ipynb?flush_cache=true).

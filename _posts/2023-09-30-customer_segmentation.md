@@ -2,6 +2,7 @@
 layout: single
 title: "Unlocking Customer Insights: Hierarchical Clustering in Market Segmentation"
 date: 2024-04-25
+permalink: /customer-segmentation-post/
 categories: [Data Science, Marketing]
 tags: [customer segmentation, hierarchical clustering, RFM analysis, Python, data visualization]
 author_profile: true
@@ -78,9 +79,4 @@ The analytical journey doesn't end with segmentation; it's only beginning. We in
 
 Hierarchical clustering is more than a technical exercise; it's a lens through which we can understand our customers deeply and meaningfully. Such insights are the bedrock upon which successful, data-driven marketing campaigns are built.
 
-## Further Reading and Resources
-
-Continued learning is key in the fast-evolving field of data science:
-
-- "Introducing Data Science" by Davy Cielen, Arno Meysman, and Mohamed Ali provides a practical approach to using Python tools for big data and machine learning.
-- "Practical Statistics for Data Scientists" by Andrew Bruce and Peter Bruce is an essential read for applying statistical concepts using R and Python.
+To explore the full analysis with all executed code, outputs, and visualizations, see [the complete notebook on NBViewer](https://nbviewer.org/github/timothyrobbinscpa/customer_segmentation/blob/master/src/customer_segmentation_FINAL_FINAL.ipynb?flush_cache=true).

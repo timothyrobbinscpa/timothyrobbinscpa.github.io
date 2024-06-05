@@ -106,4 +106,4 @@ Dive into the comprehensive analysis [here](/cinema-revenue-post/).
 
 ## Explore the Technical Journey
 
-For a detailed breakdown, including code and visuals, view the project notebook on [NBViewer](https://nbviewer.org/github/yourusername/yourrepo/blob/master/notebooks/customer_churn_analysis.ipynb).
+For a detailed breakdown, including code and visuals, view the project notebook on [NBViewer](https://nbviewer.org/github/timothyrobbinscpa/revenue_forecast/blob/master/src/predicting_cinema_revenue.ipynb?flush_cache=true).

@@ -46,7 +46,7 @@ Our analysis surfaced key churn drivers: high usage patterns, frequent service i
 I invite feedback and discussion on this project and my broader journey into data science. Share ideas and explore synergies with me.
 
 ## Explore the Full Analysis
-Dive deeper into the comprehensive study in my detailed post [here](/customer-churn/).
+Dive deeper into the comprehensive study in my detailed post [here](/customer-churn-post/).
 
 ## Technical Deep Dive
-For a detailed breakdown, including code and visuals, view the project notebook on [NBViewer](https://nbviewer.org/github/timothyrobbinscpa/new_customer_churn/blob/master/src/customer_churn.ipynb).
+For a detailed breakdown, including code and visuals, view the project notebook on [NBViewer](https://nbviewer.org/github/timothyrobbinscpa/new_customer_churn/blob/master/src/customer_churn.ipynb?flush_cache=true).

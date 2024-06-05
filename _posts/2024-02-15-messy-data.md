@@ -183,4 +183,4 @@ df['contract_valid_until'] = pd.to_datetime(df['contract_valid_until'], format='
 Conclusion
 Data cleaning is an iterative and detailed process. By following the steps outlined above, the dataset was prepared for analysis and modeling. Clean data leads to more accurate insights and better-performing models. Investing time in data cleaning is crucial for the success of any data-driven project.
 
-Feel free to reach out if there are any questions or further clarification is needed on any of the steps. Happy cleaning!
+To explore the full analysis with all executed code, outputs, and visualizations, see [the complete notebook on NBViewer](https://nbviewer.org/github/timothyrobbinscpa/messy_data_cleaning/blob/master/src/data_cleaning_FINAL_FINAL.ipynb?flush_cache=true).

@@ -145,4 +145,4 @@ This analysis provides a detailed look at the factors driving cinema sales, util
 
 ## Discover the Full Story
 
-For those interested in the technical details, including the complete code and methodologies, view the project notebook on [NBViewer](https://nbviewer.org/github/yourusername/yourrepo/blob/master/notebooks/cinema_revenue_project.ipynb).
+For those interested in the technical details, including the complete code and methodologies, view the project notebook on [NBViewer](https://nbviewer.org/github/timothyrobbinscpa/revenue_forecast/blob/master/src/predicting_cinema_revenue.ipynb?flush_cache=true).

@@ -92,4 +92,4 @@ This project highlights my expertise in handling large datasets, performing thor
 
 Explore the comprehensive analysis and dive deeper into the data, methodology, and insights by visiting the detailed project page [here](/fraud-detection-post/).
 
-For those interested in the technical details, including the complete code and methodologies, view the project notebook on [NBViewer](https://nbviewer.org/github/yourusername/yourrepo/blob/master/notebooks/fraud_detection_project.ipynb).
+For those interested in the technical details, including the complete code and methodologies, view the project notebook on [NBViewer](https://nbviewer.org/github/timothyrobbinscpa/fraud_analysis/blob/master/src/fraud_detection_FINAL_FINAL_documented.ipynb?flush_cache=true).

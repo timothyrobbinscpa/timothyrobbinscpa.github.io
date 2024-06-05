@@ -101,6 +101,10 @@ The cleaned dataset is now ready for analysis, with no missing values, consisten
 
 Handling complex data structures and ensuring the integrity of the dataset required sophisticated data manipulation strategies. My previous experience working closely with IT teams and managing large-scale data implementations proved invaluable in navigating these challenges. This data cleaning project demonstrates essential preprocessing steps to prepare data for analysis and machine learning tasks. The structured approach ensures that the dataset is clean, consistent, and ready for advanced analytical tasks.
 
-## Detailed Analysis and Technical Breakdown
+## Discover the Full Story
 
-For a comprehensive analysis and a detailed breakdown, including code and visuals, view the project notebook on [NBViewer](https://nbviewer.org/github/yourusername/yourrepo/blob/master/notebooks/customer_churn_analysis.ipynb).
+Explore the detailed analysis [here](/messy-data-post/).
+
+## Explore the Technical Journey
+
+For more on the project, including detailed code snippets and visuals, visit the notebook on [NBViewer](https://nbviewer.org/github/timothyrobbinscpa/messy_data_cleaning/blob/master/src/data_cleaning_FINAL_FINAL.ipynb?flush_cache=true).
