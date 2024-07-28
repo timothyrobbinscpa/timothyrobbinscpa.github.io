@@ -20,21 +20,6 @@ tags:
   - python
   - pandas
 ---
-
-## Summary of Data Cleaning Steps
-
-1. **Importing Necessary Libraries**: Import essential libraries such as pandas, numpy, and matplotlib.
-2. **Loading the Dataset**: Load the dataset into a pandas DataFrame.
-3. **Initial Data Exploration**: Explore the dataset to understand its structure and the nature of the data.
-4. **Handling Missing Values**: Identify and handle missing values using appropriate strategies.
-5. **Renaming Columns**: Standardize column names to snake_case.
-6. **Removing Duplicates**: Check for and remove duplicate entries.
-7. **Data Type Conversion**: Ensure each column has the correct data type.
-8. **Handling Outliers**: Identify and handle outliers using statistical methods and visualizations.
-9. **Feature Engineering**: Create new features from existing data to enhance model performance.
-10. **Data Normalization and Scaling**: Normalize and scale data for algorithms sensitive to the scale of data.
-11. **Advanced Data Cleaning Techniques**: Handle mixed data types, parse and extract information from text, and correct misspelled categories.
-
 ## Introduction
 
 Data cleaning is a crucial step in data analysis and machine learning, ensuring that the data is accurate, consistent, and usable. This guide walks through a detailed data cleaning process using Python, addressing common data issues and demonstrating best practices to prepare the dataset for analysis. The dataset, containing FIFA 21 player statistics scraped from sofifa.com, is messy and raw, presenting an excellent opportunity to learn about data cleaning. Problems include missing values, inconsistent data types, duplicates, and non-standard formats.
@@ -44,21 +29,6 @@ Data cleaning is a crucial step in data analysis and machine learning, ensuring 
 ### 1. Importing Necessary Libraries
 
 First, I imported essential libraries for data manipulation, numerical operations, and visualization.
-
-```python
-import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
-import re
-
-# Setting pandas options to display all rows and columns in the dataframe
-pd.set_option('display.max_rows', None)  # Display all rows
-pd.set_option('display.max_columns', None)  # Display all columns
-
-# Setting the plot style of matplotlib to 'ggplot' for better aesthetics
-plt.style.use('ggplot')
-```
 
 2. Loading the Dataset
 Next, I loaded the dataset into a pandas DataFrame. This allowed me to perform various operations and manipulations on the data.
