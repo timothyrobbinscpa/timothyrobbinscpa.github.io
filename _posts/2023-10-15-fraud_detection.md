@@ -3,7 +3,6 @@ title: "Advanced Fraud Detection with Machine Learning: A Detailed Case Study"
 permalink: /fraud-detection-post/
 date: 2024-04-23
 layout: single
-classes: wide
 author_profile: true
 read_time: true
 comments: true

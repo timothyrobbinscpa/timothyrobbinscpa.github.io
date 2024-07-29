@@ -2,8 +2,8 @@
 title: "Data Cleaning: A Comprehensive Guide"
 permalink: /messy-data-post/
 date: 2024-04-30
+published: false
 layout: single
-classes: wide
 author_profile: true
 read_time: true
 comments: true
