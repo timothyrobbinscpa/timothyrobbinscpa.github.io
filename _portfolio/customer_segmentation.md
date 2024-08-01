@@ -1,6 +1,6 @@
 ---
-title: "Driving Business Decisions Through Customer Segmentation"
-date: 2024-04-23
+title: "Boosting Profitability with Strategic Customer Segmentation"
+date: 2024-01-31
 layout: single
 classes: wide
 author_profile: true
@@ -8,7 +8,7 @@ read_time: false
 comments: false
 header:
   teaser: /assets/images/customer_segmentation/segmentation.webp
-excerpt: "Leveraging extensive accounting expertise and advanced data science, this project showcases strategic customer segmentation to drive targeted marketing and enhance profitability."
+excerpt: "Unleashing data-driven marketing: Discover how advanced customer segmentation drives targeted campaigns and boosts profitability."
 categories:
   - Customer-Segmentation
 tags:

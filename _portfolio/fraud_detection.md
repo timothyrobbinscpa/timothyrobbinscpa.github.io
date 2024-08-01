@@ -1,6 +1,6 @@
 ---
-title: "Fraud Detection in Financial Transactions"
-date: 2024-04-23
+title: "Machine Learning for Advanced Fraud Detection"
+date: 2024-02-29
 layout: single
 classes: wide
 author_profile: true
@@ -8,7 +8,7 @@ read_time: false
 comments: false
 header:
   teaser: /assets/images/fraud_detection/fraud_detection_splash.webp
-excerpt: "Unlocking the patterns of fraud through advanced data science techniques"
+excerpt: "Detecting financial fraud using sophisticated machine learning techniques to enhance security and minimize losses."
 tags:
   - Machine Learning
   - Data Science

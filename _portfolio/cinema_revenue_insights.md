@@ -1,5 +1,6 @@
 ---
 title: "Unveiling the Secrets of Cinema Revenue Success"
+date: 2024-04-30
 layout: single
 classes: wide
 author_profile: true
