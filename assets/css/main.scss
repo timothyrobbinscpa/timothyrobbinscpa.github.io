@@ -14,7 +14,7 @@ search: false
 
 // Additional styles
 .home .site-header {
-  height: 300px; /* Or whatever height you prefer */
+  height: 200px; /* Or whatever height you prefer */
   background-size: cover; /* Or 'contain' to fit the whole image */
   background-position: center center;
 }
@@ -27,8 +27,21 @@ search: false
   background-color: #fff; /* Adjust to match your site's design */
   z-index: 1000; /* Ensures the header stays above other content */
   border-bottom: 1px solid #ddd; /* Optional: Adds a bottom border for visual separation */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow for depth */
+ # box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow for depth */
   padding: 10px 0; /* Optional: Adds padding for spacing */
+}
+
+/* Sticky Sidebar Styles */
+.sidebar {
+  position: -webkit-sticky; /* For Safari */
+  position: sticky;
+  top: 200px; /* Adjust as needed to leave space for any fixed headers */
+  max-height: 120vh; /* Ensure it doesn't exceed the viewport height */
+  overflow-y: auto; /* Add scrollbar if content overflows */
+  background-color: #fff; /* Optional: Background color to match your design */
+  z-index: 100; /* Adjust as necessary to stack appropriately */
+  padding: 20px; /* Optional: Add padding for inner spacing */
+ # box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow */
 }
 
 // Additional utility styles

@@ -7,12 +7,9 @@ author_profile: true
 read_time: false
 comments: false
 header:
-  teaser: /assets/images/ticket_sales/generated image.webp
+   teaser: /assets/images/ticket_sales/generated image.webp
 excerpt: "Discover how I harness machine learning to transform cinema sales data into strategic insights, driving business success."
 ---
-
-![Cinema Sales](/assets/images/ticket_sales/generated image.webp)
-
 ## Introduction
 
 As a seasoned professional with over two decades of experience in accounting and robust expertise in data science, I bring a unique analytical perspective to financial analysis. This project on cinema sales data draws from my extensive background in financial management and revenue recognition, applying advanced analytics to uncover key drivers of cinema sales and optimize business strategies.

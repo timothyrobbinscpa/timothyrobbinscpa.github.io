@@ -10,9 +10,6 @@ header:
   teaser: /assets/images/messy_data_cleanup/messy_data_splash.webp
 excerpt: "Discover how extensive data cleaning techniques can transform messy, raw datasets into clean, ready-to-analyze data."
 ---
-
-![Messy Data Image](/assets/images/messy_data_cleanup/messy_data_splash.webp)
-
 ## Introduction
 
 This project leverages my extensive experience in data cleaning to prepare a dataset for analysis using Python. With over two decades of experience as an accountant and CPA, primarily as a Revenue Manager, I have prepared data for several accounting system implementations, including NetSuite, SAP, and Oracle. This background has equipped me with robust data cleaning techniques that ensure the dataset's integrity and readiness for further analysis.

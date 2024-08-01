@@ -19,9 +19,6 @@ tags:
   - Random Forest
   - Class Imbalance
 ---
-
-![Fraud Detection](/assets/images/fraud_detection/fraud_detection_splash.webp)
-
 ## Overview
 
 With over two decades of experience in accounting and robust expertise in data science, I have developed a sophisticated fraud detection system using various machine learning models. This project aims to accurately identify fraudulent transactions in financial datasets, leveraging my background as a revenue manager to enhance financial data analysis.

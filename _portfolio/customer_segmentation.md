@@ -18,9 +18,6 @@ tags:
   - Data Visualization
   - Business Strategy
 ---
-
-![Customer Segmentation Graphic](/assets/images/customer_segmentation/customer_segmentation_icon.webp)
-
 ## Introduction
 
 With over two decades of accounting experience and a certification in Data Science, I applied advanced analytical skills to customer segmentation, identifying unique customer behaviors and traits that enhance marketing strategies and profitability.
@@ -48,7 +45,7 @@ To optimize the segmentation approach, hierarchical clustering was selected over
 - **Silhouette Scores Visualization Below**: Silhouette scores were critically evaluated to determine the optimal number of clusters. These scores help measure the similarity of an object to its own cluster compared to other clusters and indicated well-separated and distinct clusters. This preliminary analysis was crucial for setting up effective segmentation parameters.
 
 <figure class="align-center">
-  <img src="/assets/images/customer_segmentation/silhouette_scores.png" alt="Comparative performance of Random Forest and Gradient Boosting models" style="width:80%;">
+  <img src="/assets/images/customer_segmentation/silhouette.png" alt="Comparative performance of Random Forest and Gradient Boosting models" style="width:80%;">
   <figcaption></figcaption>
 </figure>
 
@@ -56,7 +53,7 @@ Following the optimal cluster determination:
 - **PCA Visualization Below**: The PCA visualization shows the distribution of customer clusters. This visualization provides a clear visual representation of how customers are grouped based on their purchasing behaviors, aiding in the deeper understanding of segment characteristics.
 
 <figure class="align-center">
-  <img src="/assets/images/customer_segmentation/pca_clustered.png" alt="Cluster Visualization with PCA" style="width:80%;">
+  <img src="/assets/images/customer_segmentation/pca_kmeans.png" alt="Cluster Visualization with PCA" style="width:80%;">
   <figcaption></figcaption>
 </figure>
 
