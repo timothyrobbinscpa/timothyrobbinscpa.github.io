@@ -24,9 +24,9 @@ search: false
   position: sticky;
   top: 0;
   width: 100%;
-  background-color: #fff; /* Adjust to match your site's design */
+  background-color: #eeeeee; /* Adjust to match your site's design */
   z-index: 1000; /* Ensures the header stays above other content */
-  border-bottom: 1px solid #ddd; /* Optional: Adds a bottom border for visual separation */
+ # border-bottom: 1px solid #ddd; /* Optional: Adds a bottom border for visual separation */
  # box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow for depth */
   padding: 10px 0; /* Optional: Adds padding for spacing */
 }
@@ -38,7 +38,7 @@ search: false
   top: 200px; /* Adjust as needed to leave space for any fixed headers */
   max-height: 120vh; /* Ensure it doesn't exceed the viewport height */
   overflow-y: auto; /* Add scrollbar if content overflows */
-  background-color: #fff; /* Optional: Background color to match your design */
+  background-color: #eeeeee; /* Optional: Background color to match your design */
   z-index: 100; /* Adjust as necessary to stack appropriately */
   padding: 20px; /* Optional: Add padding for inner spacing */
  # box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow */
