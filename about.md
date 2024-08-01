@@ -6,11 +6,10 @@ permalink: /about/  # The URL where this page will be accessible.
 header:
  # overlay_image: /assets/images/my_journey/transition from accountant to data scientist.webp
  # overlay_filter: 0.3 # An optional overlay filter to darken the image for better text readability
-author_profile: True
+author_profile: true
 ---
-![My Journey](/assets/images/my_journey/transition from accountant to data scientist.webp)
 
-# From Numbers to Narratives - A Journey from Accounting to Data Science
+![My Journey](/assets/images/my_journey/transition from accountant to data scientist.webp){:style="width:75%; max-width:600px;"}
 
 ## Introduction
 

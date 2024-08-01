@@ -2,25 +2,19 @@
 ---
 
 <!doctype html>
-<!--
-  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
-  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
-  Free for personal and commercial use under the MIT license
-  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
--->
-<html lang="{{ site.locale | slice: 0,2 | default: "en" }}" class="no-js">
+<html lang="{{ site.locale | slice: 0,2 | default: 'en' }}" class="no-js">
   <head>
     {% include head.html %}
     {% include head/custom.html %}
-
-        <!-- Include the Google Analytics script -->
-        {% include analytics.html %}
-        
+    {% include analytics.html %}
   </head>
 
   <body class="layout--{{ page.layout | default: layout.layout }}{% if page.classes or layout.classes %}{{ page.classes | default: layout.classes | join: ' ' | prepend: ' ' }}{% endif %}">
     {% include_cached skip-links.html %}
-    {% include_cached masthead.html %}
+
+    <header class="site-header">
+      {% include_cached masthead.html %}
+    </header>
 
     <div class="initial-content">
       {{ content }}
@@ -40,6 +34,6 @@
     </div>
 
     {% include scripts.html %}
-
   </body>
 </html>
+

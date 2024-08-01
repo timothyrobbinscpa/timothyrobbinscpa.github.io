@@ -6,21 +6,35 @@ search: false
 // @import "reset"; // This line imports the reset styles at the top
 // @import "base"; 
 
-@charset "utf-8";
+// Existing imports and styles
 
+@charset "utf-8";
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
 
-
+// Additional styles
 .home .site-header {
-    height: 300px; /* Or whatever height you prefer */
-    background-size: cover; /* Or 'contain' to fit the whole image */
-    background-position: center center;
-  }  
+  height: 300px; /* Or whatever height you prefer */
+  background-size: cover; /* Or 'contain' to fit the whole image */
+  background-position: center center;
+}
 
+// Sticky Header
+.site-header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-color: #fff; /* Adjust to match your site's design */
+  z-index: 1000; /* Ensures the header stays above other content */
+  border-bottom: 1px solid #ddd; /* Optional: Adds a bottom border for visual separation */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow for depth */
+  padding: 10px 0; /* Optional: Adds padding for spacing */
+}
+
+// Additional utility styles
 .figure-size {
-    width: 62.5%;  /* Adjust the width as needed */
-    height: auto; /* Keeps the aspect ratio of the image */
+  width: 62.5%;  /* Adjust the width as needed */
+  height: auto; /* Keeps the aspect ratio of the image */
 }
 
 .excerpt {
@@ -29,5 +43,5 @@ search: false
 
 .author__bio {
   font-size: 25px; /* Or whatever size you prefer */
-  font-weight: bold; /* makes the text bold */
+  font-weight: bold; /* Makes the text bold */
 }
