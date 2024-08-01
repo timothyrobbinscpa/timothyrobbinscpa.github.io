@@ -28,9 +28,11 @@ I utilized the following technologies and tools:
 
 ## Data Cleaning Steps
 
-1. **Handling Missing Values**: Identifying and filling or removing missing values to ensure data completeness. My experience with NetSuite, SAP, and Oracle has honed my ability to manage large datasets effectively.
-2. **Correcting Data Types**: Converting columns to appropriate data types to maintain data integrity.
-3. **Cleaning Text and Categorical Data**: Ensuring proper formatting and consistency in text and categorical data.
+**Handling Missing Values**: Identifying and filling or removing missing values to ensure data completeness. My experience with NetSuite, SAP, and Oracle has honed my ability to manage large datasets effectively.
+
+**Correcting Data Types**: Converting columns to appropriate data types to maintain data integrity.
+
+**Cleaning Text and Categorical Data**: Ensuring proper formatting and consistency in text and categorical data.
 
 ```python
 def clean_and_split_contract(entry):
@@ -66,7 +68,7 @@ def clean_and_split_contract(entry):
         return pd.Series([np.nan, np.nan])
 ```
 
-4. **Handling Special Characters**: Removing or replacing special characters to maintain data integrity and prevent errors in analysis.
+**Handling Special Characters**: Removing or replacing special characters to maintain data integrity and prevent errors in analysis.
 
 ```python
 # Accent mapping for normalizing non-ASCII characters
@@ -86,9 +88,11 @@ def manual_normalize_club_names(club_names, mapping):
     return normalized_names
 ```
 
-5. **Dealing with Outliers**: Identifying and handling outliers to improve data quality.
-6. **Dropping Irrelevant Columns**: Removing columns that are not needed for analysis to simplify the dataset and focus on relevant data.
-7. **Ensuring Consistency**: Standardizing data formats and values to ensure uniformity across the dataset.
+**Dealing with Outliers**: Identifying and handling outliers to improve data quality.
+
+**Dropping Irrelevant Columns**: Removing columns that are not needed for analysis to simplify the dataset and focus on relevant data.
+
+**Ensuring Consistency**: Standardizing data formats and values to ensure uniformity across the dataset.
 
 ## Results
 

@@ -2,7 +2,7 @@
 title: "Data Cleaning: A Comprehensive Guide"
 permalink: /messy-data-post/
 date: 2024-04-30
-published: false
+published: true
 layout: single
 author_profile: true
 read_time: true
@@ -11,7 +11,7 @@ toc: true
 toc_sticky: true
 header:
   teaser: /assets/images/messy_data_cleanup/messy_data_splash.webp
-excerpt: "A detailed guide on cleaning the FIFA 21 dataset using Python."
+excerpt: "A detailed project on cleaning the FIFA 21 dataset using Python."
 last_modified_at: 2023-05-25T12:00:00-05:00
 categories:
   - Data Science
@@ -26,18 +26,18 @@ Data cleaning is a crucial step in data analysis and machine learning, ensuring 
 
 ## Step-by-Step Data Cleaning Process
 
-### 1. Importing Necessary Libraries
+### Importing Necessary Libraries
 
 First, I imported essential libraries for data manipulation, numerical operations, and visualization.
 
-2. Loading the Dataset
+### Loading the Dataset
 Next, I loaded the dataset into a pandas DataFrame. This allowed me to perform various operations and manipulations on the data.
 
 ```python
 df = pd.read_csv('path_to_your_dataset.csv', low_memory=False)
 ```
 
-3. Initial Data Exploration
+### Initial Data Exploration
 I explored the dataset initially to understand its structure and the nature of the data. Checking the first few rows and getting a summary of the dataset, including data types and the presence of missing values, helped in identifying potential issues.
 
 ```python
@@ -48,7 +48,7 @@ df.info()
 df.describe
 ```
 
-4. Handling Missing Values
+### Handling Missing Values
 Missing values can significantly affect analysis and model performance. I identified columns with missing values and decided on an appropriate strategy to handle them. For instance, the loan_date_end column had many missing values, as not all players are on loan. The hits column, which might indicate popularity or performance metrics, had missing values that could skew analysis.
 
 ```python
@@ -75,14 +75,14 @@ df['loan_date_end'].fillna(method='bfill', inplace=True)
 df['hits'].fillna(df['hits'].median(), inplace=True)
 ```
 
-5. Renaming Columns
+### Renaming Columns
 To standardize column names, I converted them to snake_case. This makes it easier to work with the data programmatically and ensures consistency.
 
-``python
+```python
 df.columns = [col.strip().replace(' ', '_').lower() for col in df.columns]
 ```
 
-6. Removing Duplicates
+### Removing Duplicates
 Duplicate entries can skew analysis and lead to inaccurate results. I checked for duplicates and removed them to ensure each entry in the dataset was unique. Full and partial duplicates were removed based on specific columns like Name, Age, and club_name.
 
 ```python
@@ -95,7 +95,7 @@ df = df.drop_duplicates(subset=['name', 'age', 'club_name'])
 Output:
 Number of duplicate rows: 0
 
-7. Data Type Conversion
+### Data Type Conversion
 Ensuring each column has the correct data type is essential for accurate analysis. I converted data types where necessary, such as transforming date columns to datetime objects and ensuring numerical columns were in the correct format. Converting units like height and weight to a consistent format was also crucial.
 
 ```python
@@ -107,7 +107,7 @@ df['height_cm'] = df['height'].apply(lambda x: x if 'cm' in x else float(x) * 2.
 df['weight_kg'] = df['weight'].apply(lambda x: x if 'kg' in x else float(x) * 0.453592)
 ```
 
-8. Handling Outliers
+### Handling Outliers
 Outliers can distort statistical analyses and model predictions. I identified outliers using statistical methods and visualizations like box plots and handled them appropriately. Outliers can be removed or transformed depending on the context and analysis requirements.
 
 ```python
@@ -118,7 +118,7 @@ from scipy.stats import zscore
 df = df[(np.abs(zscore(df['age'])) < 3)]
 ```
 
-9. Feature Engineering
+### Feature Engineering
 Feature engineering involved creating new features from existing data to enhance model performance. This step included combining columns, creating interaction terms, or extracting information from date columns.
 
 ```python
@@ -126,7 +126,7 @@ df['BMI'] = df['weight_kg'] / (df['height_cm']/100)**2
 df['birth_year'] = df['dob'].dt.year
 ```
 
-10. Data Normalization and Scaling
+### Data Normalization and Scaling
 Normalization and scaling are important for algorithms that are sensitive to the scale of data, such as distance-based algorithms. Techniques like Min-Max scaling or Z-score normalization were used.
 
 ```python
@@ -136,21 +136,21 @@ scaler = MinMaxScaler()
 df[['age', 'overall']] = scaler.fit_transform(df[['age', 'overall']])
 ```
 
-11. Formatting Club Names with Foreign Characters
+### Formatting Club Names with Foreign Characters
 Club names with foreign characters were standardized to maintain consistency across the dataset.
 
 ```python
 df['club_name'] = df['club_name'].str.normalize('NFKD').str.encode('ascii', errors='ignore').str.decode('utf-8')
 ```
 
-12. Standardizing Formats
+### Standardizing Formats
 Standardizing formats, such as date formats, ensures consistency in the dataset.
 
 ```python
 df['contract_valid_until'] = pd.to_datetime(df['contract_valid_until'], format='%Y')
 ```
 
-Conclusion
+## Conclusion
 Data cleaning is an iterative and detailed process. By following the steps outlined above, the dataset was prepared for analysis and modeling. Clean data leads to more accurate insights and better-performing models. Investing time in data cleaning is crucial for the success of any data-driven project.
 
 To explore the full analysis with all executed code, outputs, and visualizations, see [the complete notebook on NBViewer](https://nbviewer.org/github/timothyrobbinscpa/messy_data_cleaning/blob/master/src/data_cleaning_FINAL_FINAL.ipynb?flush_cache=true).
