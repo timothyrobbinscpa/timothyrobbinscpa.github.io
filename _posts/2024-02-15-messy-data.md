@@ -12,7 +12,7 @@ toc_sticky: true
 header:
   teaser: /assets/images/messy_data_cleanup/messy_data_splash.webp
 excerpt: "A detailed project on cleaning the FIFA 21 dataset using Python."
-last_modified_at: 2023-05-25T12:00:00-05:00
+# last_modified_at: 2023-05-25T12:00:00-05:00
 categories:
   - Data Science
 tags:
@@ -56,16 +56,6 @@ missing_values = df.isnull().sum()
 print(missing_values)
 ```
 
-Output:
-
-ID                          0
-Name                        0
-Age                         0
-Overall                     0
-...                         ...
-Contract Valid Until     1061
-dtype: int64
-
 To handle missing values, I filled numerical columns with the mean and categorical columns with the mode. For more specific cases:
 
 ```python
@@ -92,8 +82,6 @@ print(f"Number of duplicate rows: {duplicates}")
 df.drop_duplicates(inplace=True)
 df = df.drop_duplicates(subset=['name', 'age', 'club_name'])
 ```
-Output:
-Number of duplicate rows: 0
 
 ### Data Type Conversion
 Ensuring each column has the correct data type is essential for accurate analysis. I converted data types where necessary, such as transforming date columns to datetime objects and ensuring numerical columns were in the correct format. Converting units like height and weight to a consistent format was also crucial.
