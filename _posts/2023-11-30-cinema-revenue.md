@@ -84,15 +84,55 @@ Significant adjustments made to ensure data quality included:
 
 - **Adjusting Show Times:** Standardizing show times to a 24-hour format, leveraging my expertise in ensuring data accuracy and compliance with financial standards.
 
-Placeholder for code snippet to adjust show times
+```python
+# Adjust showtime for validity
+# Subtract 12 from show_time values between 13 and 24
+df.loc[(df['show_time'] > 12) & (df['show_time'] <= 24), 'show_time'] -= 12
+
+# Drop rows where 'show_time' exceeds 24
+df = df[df['show_time'] <= 24]
+```
 
 - **Handling Overcapacity:** Correcting any instances where occupancy percentages exceeded plausible limits, a task aligned with financial auditing practices where accuracy and regulatory compliance are paramount.
 
-Placeholder for code snippet to handle overcapacity
+```python
+# Fill negative theater capacity values with mean for that cinema_code
+
+# Calculate the mean capacity for each cinema_code, excluding negative values
+mean_capacity_per_cinema = df[df['capacity'] > 0].groupby('cinema_code')['capacity'].mean()
+
+# Fill negative capacity values with the mean capacity of the corresponding cinema_code
+df.loc[df['capacity'] < 0, 'capacity'] = df.loc[df['capacity'] < 0, 'cinema_code'].apply(
+    lambda x: mean_capacity_per_cinema.get(x, np.nan)
+)
+
+# Handle cases where mean capacity is not available
+df['capacity'].fillna(df['capacity'].mean(), inplace=True)
+
+# Check if there are any negative values remaining in capacity
+remaining_negative_capacity = df[df['capacity'] < 0].shape[0]
+
+print(remaining_negative_capacity)
+```
 
 - **Encoding Categorical Variables:** Converting categorical data into numeric formats, a skill honed through my experience with financial databases and ensuring compliance with data standards.
 
-Placeholder for code snippet to encode categorical variables
+```python
+# Use category encoders to encode categorical variables; otherwise too many features to handle (over 300)
+import category_encoders as ce
+
+# List of categorical columns to be binary encoded
+categorical_columns = ['film_code', 'cinema_code', 'month', 'day']
+
+# Create a Binary Encoder
+binary_encoder = ce.BinaryEncoder(cols=categorical_columns)
+
+# Fit and transform to produce binary encoded DataFrame
+df_encoded = binary_encoder.fit_transform(df)
+
+# Display the first few rows of the encoded DataFrame
+df_encoded.head()
+```
 
 - **Eliminating Highly Correlated Features:** Identifying and removing features with high correlation to prevent multicollinearity, ensuring the model's robustness and interpretability.
 
@@ -103,7 +143,30 @@ Placeholder for code snippet to encode categorical variables
 
 Various machine learning models were employed to predict cinema revenue, including Random Forest and Gradient Boosting. Model selection was based on performance metrics such as R-squared and Mean Absolute Error (MAE). Hyperparameter tuning was conducted to optimize model performance.
 
-Placeholder for code snippet to define parameter grid and fit the random search model
+```python
+# Define parameter grid for random forest
+param_grid = {
+    'n_estimators': [100, 300, 500], 
+    'max_features': ['sqrt', 'log2'],  
+    'max_depth': [5, 10, 20, 50],  
+    'min_samples_split': [2, 3, 5, 10],  
+    'min_samples_leaf': [1, 2, 3, 4],  
+    'bootstrap': [True, False]  # Limited to one option for simplicity
+}
+
+# Create base model to tune
+rf = RandomForestRegressor()
+
+# Set Randomized Search parameters
+rf_random = RandomizedSearchCV(estimator=rf, param_distributions=param_grid, n_iter=20, cv=3, verbose=2, random_state=42, n_jobs=-1)  # later increase iterations
+
+# Fit the random search model
+rf_random.fit(X_train, y_train)
+
+# Print the best parameters
+best_params = rf_random.best_params_
+print(f"Best Parameters: {best_params}")
+```
 
 ### Model Results
 

@@ -42,9 +42,7 @@ I explored the dataset initially to understand its structure and the nature of t
 
 ```python
 df.head()
-
 df.info()
-
 df.describe
 ```
 
