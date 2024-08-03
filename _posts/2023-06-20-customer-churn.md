@@ -4,12 +4,10 @@ permalink: /customer-churn-post/
 toc: true
 toc_label: "Table of Contents"
 toc_sticky: true
-#sidebar:
-#  title: "Table of Contents"
-#  nav: ".sidebar__right"
 layout: single
-#classes: wide
 date: 2023-06-20
+header:
+  teaser: /assets/images/customer_churn/download (1).jfif
 categories: "Customer-Churn"
 tags:
   - Data Analysis

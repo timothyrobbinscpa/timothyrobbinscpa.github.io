@@ -12,8 +12,9 @@ toc_sticky: true
 read_time: true
 share: true
 header:
-#  overlay_image: /assets/images/ticket_sales/generated image.webp
-#  overlay_filter: rgba(0, 0, 0, 0.5)
+  teaser: /assets/images/ticket_sales/generated image.webp
+excerpt: "Discover how I harness machine learning to transform cinema sales data into strategic insights, driving business success."
+
 ---
 
 ![Cinema Sales](/assets/images/ticket_sales/generated image.webp)

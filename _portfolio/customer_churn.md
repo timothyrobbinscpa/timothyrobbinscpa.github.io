@@ -12,7 +12,6 @@ tags:
   - Predictive Modeling
 header:
   teaser: /assets/images/customer_churn/download (1).jfif
-  # image_description: "An illustrative graphic showing trends in customer churn and retention."
 excerpt: "Discover how advanced data science techniques effectively tackle customer churn, significantly enhancing business sustainability and customer loyalty."
 ---
 ## Unveiling Churn Dynamics: A Data-Driven Exploration

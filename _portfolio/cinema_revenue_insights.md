@@ -7,8 +7,8 @@ author_profile: true
 read_time: false
 comments: false
 header:
-   teaser: /assets/images/ticket_sales/generated image.webp
-excerpt: "Discover how I harness machine learning to transform cinema sales data into strategic insights, driving business success."
+  teaser: /assets/images/ticket_sales/generated image.webp
+  excerpt: "Discover how I harness machine learning to transform cinema sales data into strategic insights, driving business success."
 ---
 ## Introduction
 
