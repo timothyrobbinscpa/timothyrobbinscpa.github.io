@@ -8,7 +8,7 @@ read_time: false
 comments: false
 header:
   teaser: /assets/images/customer_segmentation/segmentation.webp
-excerpt: "Unleashing data-driven marketing: Discover how advanced customer segmentation drives targeted campaigns and boosts profitability."
+excerpt: "Discover how advanced customer segmentation drives targeted campaigns and boosts profitability."
 categories:
   - Customer-Segmentation
 tags:
