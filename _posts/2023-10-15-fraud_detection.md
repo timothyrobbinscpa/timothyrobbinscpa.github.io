@@ -1,7 +1,7 @@
 ---
 title: "Advanced Fraud Detection with Machine Learning: A Detailed Case Study"
 permalink: /fraud-detection-post/
-date: 2024-04-23
+date: 2024-04-01
 layout: single
 author_profile: true
 read_time: true
@@ -20,6 +20,7 @@ tags:
   - Neural Networks
   - Random Forest
   - Data Visualization
+featured: true
 ---
 
 ![Fraud Detection](/assets/images/fraud_detection/fraud_detection_splash.webp)

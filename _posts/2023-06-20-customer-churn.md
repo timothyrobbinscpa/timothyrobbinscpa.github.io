@@ -5,7 +5,7 @@ toc: true
 toc_label: "Table of Contents"
 toc_sticky: true
 layout: single
-date: 2023-06-20
+date: 2024-03-01
 header:
   teaser: /assets/images/customer_churn/download (1).jfif
 categories: "Customer-Churn"
@@ -21,6 +21,7 @@ tags:
   - Visualization
   - Data Science
 excerpt: "Exploring the intricacies of customer churn in the telecom sector using advanced data analysis techniques."
+featured: true
 ---
 ![Customer Churn](/assets/images/customer_churn/download (1).jfif)
 

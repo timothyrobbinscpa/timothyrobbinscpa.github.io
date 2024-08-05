@@ -1,8 +1,8 @@
 ---
 title: "Data Cleaning: A Comprehensive Guide"
 permalink: /messy-data-post/
-date: 2024-04-30
-published: true
+date: 2024-01-01
+published: false
 layout: single
 author_profile: true
 read_time: true
@@ -19,6 +19,7 @@ tags:
   - data cleaning
   - python
   - pandas
+featured: false
 ---
 ## Introduction
 

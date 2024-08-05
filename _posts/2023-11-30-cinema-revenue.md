@@ -2,7 +2,7 @@
 layout: single
 permalink: /cinema-revenue-post/
 title: "Unveiling Key Drivers of Cinema Revenue: A Data Science Approach"
-date: 2024-05-31
+date: 2024-02-01
 categories: [Data Science, Entertainment]
 tags: [cinema revenue, machine learning, data analysis, Python, revenue management]
 author_profile: true
@@ -14,7 +14,7 @@ share: true
 header:
   teaser: /assets/images/ticket_sales/generated image.webp
 excerpt: "Discover how I harness machine learning to transform cinema sales data into strategic insights, driving business success."
-
+featured: false
 ---
 
 ![Cinema Sales](/assets/images/ticket_sales/generated image.webp)
