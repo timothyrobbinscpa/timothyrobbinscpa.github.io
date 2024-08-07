@@ -14,7 +14,7 @@ search: false
 
 // Additional styles
 .home .site-header {
-  height: 200px; /* Or whatever height you prefer */
+  height: 24px; /* Or whatever height you prefer */
   background-size: cover; /* Or 'contain' to fit the whole image */
   background-position: center center;
 }
@@ -35,7 +35,7 @@ search: false
 .sidebar {
   position: -webkit-sticky; /* For Safari */
   position: sticky;
-  top: 200px; /* Adjust as needed to leave space for any fixed headers */
+  top: 100px; /* Adjust as needed to leave space for any fixed headers */
   max-height: 120vh; /* Ensure it doesn't exceed the viewport height */
   overflow-y: auto; /* Add scrollbar if content overflows */
   background-color: #eeeeee; /* Optional: Background color to match your design */

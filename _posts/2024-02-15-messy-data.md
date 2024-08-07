@@ -4,10 +4,11 @@ permalink: /messy-data-post/
 date: 2024-01-01
 published: false
 layout: single
+classes: wide
 author_profile: true
 read_time: true
 comments: true
-toc: true
+toc: false
 toc_sticky: true
 header:
   teaser: /assets/images/messy_data_cleanup/messy_data_splash.webp

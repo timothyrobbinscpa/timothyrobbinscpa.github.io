@@ -3,10 +3,11 @@ title: "Advanced Fraud Detection with Machine Learning: A Detailed Case Study"
 permalink: /fraud-detection-post/
 date: 2024-04-01
 layout: single
+classes: wide
 author_profile: true
 read_time: true
 comments: true
-toc: true
+toc: false
 toc_sticky: true
 header:
   teaser: /assets/images/fraud_detection/fraud_detection_splash.webp
@@ -22,9 +23,6 @@ tags:
   - Data Visualization
 featured: true
 ---
-
-![Fraud Detection](/assets/images/fraud_detection/fraud_detection_splash.webp)
-
 # Fraud Detection Using Machine Learning
 
 In the digital age, fraud has become a pervasive issue affecting various industries. Leveraging machine learning for fraud detection offers a robust solution to identify and mitigate fraudulent activities. This post provides an in-depth look at my implementation of fraud detection using advanced machine learning techniques.

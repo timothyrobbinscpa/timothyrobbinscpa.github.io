@@ -1,10 +1,10 @@
 ---
 title: "Decoding Customer Churn: A Data Science Journey in the Telecom Industry."
 permalink: /customer-churn-post/
-toc: true
-toc_label: "Table of Contents"
+toc: false
 toc_sticky: true
 layout: single
+classes: wide
 date: 2024-03-01
 header:
   teaser: /assets/images/customer_churn/download (1).jfif
@@ -23,8 +23,6 @@ tags:
 excerpt: "Exploring the intricacies of customer churn in the telecom sector using advanced data analysis techniques."
 featured: true
 ---
-![Customer Churn](/assets/images/customer_churn/download (1).jfif)
-
 # Introduction
 In the rapidly evolving telecom sector, understanding and mitigating customer churn is essential. In this project, I employed advanced data science techniques to unravel churn patterns, aiding in the development of effective strategies for customer retention and business growth. Using predictive modeling, I aimed to identify customers with a high likelihood of discontinuing their services, a crucial step for proactive customer management.
 

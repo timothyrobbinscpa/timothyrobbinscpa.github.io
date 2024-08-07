@@ -1,5 +1,6 @@
 ---
 layout: single
+classes: wide
 title: "Unlocking Customer Insights: Clustering in Market Segmentation"
 date: 2024-05-01
 permalink: /customer-segmentation-post/
@@ -7,7 +8,7 @@ categories: [Data Science, Marketing]
 tags: [customer segmentation, hierarchical clustering, RFM analysis, Python, data visualization]
 author_profile: true
 comments: true
-toc: true
+toc: false
 toc_sticky: true
 read_time: true
 share: true
@@ -15,7 +16,6 @@ header:
   teaser: /assets/images/customer_segmentation/segmentation.webp
 featured: true
 ---
-
 In a market as diverse as it is competitive, understanding the customer base is not just an advantage; it's a necessity. This deep dive into hierarchical clustering sheds light on how customers can be segmented into meaningful groups based on behavior and value, allowing businesses to tailor their marketing approaches with unparalleled precision.
 
 ## Leveraging Experience
