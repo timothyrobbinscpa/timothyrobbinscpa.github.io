@@ -1,10 +1,10 @@
-/* Safari-specific styles */
-@media screen and (-webkit-min-device-pixel-ratio:0) {
+/* Safari on iPhone-specific styles */
+@media screen and (max-width: 768px) and (-webkit-min-device-pixel-ratio:0) {
     .author-profile {
-      position: static; /* Adjust the position for Safari */
+      position: static; /* Adjust the position for Safari on iPhone */
       width: 100%; /* Ensure it does not overlap content */
     }
   
-    /* Add any other Safari-specific adjustments here */
+    /* Add any other iPhone-specific adjustments here */
   }
   
