@@ -1,10 +1,9 @@
-/* Safari on iPhone-specific styles */
+/* Hide author profile on Safari for iPhone */
 @media screen and (max-width: 768px) and (-webkit-min-device-pixel-ratio:0) {
-    .author-profile {
-      position: static; /* Adjust the position for Safari on iPhone */
-      width: 100%; /* Ensure it does not overlap content */
+    @supports (-webkit-overflow-scrolling: touch) {
+      .author-profile {
+        display: none;
+      }
     }
-  
-    /* Add any other iPhone-specific adjustments here */
   }
   
