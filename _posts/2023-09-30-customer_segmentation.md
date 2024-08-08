@@ -16,6 +16,8 @@ header:
   teaser: /assets/images/customer_segmentation/segmentation.webp
 featured: true
 ---
+## Introduction
+
 In a market as diverse as it is competitive, understanding the customer base is not just an advantage; it's a necessity. This deep dive into hierarchical clustering sheds light on how customers can be segmented into meaningful groups based on behavior and value, allowing businesses to tailor their marketing approaches with unparalleled precision.
 
 ## Leveraging Experience

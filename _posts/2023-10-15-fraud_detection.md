@@ -23,7 +23,7 @@ tags:
   - Data Visualization
 featured: true
 ---
-# Fraud Detection Using Machine Learning
+## Introduction
 
 In the digital age, fraud has become a pervasive issue affecting various industries. Leveraging machine learning for fraud detection offers a robust solution to identify and mitigate fraudulent activities. This post provides an in-depth look at my implementation of fraud detection using advanced machine learning techniques.
 
@@ -161,12 +161,6 @@ In the context of fraud detection, where both high precision and high recall are
 </figure>
 
 The Cumulative Gains Curves for both models affirm their value in fraud detection systems. They optimize the process by ensuring that the majority of fraudulent transactions are identified quickly, enabling organizations to allocate resources more efficiently and respond more swiftly to potential threats. This capability is essential for maintaining financial security and consumer trust in high-risk environments.
-
-## Implementation Steps
-
-- **Data Loading:** I imported the dataset and performed initial data checks using Python libraries like pandas.
-- **Data Preprocessing:** I applied data cleaning techniques, including handling missing values and normalizing data.
-- **Model Training:** I trained the Random Forest and Neural Network models and fine-tuned hyperparameters using grid search.
 
 ## Visualization and Results
 
