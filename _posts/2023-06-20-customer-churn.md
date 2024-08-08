@@ -23,7 +23,7 @@ tags:
 excerpt: "Exploring the intricacies of customer churn in the telecom sector using advanced data analysis techniques."
 featured: true
 ---
-# Introduction
+## Introduction
 In the rapidly evolving telecom sector, understanding and mitigating customer churn is essential. In this project, I employed advanced data science techniques to unravel churn patterns, aiding in the development of effective strategies for customer retention and business growth. Using predictive modeling, I aimed to identify customers with a high likelihood of discontinuing their services, a crucial step for proactive customer management.
 
 ## Accounting Expertise Enhancing Data Science
