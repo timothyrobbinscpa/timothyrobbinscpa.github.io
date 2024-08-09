@@ -6,4 +6,18 @@
       }
     }
   }
+
+figure {
+    margin-bottom: 0; /* Remove default margin if any */
+}
+
+figure img {
+    margin-bottom: 0; /* Ensure no margin below the image */
+}
+
+figure figcaption {
+    margin-top: 5px; /* Adjust to your preferred spacing */
+    margin-bottom: 20px; /* Adjust this value to add more space under the caption */
+}
+ 
   
