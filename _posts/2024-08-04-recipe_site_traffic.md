@@ -184,22 +184,6 @@ The Precision-Recall curve shows the trade-offs between precision and recall as 
 
 After optimizing the model, the final version was selected to predict daily high-traffic recipes for the homepage. This model was deployed with the optimal threshold, ensuring that it meets the business objective of featuring popular recipes 80% of the time.
 
-    # Apply the optimal threshold to get final predictions
-    final_rf_preds = (rf_probs >= optimal_rf_threshold).astype(int)
-    final_gb_preds = (gb_probs >= optimal_gb_threshold).astype(int)
-
-    # Calculate final performance metrics
-    final_rf_recall = recall_score(y_test, final_rf_preds)
-    final_rf_precision = precision_score(y_test, final_rf_preds)
-    final_rf_f1 = f1_score(y_test, final_rf_preds)
-
-    final_gb_recall = recall_score(y_test, final_gb_preds)
-    final_gb_precision = precision_score(y_test, final_gb_preds)
-    final_gb_f1 = f1_score(y_test, final_gb_preds)
-
-    print(f"Final RF Model - Recall: {final_rf_recall:.4f}, Precision: {final_rf_precision:.4f}, F1 Score: {final_rf_f1:.4f}")
-    print(f"Final GB Model - Recall: {final_gb_recall:.4f}, Precision: {final_gb_precision:.4f}, F1 Score: {final_gb_f1:.4f}")
-
 <figure>
   <img src="/assets/images/recipe_traffic/final_model_performance.png" alt="Final Model Performance">
   <figcaption style="text-align:left;"><em>Figure 5: Performance metrics of the final Random Forest and Gradient Boosting models at their optimal thresholds, demonstrating a balance between recall and precision.</em></figcaption>
@@ -229,5 +213,5 @@ Implementing machine learning for predicting popular recipes significantly enhan
 
 ## Discover the Full Story
 
-To explore the full analysis with all executed code, outputs, and visualizations, see [the complete notebook on NBViewer](https://nbviewer.org/github/timothyrobbinscpa/recipe_analysis/blob/master/src/recipe_prediction_FINAL.ipynb).
+To explore the full analysis with all executed code, outputs, and visualizations, see [the complete notebook on NBViewer](https://nbviewer.org/github/timothyrobbinscpa/recipe_analysis/blob/master/src/recipe_site_traffic.ipynb).
 
