@@ -1,126 +1,234 @@
 ---
+title: "Building a Robust Recommendation System Using Collaborative Filtering"
+permalink: /movie_recommendation-post/
+date: 2024-08-11
 layout: single
-title: "Showcasing My Data Science Skills: A Journey from Accounting to Machine Learning"
-date: 2024-05-28
-published: false  # temporarily suppress project from appearing on website
-Categories: 
+classes: wide
+author_profile: true
+read_time: true
+comments: true
+toc: false
+toc_sticky: true
+header:
+  teaser: /assets/images/movie_recommentation/movie_recommendation_graphic.webp
+excerpt: "A detailed walkthrough on developing a recommendation system using collaborative filtering techniques in Python."
+categories:
   - Data Science
-tags: 
-  - Machine Learning
-  - Data Science
-  - Recommendation System
+tags:
+  - Recommendation Systems
+  - Collaborative Filtering
+  - Python
+  - Data Science Projects
+featured: false
 ---
 
-Welcome to my blog! I'm excited to share my journey from a seasoned accountant and CPA to a data science enthusiast, showcasing my skills and projects that demonstrate my capabilities in this dynamic field. With over 20 years of experience in the SaaS industry as a revenue manager, I've now transitioned into data science, leveraging my analytical skills to build sophisticated machine learning models. In this post, I'll walk you through a comprehensive project where I developed a hybrid recommendation system using collaborative filtering and content-based filtering.
+In this project, I developed a recommendation system using collaborative filtering techniques. The primary objective was to predict user preferences based on historical interaction data, a crucial task for personalizing user experiences in various applications such as e-commerce, streaming services, and more. This post guides you through the entire process, from data preprocessing and model building to evaluation, with a detailed walkthrough of each step and relevant code snippets.
 
-## Project Overview
+### Data Preprocessing
 
-The project aims to create a hybrid recommendation system that combines the strengths of collaborative filtering (CF) and content-based filtering (CBF) to provide personalized movie recommendations. The project utilizes various Python libraries, including pandas, numpy, surprise, sklearn, matplotlib, and seaborn, for data manipulation, numerical operations, model building, and data visualization.
+Data preprocessing is a critical first step in building any machine learning model. The quality of the input data directly influences the model’s performance. For this recommendation system, the data preprocessing involved handling missing values, addressing outliers, and preparing the data for model consumption.
 
-## Libraries and Data
+Handling missing values was an essential step. Missing ratings were imputed with 0, under the assumption that a missing rating implies no interaction between the user and the item. This approach ensures that the user-item matrix is fully populated, making it suitable for collaborative filtering.
 
-I used several Python libraries for this project, including:
+    import pandas as pd  # Data manipulation
+    import numpy as np  # Numerical operations
+    import warnings  # Suppress warnings
 
-- **pandas** and **numpy** for data manipulation and numerical operations.
-- **surprise** for building the collaborative filtering model.
-- **sklearn** for various machine learning utilities.
-- **matplotlib** and **seaborn** for data visualization.
+    # Suppress warnings from deprecated or future features
+    warnings.filterwarnings("ignore", category=DeprecationWarning)
+    warnings.filterwarnings("ignore", category=FutureWarning)
 
-The dataset used is the MovieLens dataset, which includes two CSV files: `movies.csv` and `ratings.csv`. These files provide the movie metadata and user ratings, respectively.
+    # Load data
+    movies_df = pd.read_csv('movies.csv')
+    ratings_df = pd.read_csv('ratings.csv')
 
-## Data Loading and Preprocessing
+    # Merge datasets
+    merged_df = pd.merge(ratings_df, movies_df, on='movieId')
 
-I started by loading the datasets and merging them to create a comprehensive dataset. This involved reading the CSV files and combining them based on the movie IDs. Additionally, I converted timestamps to a readable date format and extracted the release year from the movie titles.
+    # Handle missing values by filling with 0
+    user_item_matrix = merged_df.pivot_table(index='userId', columns='movieId', values='rating').fillna(0)
 
-## Exploratory Data Analysis (EDA)
+The code snippet above demonstrates how the `user_item_matrix` was created by merging the movies and ratings datasets, followed by filling any missing ratings with zeros. This matrix forms the basis for the collaborative filtering process.
 
-Performing EDA is crucial to understand the data better. Here are some of the steps I took:
+### Visualizing Data Distribution
 
-1. **Displaying DataFrames**: I viewed the first few rows of the movies and ratings DataFrames to understand their structure.
+Understanding the data distribution helps in uncovering patterns and insights that can inform the modeling process. I generated several visualizations to explore the distribution of ratings, the popularity of movies, and the diversity of genres.
 
-2. **Shape and Statistics**: I checked the shape of each DataFrame to see the number of rows and columns, and I also viewed basic statistics to get an overview of the data.
+The first visualization identifies the most popular movies by plotting the top 10 movies based on the number of ratings they received. This helps in understanding which movies are most frequently rated and thus likely to be recommended.
 
-3. **Missing Values**: I identified any missing values in both DataFrames.
+    # Plot the top 10 movies by number of ratings
+    top_movies = merged_df['title'].value_counts().nlargest(10)
+    plt.figure(figsize=(10, 5))
+    sns.barplot(y=top_movies.index, x=top_movies.values, palette='viridis')
+    plt.title('Top 10 Movies by Number of Ratings')
+    plt.xlabel('Number of Ratings')
+    plt.ylabel('Movie Title')
+    plt.show()
 
-4. **Visualization**:
-    - **Distribution of Ratings**: I plotted the distribution of movie ratings to understand how users rate movies.
-    - **Number of Ratings per Movie**: This helped me see the popularity of different movies.
-    - **Number of Ratings per User**: I analyzed how many ratings each user provided, giving insights into user engagement.
-    - **Genre Distribution**: I examined the distribution of movie genres.
-    - **Distribution of Movie Release Years**: This visualization helped me understand the trends over time.
-    - **Top 10 Movies by Number of Ratings**: I identified the most popular movies based on the number of ratings they received.
+<figure class="align-center">
+  <img src="/assets/images/movie_recommendation/top_movies.png" alt="Top 10 Movies by Number of Ratings" style="width:80%;">
+  <figcaption>Top 10 Movies by Number of Ratings</figcaption>
+</figure>
 
-### Visualization: Distribution of Ratings
+The bar plot above reveals the top 10 movies with the highest number of ratings, providing insight into the most popular titles among users. This is valuable for understanding which movies might be commonly recommended.
 
-![Distribution of Ratings]({{ site.baseurl }}/assets/images/distribution_of_ratings.png)
+Next, I visualized the genre distribution to understand the variety and popularity of genres within the dataset. This is important as it gives an idea of the diversity of content available and helps in tailoring recommendations based on genre preferences.
 
-### Visualization: Number of Ratings per Movie
+    # Plot the genre distribution
+    merged_df['genres'] = merged_df['genres'].str.split('|')
+    all_genres = merged_df['genres'].explode().value_counts()
+    plt.figure(figsize=(12, 6))
+    sns.barplot(x=all_genres.values, y=all_genres.index, palette='viridis')
+    plt.title('Genre Distribution')
+    plt.xlabel('Frequency')
+    plt.ylabel('Genre')
+    plt.show()
 
-![Number of Ratings per Movie]({{ site.baseurl }}/assets/images/number_of_ratings_per_movie.png)
+<figure class="align-center">
+  <img src="/assets/images/movie_recommendation/genre_distribution.png" alt="Genre Distribution" style="width:80%;">
+  <figcaption>Genre Distribution</figcaption>
+</figure>
 
-### Visualization: Number of Ratings per User
+The genre distribution plot shows the frequency of each genre in the dataset, providing insights into the most and least common genres among the movies. This information can guide the recommendation system in making genre-specific suggestions.
 
-![Number of Ratings per User]({{ site.baseurl }}/assets/images/number_of_ratings_per_user.png)
+### Collaborative Filtering Techniques
 
-### Visualization: Genre Distribution
+Collaborative filtering is a popular technique for building recommendation systems. It leverages the power of similarities between users or items to predict preferences. In this project, I explored two main types of collaborative filtering: user-based and item-based.
 
-![Genre Distribution]({{ site.baseurl }}/assets/images/genre_distribution.png)
+User-based collaborative filtering recommends items to a user by finding other users with similar preferences. The underlying assumption is that if two users rate several items similarly, they will likely rate other items similarly as well.
 
-### Visualization: Distribution of Movie Release Years
+To begin with, I calculated the user similarity matrix using the cosine similarity metric, which measures the cosine of the angle between two vectors—in this case, the vectors represent user ratings.
 
-![Distribution of Movie Release Years]({{ site.baseurl }}/assets/images/distribution_of_movie_release_years.png)
+    from sklearn.metrics.pairwise import cosine_similarity
 
-### Visualization: Top 10 Movies by Number of Ratings
+    # Calculating cosine similarity
+    user_similarity = cosine_similarity(user_item_matrix)
 
-![Top 10 Movies by Number of Ratings]({{ site.baseurl }}/assets/images/top_10_movies_by_number_of_ratings.png)
+The cosine similarity metric was chosen because it effectively handles sparse data, which is common in recommendation systems where not every user has rated every item. The resulting `user_similarity` matrix quantifies how similar each user is to every other user.
 
-## Time Decay and Standardization
+Once the user similarity matrix was constructed, I predicted the ratings a user would give to items based on the ratings given by similar users. This is achieved by weighting the ratings of similar users and using them to predict how the target user might rate a particular item.
 
-To account for the recency of ratings, I applied a time decay factor. This means that more recent ratings were given more weight compared to older ratings. Additionally, I standardized the features to ensure they were on a similar scale, which is essential for some machine learning algorithms to perform well.
+    # Predicting ratings
+    def predict_ratings(user_similarity, user_item_matrix):
+        mean_user_rating = user_item_matrix.mean(axis=1)
+        ratings_diff = (user_item_matrix - mean_user_rating[:, np.newaxis])
+        pred = mean_user_rating[:, np.newaxis] + user_similarity.dot(ratings_diff) / np.array([np.abs(user_similarity).sum(axis=1)]).T
+        return pred
 
-## Building the Hybrid Recommendation System
+    predicted_ratings = predict_ratings(user_similarity, user_item_matrix)
 
-The core of this project is building a hybrid recommendation system. Here's how I did it:
+The `predict_ratings` function adjusts the mean user ratings by the weighted sum of the ratings from similar users, generating predictions for how a user might rate items they haven’t yet interacted with.
 
-### Collaborative Filtering (CF)
+Item-based collaborative filtering operates on a similar principle but focuses on the similarities between items rather than users. The assumption here is that users tend to like items similar to those they have already rated highly.
 
-I used the SVD (Singular Value Decomposition) algorithm from the `surprise` library for collaborative filtering. This algorithm is well-suited for making recommendations based on the patterns in user ratings.
+The item similarity matrix is calculated using the same cosine similarity metric, but this time the focus is on comparing items rather than users.
 
-1. **Data Preparation**: I loaded the ratings data into the Surprise library and split it into training and testing sets.
-2. **Model Training**: I trained the SVD model using a grid search to find the best parameters for the model.
-3. **Model Evaluation**: I evaluated the model using metrics such as RMSE (Root Mean Squared Error) and MAE (Mean Absolute Error).
+    # Calculating item similarity
+    item_similarity = cosine_similarity(user_item_matrix.T)
 
-### Content-Based Filtering (CBF)
+With the item similarity matrix in place, I predicted the ratings by taking a weighted average of the ratings for similar items.
 
-For content-based filtering, I derived user preferences based on movie features such as genres. Here are the steps:
+    # Predicting item-based ratings
+    def predict_item_based_ratings(item_similarity, user_item_matrix):
+        return user_item_matrix.dot(item_similarity) / np.array([np.abs(item_similarity).sum(axis=1)])
 
-1. **Extracting Features**: I extracted the relevant features from the movie dataset, such as genres.
-2. **Calculating User Preferences**: I calculated user preferences based on the average features of the movies they rated highly.
-3. **Calculating Content Scores**: I computed content-based scores by comparing user preferences with movie features using cosine similarity.
+    item_predicted_ratings = predict_item_based_ratings(item_similarity, user_item_matrix)
 
-### Hybrid Scoring
+The item-based approach is often preferred in scenarios where the similarity between items is more stable and reliable than user behavior, which can be more erratic.
 
-I combined CF and CBF scores to generate hybrid recommendations. This involved:
+### Visualizing Similarity Matrices
 
-1. **Combining Scores**: I weighted the CF and CBF scores and adjusted for factors such as popularity and recency.
-2. **Generating Recommendations**: For each user, I combined the scores to generate a list of top movie recommendations.
+Visualizing the similarity matrices helps in understanding the relationships between users and between items. Heatmaps are particularly useful for this purpose, as they allow for quick identification of clusters of similar users or items.
 
-## Evaluation and Metrics
+    # Plotting the similarity matrices
+    plt.figure(figsize=(10, 8))
+    sns.heatmap(user_similarity, cmap='coolwarm')
+    plt.title('User Similarity Matrix')
+    plt.show()
 
-Evaluating the performance of the recommendation system is essential. I used various metrics such as RMSE, MAE, Precision, Recall, and F1 Score to assess the model's accuracy. Additionally, I measured catalog coverage, novelty, personalization, and intra-list diversity to understand the quality of the recommendations.
+<figure class="align-center">
+  <img src="/assets/images/movie_recommendation/user_similarity_matrix.png" alt="User Similarity Matrix" style="width:80%;">
+  <figcaption>User Similarity Matrix</figcaption>
+</figure>
 
-## Conclusion
+The user similarity matrix heatmap illustrates the degree of similarity between users. Darker shades indicate higher similarity, highlighting clusters of users with similar preferences.
 
-This project showcases my ability to build and evaluate a sophisticated hybrid recommendation system, demonstrating my expertise in data manipulation, machine learning, and data visualization. My transition from accounting to data science is driven by a passion for uncovering insights from data and applying advanced analytical techniques to solve complex problems. I look forward to leveraging these skills in a data science role, contributing to innovative projects, and driving data-driven decision-making.
+    plt.figure(figsize=(10, 8))
+    sns.heatmap(item_similarity, cmap='coolwarm')
+    plt.title('Item Similarity Matrix')
+    plt.show()
 
-Thank you for reading, and I hope you found this project insightful. Feel free to explore the code and visualizations, and reach out if you have any questions or feedback!
+<figure class="align-center">
+  <img src="/assets/images/movie_recommendation/item_similarity_matrix.png" alt="Item Similarity Matrix" style="width:80%;">
+  <figcaption>Item Similarity Matrix</figcaption>
+</figure>
 
----
+Similarly, the item similarity matrix heatmap displays the similarities between items. This visualization is valuable for identifying groups of items that are frequently rated similarly, which can inform recommendation strategies.
 
-*Note: The full code for this project is available on my GitHub repository [link to repository]*.
+### Model Evaluation
 
----
+Evaluating the performance of a recommendation system is crucial to understanding how well it meets the desired objectives. Several evaluation metrics were used to assess the accuracy and effectiveness of the models.
 
-### Connect with Me
+Root Mean Square Error (RMSE) is a commonly used metric that measures the difference between the predicted and actual ratings. It is particularly useful for gauging how close the model's predictions are to the true ratings.
 
-If you're interested in learning more about my work or discussing potential opportunities, please connect with me on [LinkedIn](#) or [GitHub](#). Let's create something amazing together!
+    from sklearn.metrics import mean_squared_error
+
+    # Calculating RMSE
+    def rmse(predicted_ratings, true_ratings):
+        predicted_flat = predicted_ratings[true_ratings.nonzero()].flatten()
+        true_flat = true_ratings[true_ratings.nonzero()].flatten()
+        return np.sqrt(mean_squared_error(predicted_flat, true_flat))
+
+    user_based_rmse = rmse(predicted_ratings, user_item_matrix.values)
+    item_based_rmse = rmse(item_predicted_ratings, user_item_matrix.values)
+
+    print(f'User-Based CF RMSE: {user_based_rmse}')
+    print(f'Item-Based CF RMSE: {item_based_rmse}')
+
+The RMSE values for both user-based and item-based collaborative filtering provide a quantitative measure of the model’s accuracy. Lower RMSE values indicate better predictive performance.
+
+Precision-at-K measures the proportion of recommended items in the top-K that are relevant. This metric is useful for understanding the model's ability to recommend relevant items among the top-K predictions.
+
+    def precision_at_k(predictions, k, threshold):
+        top_k = predictions.argsort()[:, -k:]
+        hits = (top_k >= threshold).sum(axis=1)
+        return hits.mean()
+
+    precision_user_based = precision_at_k(predicted_ratings, k=5, threshold=3.5)
+    precision_item_based = precision_at_k(item_predicted_ratings, k=5, threshold=3.5)
+
+    print(f'User-Based CF Precision@K: {precision_user_based}')
+    print(f'Item-Based CF Precision@K: {precision_item_based}')
+
+Precision-at-K gives a practical measure of how many of the top-K recommendations are relevant, offering insight into the effectiveness of the recommendation system in a real-world setting.
+
+The precision-recall curve provides a graphical representation of the trade-off between precision and recall for different threshold values. It helps in visualizing the effectiveness of the recommendation system in identifying relevant items.
+
+    from sklearn.metrics import precision_recall_curve
+
+    y_true = user_item_matrix.values.flatten()
+    y_scores = predicted_ratings.flatten()
+
+    precision, recall, thresholds = precision_recall_curve(y_true, y_scores)
+
+    plt.figure(figsize=(8, 6))
+    plt.plot(recall, precision, marker='.')
+    plt.title('Precision-Recall Curve')
+    plt.xlabel('Recall')
+    plt.ylabel('Precision')
+    plt.show()
+
+<figure class="align-center">
+  <img src="/assets/images/movie_recommendation/precision_recall_curve.png" alt="Precision-Recall Curve" style="width:80%;">
+  <figcaption>Precision-Recall Curve</figcaption>
+</figure>
+
+The precision-recall curve illustrates the balance between precision and recall across different thresholds. A higher area under the curve (AUC) indicates a better-performing model.
+
+### Conclusion
+
+This project demonstrates the development of a recommendation system using advanced collaborative filtering techniques. From data preprocessing to model evaluation, each step is meticulously crafted to ensure the recommendation system performs optimally in predicting user preferences.
+
+By exploring both user-based and item-based collaborative filtering, I gained insights into the strengths and weaknesses of each approach. The detailed code snippets and visualizations provided in this post illustrate the systematic approach taken to build, evaluate, and optimize the recommendation system.
+
+I look forward to applying these skills in a professional setting, where I can contribute to developing data-driven solutions that enhance user experiences and drive business value.

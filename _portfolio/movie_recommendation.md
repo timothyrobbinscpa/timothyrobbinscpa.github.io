@@ -1,82 +1,96 @@
 ---
-title: "Building Robust Recommendation Systems: A Data Science Approach"
-date: 2024-05-28
-published: false  # temporarily suppress project for appearing on website
+title: "Building a Robust Recommendation System Using Collaborative Filtering"
+date: 2024-04-01
 layout: single
 classes: wide
-published: false  # temporarily suppress project for appearing on website
 author_profile: true
-read_time: false
-comments: false
+read_time: true
+comments: true
+toc: false
+toc_sticky: true
 header:
-  teaser: /assets/images/recommendation_systems/recommendation_system_splash.webp
-excerpt: "Discover how advanced data science techniques can create powerful recommendation systems for personalized user experiences."
+  teaser: /assets/images/fraud_detection/fraud_detection_splash.webp
+excerpt: "A concise overview of a project focused on developing a recommendation system using collaborative filtering techniques."
+categories:
+  - Data Science
+tags:
+  - Recommendation Systems
+  - Collaborative Filtering
+  - Python
+  - Data Science Projects
+featured: false
 ---
 
-![Recommendation System Image](/assets/images/recommendation_systems/recommendation_system_splash.webp)
+### Introduction
 
-## Introduction
+In today’s data-driven world, personalized recommendations have become a cornerstone of user experience. This project involved developing a recommendation system using collaborative filtering techniques to predict user preferences based on historical data. Leveraging my extensive experience in accounting and data analysis, I aimed to create a system that could enhance user engagement across various platforms.
 
-In today's data-driven world, recommendation systems are crucial for enhancing user experiences across various platforms. With a solid foundation in data science and extensive experience in accounting and revenue management, I have developed a sophisticated hybrid recommendation system. This project highlights my technical skills in data analysis, machine learning, and algorithm development, aimed at providing personalized movie recommendations.
+### Project Objectives
 
-## Overview
+The primary goal of this project was to build a recommendation system that accurately predicts user preferences, enabling personalized experiences in e-commerce, content streaming, and other domains. The focus was on employing collaborative filtering techniques to analyze user-item interactions and generate relevant recommendations.
 
-The goal of this project is to develop a recommendation system that integrates both collaborative filtering (CF) and content-based filtering (CBF) techniques. By leveraging my expertise in data science and my proficiency in Python, I have built a robust system that delivers highly accurate and relevant recommendations.
+### Dataset Overview
 
-## Technologies and Tools Used
+The dataset used for this project consisted of user ratings for various movies, including information on user IDs, movie IDs, ratings, and genres. The data was sourced from a well-known movie rating dataset, which provided a robust foundation for building the recommendation system.
 
-- **Python**: For data manipulation, machine learning, and automation.
+### Technologies and Tools Used
+
+The project utilized a variety of tools and technologies, including:
+
+- **Python**: For data processing, analysis, and model building.
 - **Pandas and NumPy**: For data manipulation and numerical operations.
-- **Matplotlib**: For data visualization.
-- **Surprise Library**: For collaborative filtering algorithms.
-- **SQL**: For data extraction and manipulation.
+- **Scikit-Learn**: For implementing machine learning algorithms and evaluation metrics.
+- **Seaborn and Matplotlib**: For data visualization and generating insightful plots.
+- **Cosine Similarity**: For calculating user and item similarities in collaborative filtering.
+- **Jupyter Notebook**: For interactive coding and documentation.
 
-## Project Highlights
+### Analysis and Methodology
 
-### Data Loading and Preprocessing
+The analysis began with thorough data preprocessing, including handling missing values and preparing the user-item matrix. Collaborative filtering techniques, both user-based and item-based, were employed to calculate similarities and predict user ratings.
 
-- **Data Integration**: Loaded and preprocessed movie and ratings datasets, merging them for a comprehensive view of user interactions.
-- **Feature Engineering**: Extracted release years from titles, one-hot encoded genres, and normalized features for better performance.
+Key steps included:
 
-### Time Decay and Normalization
+- **User Similarity Calculation**: Using cosine similarity to identify users with similar preferences.
+- **Item Similarity Calculation**: Identifying items that are frequently rated similarly by users.
+- **Rating Prediction**: Leveraging the similarity matrices to predict how a user might rate an unseen item.
 
-- **Time Decay Application**: Applied time decay to ratings, prioritizing recent interactions for more relevant recommendations.
-- **Score Normalization**: Ensured consistency in scores, normalizing them to a 0.5-5.0 scale for fair comparison.
+One of the initial visualizations helped in understanding the popularity of movies based on user ratings:
 
-### Collaborative Filtering
+<figure class="align-center">
+  <img src="/assets/images/movie_recommendation/top_movies.png" alt="Top 10 Movies by Number of Ratings" style="width:80%;">
+  <figcaption>Top 10 Movies by Number of Ratings</figcaption>
+</figure>
 
-- **Algorithm**: Utilized SVD (Singular Value Decomposition) for collaborative filtering.
-- **Hyperparameter Tuning**: Employed GridSearchCV for optimal model parameters.
-- **Evaluation Metrics**: Assessed model performance using RMSE, MAE, and additional metrics such as precision, recall, and F1 score.
+This bar plot highlights the top 10 movies based on the number of ratings they received, providing insight into which movies are most frequently interacted with by users.
 
-### Content-Based Filtering
+### Actionable Strategies and Key Insights
 
-- **Cosine Similarity**: Calculated similarity between items based on feature vectors.
-- **Hybrid Scoring**: Combined CF and CBF scores using a weighted sum to generate final recommendations.
+The recommendation system successfully identified patterns in user behavior, allowing for personalized recommendations that are likely to align with user preferences. The system’s ability to predict ratings based on similar users or items makes it adaptable to various applications, from product recommendations in e-commerce to content suggestions in streaming services.
 
-### Evaluation and Results
+An important part of evaluating the recommendation system was the precision-recall curve:
 
-- **Outlier Detection**: Identified and managed outliers to maintain recommendation accuracy.
-- **Comprehensive Evaluation**: Evaluated model using hit rate, mean reciprocal rank (MRR), and average precision at K (AP@K).
+<figure class="align-center">
+  <img src="/assets/images/movie_recommendation/precision_recall_curve.png" alt="Precision-Recall Curve" style="width:80%;">
+  <figcaption>Precision-Recall Curve</figcaption>
+</figure>
 
-## Results
+This curve provides a graphical representation of the trade-off between precision and recall, offering valuable insights into the system's performance in identifying relevant items.
 
-- **Model Performance**: Achieved competitive RMSE and MAE scores, indicating high accuracy in predicted ratings.
-- **Comparison with Industry Standards**: Evaluated model metrics against industry benchmarks, demonstrating superior performance in several areas.
-- **Visualization**: Plotted distributions of scores before and after normalization, providing insights into the effectiveness of the normalization process.
+### Challenges and Learning Experiences
 
-## Conclusion
+One of the significant challenges was handling the large and sparse user-item matrix, which required careful manipulation to avoid overfitting and ensure meaningful recommendations. Additionally, balancing the trade-offs between precision and recall during model evaluation was a complex task that necessitated iterative testing and refinement.
 
-This project showcases my ability to design and implement sophisticated recommendation systems using advanced data science techniques. Through careful preprocessing, feature engineering, and model evaluation, I created a robust hybrid recommendation system that can significantly enhance user experiences by providing highly relevant movie recommendations. My goal is to leverage these skills to contribute to innovative projects and drive impactful solutions in the field of data science.
+This project allowed me to deepen my understanding of recommendation systems and the critical role of data quality in building effective models. It also provided an opportunity to apply advanced machine learning techniques in a real-world context, leading to significant personal and professional growth.
 
-## Detailed Analysis and Technical Breakdown
+### Reflections and Looking Ahead
 
-For a comprehensive analysis and a detailed breakdown, including code and visuals, view the project notebook on [NBViewer](https://nbviewer.org/github/yourusername/yourrepo/blob/master/notebooks/customer_churn_analysis.ipynb).
+The recommendation system developed in this project has the potential to be applied across various industries, where personalized user experiences are key to customer retention and satisfaction. Future enhancements could include integrating more advanced algorithms, such as deep learning-based recommendation systems, and incorporating contextual data to improve the relevance and timeliness of recommendations.
 
----
+### Discover the Full Story
 
-Feel free to reach out to me via [email](mailto:your-email@example.com) or connect with me on [LinkedIn](https://www.linkedin.com/in/your-profile).
+Explore the comprehensive analysis and dive deeper into the data, methodology, and insights by visiting the detailed project page [here](#).
 
----
+### Explore the Technical Journey
 
-Thank you for exploring my portfolio! I look forward to connecting with you to discuss potential opportunities and collaborations.
+For those interested in the technical details, including the complete code and methodologies, view the project notebook on NBViewer [here](#).
+
