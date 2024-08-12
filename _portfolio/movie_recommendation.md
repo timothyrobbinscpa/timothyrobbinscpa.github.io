@@ -1,16 +1,12 @@
 ---
 title: "Building a Robust Recommendation System Using Collaborative Filtering"
-date: 2024-04-01
+date: 2024-08-01
 layout: single
 classes: wide
 author_profile: true
-read_time: true
-comments: true
-toc: false
-toc_sticky: true
 header:
-  teaser: /assets/images/fraud_detection/fraud_detection_splash.webp
-excerpt: "A concise overview of a project focused on developing a recommendation system using collaborative filtering techniques."
+  teaser: /assets/images/movie_recommentation/movie_recommendation_graphic.webp
+excerpt: "Explore how advanced collaborative filtering powers personalized recommendations, enhancing user engagement and transforming digital experiences."
 categories:
   - Data Science
 tags:
@@ -21,7 +17,6 @@ tags:
 published: false
 featured: false
 ---
-
 ### Introduction
 
 In today’s data-driven world, personalized recommendations have become a cornerstone of user experience. This project involved developing a recommendation system using collaborative filtering techniques to predict user preferences based on historical data. Leveraging my extensive experience in accounting and data analysis, I aimed to create a system that could enhance user engagement across various platforms.

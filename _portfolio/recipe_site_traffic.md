@@ -1,11 +1,13 @@
 ---
 title: "Predicting Popular Recipes: A Comprehensive Data Science Approach"
 date: 2024-08-08
-permalink: /recipe-post-summary/
-toc: false
-toc_sticky: true
+author_profile: true
+# permalink: /recipe-post-summary/
 layout: single
 classes: wide
+header:
+ # teaser: 
+excerpt: "Explore how I combined data analytics with machine learning to drive user engagement and improve digital content strategies."
 categories:
   - Data Science
   - Predictive Modeling
@@ -15,6 +17,7 @@ tags:
   - Predictive Modeling
   - Jupyter Notebook
 published: false
+featured: false
 ---
 
 ### Introduction

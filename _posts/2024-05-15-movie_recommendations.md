@@ -5,8 +5,6 @@ date: 2024-08-11
 layout: single
 classes: wide
 author_profile: true
-read_time: true
-comments: true
 toc: false
 toc_sticky: true
 header:
@@ -22,6 +20,7 @@ tags:
 published: false
 featured: false
 ---
+## Introduction
 
 In this project, I developed a recommendation system using collaborative filtering techniques. The primary objective was to predict user preferences based on historical interaction data, a crucial task for personalizing user experiences in various applications such as e-commerce, streaming services, and more. This post guides you through the entire process, from data preprocessing and model building to evaluation, with a detailed walkthrough of each step and relevant code snippets.
 
