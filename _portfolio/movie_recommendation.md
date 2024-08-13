@@ -5,7 +5,7 @@ layout: single
 classes: wide
 author_profile: true
 header:
-  teaser: /assets/images/movie_recommentation/movie_recommendation_graphic.webp
+  teaser: /assets/images/movie_recommendation/movie_recommendation_graphic.webp
 excerpt: "Explore how advanced collaborative filtering powers personalized recommendations, enhancing user engagement and transforming digital experiences."
 categories:
   - Data Science
@@ -14,79 +14,65 @@ tags:
   - Collaborative Filtering
   - Python
   - Data Science Projects
-published: false
+published: true
 featured: false
 ---
-### Introduction
+## Introduction
 
-In today’s data-driven world, personalized recommendations have become a cornerstone of user experience. This project involved developing a recommendation system using collaborative filtering techniques to predict user preferences based on historical data. Leveraging my extensive experience in accounting and data analysis, I aimed to create a system that could enhance user engagement across various platforms.
+In this project, I developed a robust recommendation system utilizing collaborative filtering techniques. The system was designed to predict user preferences based on historical interaction data, aiming to enhance personalized user experiences across various platforms, including e-commerce and streaming services.
 
-### Project Objectives
+## Project Objectives
 
-The primary goal of this project was to build a recommendation system that accurately predicts user preferences, enabling personalized experiences in e-commerce, content streaming, and other domains. The focus was on employing collaborative filtering techniques to analyze user-item interactions and generate relevant recommendations.
+The main objective of this project was to create an effective recommendation system capable of accurately predicting user preferences. The system had to perform well across multiple metrics and align with industry standards for accuracy, precision, and recall.
 
-### Dataset Overview
+## Dataset Overview
 
-The dataset used for this project consisted of user ratings for various movies, including information on user IDs, movie IDs, ratings, and genres. The data was sourced from a well-known movie rating dataset, which provided a robust foundation for building the recommendation system.
+The project used a dataset containing user ratings and movie metadata. This dataset was crucial for building and validating the recommendation models. Data preprocessing steps included handling missing values and creating a user-item matrix to facilitate collaborative filtering.
 
-### Technologies and Tools Used
+## Technologies and Tools Used
 
-The project utilized a variety of tools and technologies, including:
+- **Programming Language:** Python
+- **Libraries:** Pandas, NumPy, Scikit-learn, Seaborn, Matplotlib
+- **Techniques:** Collaborative Filtering (User-Based and Item-Based)
 
-- **Python**: For data processing, analysis, and model building.
-- **Pandas and NumPy**: For data manipulation and numerical operations.
-- **Scikit-Learn**: For implementing machine learning algorithms and evaluation metrics.
-- **Seaborn and Matplotlib**: For data visualization and generating insightful plots.
-- **Cosine Similarity**: For calculating user and item similarities in collaborative filtering.
-- **Jupyter Notebook**: For interactive coding and documentation.
+## Analysis and Methodology
 
-### Analysis and Methodology
+The methodology revolved around collaborative filtering techniques, both user-based and item-based. These techniques leverage the similarity between users or items to predict preferences. Data preprocessing was a critical step, ensuring that the dataset was clean and suitable for model building. The analysis included visualizing data distribution, building similarity matrices, and evaluating model performance against industry standards.
 
-The analysis began with thorough data preprocessing, including handling missing values and preparing the user-item matrix. Collaborative filtering techniques, both user-based and item-based, were employed to calculate similarities and predict user ratings.
-
-Key steps included:
-
-- **User Similarity Calculation**: Using cosine similarity to identify users with similar preferences.
-- **Item Similarity Calculation**: Identifying items that are frequently rated similarly by users.
-- **Rating Prediction**: Leveraging the similarity matrices to predict how a user might rate an unseen item.
-
-One of the initial visualizations helped in understanding the popularity of movies based on user ratings:
-
-<figure class="align-center">
-  <img src="/assets/images/movie_recommendation/top_movies.png" alt="Top 10 Movies by Number of Ratings" style="width:80%;">
-  <figcaption>Top 10 Movies by Number of Ratings</figcaption>
+<figure>
+  <img src="/assets/images/movie_recommendation/user_similarity_matrix.png" alt="User Similarity Matrix" style="width:80%;">
+  <figcaption>Figure 1: The user similarity matrix, where darker shades indicate higher similarity between users, revealing clusters with similar preferences.</figcaption>
 </figure>
 
-This bar plot highlights the top 10 movies based on the number of ratings they received, providing insight into which movies are most frequently interacted with by users.
+The user similarity matrix was a key component in user-based collaborative filtering, identifying clusters of users with similar preferences. This matrix informed the system's ability to make personalized recommendations.
 
-### Actionable Strategies and Key Insights
-
-The recommendation system successfully identified patterns in user behavior, allowing for personalized recommendations that are likely to align with user preferences. The system’s ability to predict ratings based on similar users or items makes it adaptable to various applications, from product recommendations in e-commerce to content suggestions in streaming services.
-
-An important part of evaluating the recommendation system was the precision-recall curve:
-
-<figure class="align-center">
-  <img src="/assets/images/movie_recommendation/precision_recall_curve.png" alt="Precision-Recall Curve" style="width:80%;">
-  <figcaption>Precision-Recall Curve</figcaption>
+<figure>
+  <img src="/assets/images/movie_recommendation/industry_standards.png" alt="Comparison to Industry Standards" style="width:80%;">
+  <figcaption>Figure 2: A comparison of model metrics to industry standards, showcasing how the recommendation system performs in areas such as RMSE, MAE, Precision, Recall, and F1 Score.</figcaption>
 </figure>
 
-This curve provides a graphical representation of the trade-off between precision and recall, offering valuable insights into the system's performance in identifying relevant items.
+The comparison to industry standards provided critical insights into the system's effectiveness, ensuring that the model's performance was competitive with leading recommendation systems.
 
-### Challenges and Learning Experiences
+## Actionable Strategies and Key Insights
 
-One of the significant challenges was handling the large and sparse user-item matrix, which required careful manipulation to avoid overfitting and ensure meaningful recommendations. Additionally, balancing the trade-offs between precision and recall during model evaluation was a complex task that necessitated iterative testing and refinement.
+Key insights from this project include:
 
-This project allowed me to deepen my understanding of recommendation systems and the critical role of data quality in building effective models. It also provided an opportunity to apply advanced machine learning techniques in a real-world context, leading to significant personal and professional growth.
+- **Optimization Opportunities:** The low catalog coverage suggests a need to explore and recommend a broader range of items to improve user satisfaction.
+- **Enhancing Novelty:** The high average novelty score highlights the system's effectiveness in introducing lesser-known items to users, which can drive content discovery.
+- **Improving Intra-List Diversity:** Enhancing diversity within recommendation lists can reduce redundancy and offer users a more varied selection.
 
-### Reflections and Looking Ahead
+## Challenges and Learning Experiences
 
-The recommendation system developed in this project has the potential to be applied across various industries, where personalized user experiences are key to customer retention and satisfaction. Future enhancements could include integrating more advanced algorithms, such as deep learning-based recommendation systems, and incorporating contextual data to improve the relevance and timeliness of recommendations.
+This project presented several challenges, including managing large datasets, addressing data sparsity, and optimizing model performance. My background in accounting and data analysis was instrumental in overcoming these challenges, particularly in data handling and preprocessing.
 
-### Discover the Full Story
+## Reflections and Looking Ahead
+
+Reflecting on this project, I am pleased with the system's performance across multiple key metrics. Moving forward, there are opportunities to incorporate additional data and explore advanced techniques, such as deep learning-based recommendation algorithms, to further enhance the system's accuracy and personalization capabilities.
+
+## Discover the Full Story
 
 Explore the comprehensive analysis and dive deeper into the data, methodology, and insights by visiting the detailed project page [here](#).
 
-### Explore the Technical Journey
+## Explore the Technical Journey
 
 For those interested in the technical details, including the complete code and methodologies, view the project notebook on NBViewer [here](#).
-
