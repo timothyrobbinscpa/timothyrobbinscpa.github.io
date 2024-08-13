@@ -1,6 +1,6 @@
 ---
 title: "Predicting Popular Recipes: A Comprehensive Data Science Approach"
-date: 2024-08-08
+date: 2024-01-10
 permalink: /recipe-post/
 toc: false
 toc_sticky: true
@@ -17,7 +17,7 @@ tags:
   - Python
   - Predictive Modeling
   - Jupyter Notebook
-published: false
+published: true
 featured: false
 ---
 

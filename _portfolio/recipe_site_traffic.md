@@ -6,7 +6,7 @@ author_profile: true
 layout: single
 classes: wide
 header:
- # teaser: 
+  teaser:  /assets/images/recipe_traffic/recipe_thumbnail.avif 
 excerpt: "Explore how I combined data analytics with machine learning to drive user engagement and improve digital content strategies."
 categories:
   - Data Science
@@ -16,7 +16,7 @@ tags:
   - Python
   - Predictive Modeling
   - Jupyter Notebook
-published: false
+published: true
 featured: false
 ---
 
