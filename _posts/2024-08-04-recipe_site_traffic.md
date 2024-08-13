@@ -7,7 +7,7 @@ toc_sticky: true
 layout: single
 classes: wide
 header:
- # teaser: /assets/images/movie_recommentation/movie_recommendation_graphic.webp
+  teaser: /assets/images/recipe_traffic/recipe_thumbnail.avif 
 excerpt: "Explore how I combined data analytics with machine learning to drive user engagement and improve digital content strategies."
 categories:
   - Data Science
