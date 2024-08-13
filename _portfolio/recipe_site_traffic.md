@@ -52,11 +52,6 @@ To understand the spread and skewness of the nutritional content within the reci
 **Correlation Analysis:**  
 I then analyzed the correlations between the nutritional variables and the high-traffic indicator. The correlation matrix highlighted that while most correlations were weak, there was a noticeable positive correlation between calories and protein. This insight suggested that these variables might independently influence whether a recipe becomes popular.
 
-<figure>
-  <img src="/assets/images/recipe_traffic/correlation_matrix.png" alt="Correlation Matrix of Numeric Variables">
-  <figcaption style="text-align:left;"><em>Figure 2: Correlation matrix of numeric variables showing relationships between nutritional content and the high-traffic indicator.</em></figcaption>
-</figure>
-
 **Model Selection and Evaluation:**  
 Based on the insights gained from the EDA, I selected Random Forest and Gradient Boosting models for their ability to handle large, complex datasets. These models were fine-tuned using cross-validation, and their performance was assessed using precision, recall, and F1 scores.
 
