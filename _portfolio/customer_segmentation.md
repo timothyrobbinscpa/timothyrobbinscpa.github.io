@@ -1,6 +1,7 @@
 ---
 title: "Boosting Profitability with Strategic Customer Segmentation"
 date: 2024-01-31
+permalink: /segmentation_portfolio/
 layout: single
 classes: wide
 author_profile: true
@@ -17,6 +18,7 @@ tags:
   - Python
   - Data Visualization
   - Business Strategy
+featured: true
 ---
 ## Introduction
 

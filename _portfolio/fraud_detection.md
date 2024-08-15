@@ -1,6 +1,7 @@
 ---
 title: "Machine Learning for Advanced Fraud Detection"
 date: 2024-02-29
+permalink: /fraud-portfolio/
 layout: single
 classes: wide
 author_profile: true
@@ -18,6 +19,8 @@ tags:
   - Neural Networks
   - Random Forest
   - Class Imbalance
+featured: true
+
 ---
 ## Overview
 

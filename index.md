@@ -1,28 +1,56 @@
 ---
 layout: splash
-classes: wide
-title: "Tim Robbins: Bridging the Gap between Finance and Data Science"
+title: "Tim Robbins: Bridging the GAP between Finance and Data Science"
 header:
-  image: /assets/images/home_page/data_science_finance.jpg
+  overlay_color: "#333"
   overlay_image: /assets/images/home_page/data_science_finance.jpg
-  overlay_filter: 0.3
-excerpt: '<span style="color: white; text-shadow: 2px 2px 8px rgba(0,0,0,0.6);">Empowering data-driven decisions in finance and beyond.</span>'
-author_profile: false
-pagination:
-  enabled: true
+  overlay_filter: 0.7
+  cta_label: "View My Portfolio"
+  cta_url: /portfolio/
+  cta_classes: "button button-primary"
+  # actions:
+  #  - label: "Download My Resume"
+  #    url: "#resume-placeholder"
+  #    class: "button button-outline"
+excerpt: "Empowering data-driven decisions with a unique blend of finance and data science expertise."
 ---
 
-As a Data Scientist with a robust background in finance, I specialize in leveraging advanced analytics to solve complex business problems. My journey from a CPA to a data scientist has equipped me with unique insights into the financial industry's data needs.
+## About Me
+I’m Tim Robbins, a data scientist with a rich background in finance. My transition from a CPA to a data scientist has allowed me to develop a unique perspective on financial data, helping businesses make informed, data-driven decisions. I specialize in leveraging machine learning and advanced analytics to solve complex business problems.
 
-## Professional Highlights
-- **Data Science Expertise**: Proficient in Python, R, SQL, Tableau, and machine learning techniques, including regression analysis, clustering, and neural networks.
-- **Technical Proficiencies**: Experienced in applying data science methodologies to optimize processes, improve decision-making, and drive strategic initiatives.
-- **Career Evolution**: Transitioned from a successful career in revenue accounting to focus on data science, bringing a deep understanding of financial data analysis.
+## Data Science Certification
+**Certified Data Science Professional in Python**  
+*DataCamp - March 2024*  
+This certification, which is equivalent to 2 years of Python programming experience, validates my proficiency in Python for data science, including hands-on experience with key tools and techniques in the field. This certification marks my formal transition into data science, building upon my extensive experience in finance and accounting.
 
-## Explore My Work
-- **[Portfolio](/portfolio/)**: A showcase of projects demonstrating practical applications of data science across various sectors.
-- **[Detailed Projects](/posts/)**: In-depth case studies and discussions on data-driven solutions in business contexts.
-- **[About Me](/about/)**: A narrative of my career evolution and key experiences that shaped my expertise.
+## Featured Projects
+<div class="projects-grid">
+  {% for post in site.portfolio %}
+    {% if post.featured %}
+      <div class="project-item">
+        <a href="{{ post.url }}" class="image-effect-container">
+          <img src="{{ post.header.teaser | default: '/assets/images/placeholder.jpg' }}" alt="{{ post.title }}">
+          <div class="overlay">
+            <h3>{{ post.title }}</h3>
+          </div>
+        </a>
+        <p>{{ post.excerpt }}</p>
+      </div>
+    {% endif %}
+  {% endfor %}
+</div>
 
-## Get in Touch
-- **[Contact Me](/contact/)**: Open to new opportunities where I can leverage my data science skills to contribute to business success.
+## Contact Me
+<div class="contact-form">
+  <form action="https://formspree.io/f/xrbzlpdq" method="POST">
+    <label for="name">Your Name:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">Your Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="message">Your Message:</label>
+    <textarea id="message" name="message" rows="5" required></textarea>
+
+    <button type="submit">Send</button>
+  </form>

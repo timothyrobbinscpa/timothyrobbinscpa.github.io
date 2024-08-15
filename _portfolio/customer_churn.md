@@ -1,6 +1,7 @@
 ---
 title: "Turning the Tide on Customer Churn"
 date: 2024-03-31
+permalink: /churn-portfolio/
 author_profile: true
 layout: single
 classes: wide
@@ -13,6 +14,7 @@ tags:
 header:
   teaser: /assets/images/customer_churn/download (1).jfif
 excerpt: "Discover how advanced data science techniques effectively tackle customer churn, significantly enhancing business sustainability and customer loyalty."
+featured: true
 ---
 ## Unveiling Churn Dynamics: A Data-Driven Exploration
 With extensive experience in assessing the impact of customer churn on revenue and accounts receivable, I leveraged Python to dissect and analyze complex patterns of customer churn. My Master's in Data Science further enabled me to transform these detailed analyses into actionable insights for reducing churn and enhancing customer retention strategies.
