@@ -1,8 +1,8 @@
 ---
 layout: splash
-title: "Tim Robbins: Bridging the GAP between Finance and Data Science"
+title: "Empowering data-driven decisions with a unique blend of finance and data science expertise."
 header:
-  overlay_color: "#333"
+  overlay_color: "#555"
   overlay_image: /assets/images/home_page/data_science_finance.jpg
   overlay_filter: 0.7
   cta_label: "View My Portfolio"
@@ -12,16 +12,20 @@ header:
   #  - label: "Download My Resume"
   #    url: "#resume-placeholder"
   #    class: "button button-outline"
-excerpt: "Empowering data-driven decisions with a unique blend of finance and data science expertise."
+# excerpt: "Empowering data-driven decisions with a unique blend of finance and data science expertise."
 ---
-
 ## About Me
 I’m Tim Robbins, a data scientist with a rich background in finance. My transition from a CPA to a data scientist has allowed me to develop a unique perspective on financial data, helping businesses make informed, data-driven decisions. I specialize in leveraging machine learning and advanced analytics to solve complex business problems.
 
-## Data Science Certification
-**Certified Data Science Professional in Python**  
-*DataCamp - March 2024*  
-This certification, which is equivalent to 2 years of Python programming experience, validates my proficiency in Python for data science, including hands-on experience with key tools and techniques in the field. This certification marks my formal transition into data science, building upon my extensive experience in finance and accounting.
+### Data Science Certification
+In March 2024, I earned the **Certified Data Science Professional in Python** certification from DataCamp. This certification, equivalent to 2 years of Python programming experience, validates my proficiency in Python for data science, including hands-on experience with key tools and techniques in the field. It marks my formal transition into data science, building upon my extensive experience in finance and accounting.
+
+Combining my deep understanding of finance with my data science expertise, I bring a unique skill set that enables me to bridge the gap between these two critical areas, ultimately driving value through data-driven insights and strategies.
+
+## Explore My Work
+- **[Portfolio Projects](/portfolio/)**: A showcase of projects demonstrating practical applications of data science across various sectors.
+- **[Detailed Projects](/posts/)**: In-depth case studies and discussions on data-driven solutions in business contexts.
+- **[About Me](/about/)**: A narrative of my career evolution and key experiences that shaped my expertise.
 
 ## Featured Projects
 <div class="projects-grid">
