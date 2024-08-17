@@ -1,5 +1,5 @@
 ---
-title: "Advanced Fraud Detection with Machine Learning: A Detailed Case Study"
+title: "Machine Learning for Advanced Fraud Detection"
 permalink: /fraud-detection-post/
 date: 2024-04-01
 layout: single

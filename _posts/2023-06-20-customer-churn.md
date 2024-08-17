@@ -1,5 +1,5 @@
 ---
-title: "Decoding Customer Churn: A Data Science Journey in the Telecom Industry."
+title: "Turning the Tide on Customer Churn"
 permalink: /customer-churn-post/
 toc: false
 toc_sticky: true

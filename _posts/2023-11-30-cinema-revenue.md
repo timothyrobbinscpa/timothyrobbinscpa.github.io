@@ -2,7 +2,7 @@
 layout: single
 classes: wide
 permalink: /cinema-revenue-post/
-title: "Unveiling Key Drivers of Cinema Revenue: A Data Science Approach"
+title: "Unveiling the Secrets of Cinema Revenue Success"
 date: 2024-02-01
 categories: [Data Science, Entertainment]
 tags: [cinema revenue, machine learning, data analysis, Python, revenue management]

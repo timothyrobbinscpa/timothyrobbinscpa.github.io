@@ -1,7 +1,7 @@
 ---
 layout: single
 classes: wide
-title: "Unlocking Customer Insights: Clustering in Market Segmentation"
+title: "Boosting Profitability with Strategic Customer Segmentation"
 date: 2024-05-01
 permalink: /customer-segmentation-post/
 categories: [Data Science, Marketing]
