@@ -71,8 +71,8 @@ Reflecting on this project, I am pleased with the system's performance across mu
 
 ## Discover the Full Story
 
-Explore the comprehensive analysis and dive deeper into the data, methodology, and insights by visiting the detailed project page [here](#).
+Explore the comprehensive analysis and dive deeper into the data, methodology, and insights by visiting the detailed project page [here](/movie_recommendation-post/).
 
 ## Explore the Technical Journey
 
-For those interested in the technical details, including the complete code and methodologies, view the project notebook on NBViewer [here](#).
+For those interested in the technical details, including the complete code and methodologies, view the project notebook on NBViewer [here](https://nbviewer.org/github/timothyrobbinscpa/movie_recommendations/blob/master/src/movie_recommendations_FINAL_FINAL_FINAL.ipynb).

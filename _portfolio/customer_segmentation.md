@@ -77,5 +77,5 @@ Explore the detailed analysis [here](/customer-segmentation-post/).
 
 ## Explore the Technical Journey
 
-For more on the project, including detailed code snippets and visuals, visit the notebook on [NBViewer](https://nbviewer.org/github/timothyrobbinscpa/customer_segmentation/blob/master/src/customer_segmentation_FINAL_FINAL.ipynb).
+For more on the project, including detailed code snippets and visuals, visit the notebook on [NBViewer](https://nbviewer.org/github/timothyrobbinscpa/customer_segmentation/blob/master/src/customer_segmentation_FINAL_FINAL_FINAL.ipynb).
 
