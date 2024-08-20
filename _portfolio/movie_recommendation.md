@@ -1,6 +1,7 @@
 ---
 title: "Building a Robust Recommendation System Using Collaborative Filtering"
 date: 2024-08-01
+permalink: /movie-portfolio/
 layout: single
 classes: wide
 author_profile: true

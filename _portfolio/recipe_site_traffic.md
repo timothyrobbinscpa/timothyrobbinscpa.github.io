@@ -1,6 +1,7 @@
 ---
 title: "Predicting Popular Recipes: A Comprehensive Data Science Approach"
 date: 2024-08-08
+permalink: /recipe-portfolio/
 author_profile: true
 layout: single
 classes: wide
