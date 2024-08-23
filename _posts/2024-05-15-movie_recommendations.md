@@ -218,10 +218,6 @@ Looking ahead, there are several areas where this project could be expanded:
   
 - **Exploring Advanced Techniques:** Implementing deep learning-based recommendation algorithms could further improve the accuracy and personalization of the recommendations, potentially offering even greater value to users.
 
-### Discover the Full Story
-
-Explore the comprehensive analysis and dive deeper into the data, methodology, and insights by visiting the detailed project page [here](#).
-
 ### Explore the Technical Journey
 
-For those interested in the technical details, including the complete code and methodologies, view the project notebook on NBViewer [here](#).
+For those interested in the technical details, including the complete code and methodologies, view the project notebook on NBViewer [here](https://nbviewer.org/github/timothyrobbinscpa/movie_recommendations/blob/master/src/movie_recommendations_UPDATED_FINAL.ipynb?flush_cache=true).

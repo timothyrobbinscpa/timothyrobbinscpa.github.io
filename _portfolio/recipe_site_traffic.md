@@ -75,7 +75,7 @@ One of the key challenges was transitioning from a long-standing career in accou
 This project marked a significant milestone in my data science journey. It showcased my ability to leverage past experience in a new domain and apply advanced predictive modeling to solve real-world business problems. Looking ahead, I am excited to explore more complex datasets and advanced techniques, including deep learning and ensemble models, to drive even more impactful insights and business solutions.
 
 ### Discover the Full Story
-Explore the comprehensive analysis and dive deeper into the data, methodology, and insights by visiting the detailed project page [here](/recipe-post/)
+Explore the comprehensive analysis and dive deeper into the data, methodology, and insights by visiting the detailed project page [here](/recipe-post/).
 
 ### Explore the Technical Journey
-For those interested in the technical details, including the complete code and methodologies, view the project notebook on NBViewer: [Explore the Notebook](https://nbviewer.org/github/timothyrobbinscpa/recipe_analysis/blob/master/src/recipe_prediction_FINAL.ipynb).
+For those interested in the technical details, including the complete code and methodologies, view the project notebook on NBViewer: [Explore the Notebook](https://nbviewer.org/github/timothyrobbinscpa/recipe_site_traffic/blob/main/src/recipe_site_traffic.ipynb?flush_cache=true).

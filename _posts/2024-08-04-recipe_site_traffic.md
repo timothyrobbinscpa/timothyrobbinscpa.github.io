@@ -217,5 +217,5 @@ Implementing machine learning for predicting popular recipes significantly enhan
 
 ## Discover the Full Story
 
-To explore the full analysis with all executed code, outputs, and visualizations, see [the complete notebook on NBViewer](https://nbviewer.org/github/timothyrobbinscpa/recipe_analysis/blob/master/src/recipe_site_traffic.ipynb).
+To explore the full analysis with all executed code, outputs, and visualizations, see [the complete notebook on NBViewer](https://nbviewer.org/github/timothyrobbinscpa/recipe_site_traffic/blob/main/src/recipe_site_traffic.ipynb?flush_cache=true).
 

@@ -155,4 +155,4 @@ Both clustering methods revealed distinct customer segments, each with unique ch
 By accurately mapping the clusters to their respective characteristics, tailored marketing strategies can be developed for each customer segment. This ensures that each segment receives personalized and relevant offers, enhancing customer satisfaction, increasing engagement, and driving revenue growth.
 
 
-To explore the full analysis with all executed code, outputs, and visualizations, see [the complete notebook on NBViewer](https://nbviewer.org/github/timothyrobbinscpa/customer_segmentation/blob/master/src/customer_segmentation_FINAL_FINAL.ipynb?flush_cache=true).
+To explore the full analysis with all executed code, outputs, and visualizations, see [the complete notebook on NBViewer](https://nbviewer.org/github/timothyrobbinscpa/customer_segmentation/blob/master/src/customer_segmentation_FINAL_FINAL_FINAL.ipynb?flush_cache=true).
