@@ -7,20 +7,22 @@ classes: wide
 author_profile: true
 read_time: false
 comments: false
-# header:
-  # teaser: /assets/images/fraud_detection/fraud_detection_splash.webp
-# excerpt: 
-tags:
-  - Machine Learning
-  - Data Science
-  - Fraud Detection
-  - Financial Analysis
-  - Python
-  - Neural Networks
-  - Random Forest
-  - Class Imbalance
-published: false
+header:
+  teaser: /assets/images/hotel_booking/hotel_thumbnail_4.webp
+excerpt: "In this project, I leverage advanced SQL to unlock powerful insights, optimize hotel pricing, and predict bookings for maximum impact."
+# tags:
+published: true
 featured: false
+categories:
+  - Data Science
+  - SQL
+  - Portfolio Projects
+tags:
+  - SQL
+  - Data Analysis
+  - Hotel Industry
+  - Pricing Strategy
+  - Predictive Analytics
 ---
 
 ## Project Overview
@@ -125,12 +127,6 @@ Another critical aspect of the analysis was understanding how lead times and boo
 
 This query revealed that bookings with shorter lead times tended to generate higher revenue and fewer changes, suggesting that last-minute pricing strategies could be beneficial.
 
-### Step 4: Visualization and Reporting
-
-To make the insights actionable, the data was visualized using Tableau, creating interactive dashboards that highlighted key trends and allowed stakeholders to explore the data dynamically.
-
-**Example Visualization**: A dashboard showing cancellation rates by booking channel and month, allowing hotel managers to identify peak periods of cancellations and adjust their strategies accordingly.
-
 ## Results and Insights
 
 The analysis provided several key insights:
@@ -148,8 +144,4 @@ This project demonstrates the power of SQL in transforming raw data into actiona
 
 ## Code and Documentation
 
-All the SQL queries, data import scripts, and related documentation are available in my [GitHub repository](https://github.com/yourusername/hotel-booking-analysis). This repository includes detailed instructions on how to reproduce the analysis and customize it for different datasets.
-
-## Interactive Dashboard
-
-Explore the interactive dashboard created in Tableau to visualize the key insights from this analysis. [View Dashboard](#).
+All the SQL queries, data import scripts, and related documentation are available in my [GitHub repository](https://github.com/timothyrobbinscpa/hotel-booking-analysis).
