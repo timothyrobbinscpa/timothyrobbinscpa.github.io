@@ -104,7 +104,7 @@ analytics:
 # Site Author
 author:
   name             : "Tim Robbins"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar           : "/assets/images/home_page/Cover.jpg"
   bio              : "A seasoned Data Scientist and CPA with 20+ years in Revenue Accounting. Master’s in Data Science, skilled in Python, R, SQL, and machine learning. Passionate about transforming data into actionable business strategies."
   location         : "Scottsdale, AZ"
 #  email            : "timothyrobbinscpa@gmail.com"
@@ -163,6 +163,8 @@ footer:
 # Reading Files
 include:
   - .htaccess
+  - assets/css/custom.css
+
 #  - _pages  - removed as is not a regular practice
 exclude:
   - "*.sublime-project"
@@ -232,6 +234,8 @@ sass:
 assets:
   css:
     - /assets/css/custom.css
+include:
+  - assets/css/custom.css
 
 # Outputting
 permalink: /:categories/:title/
