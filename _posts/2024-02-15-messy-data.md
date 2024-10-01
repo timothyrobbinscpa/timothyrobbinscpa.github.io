@@ -1,144 +1,191 @@
 ---
-title: "Data Cleaning: A Comprehensive Guide"
-permalink: /messy-data-post/
-date: 2024-01-01
-published: false
 layout: single
 classes: wide
+title: "Comprehensive Data Cleaning for Consistent and Reliable Analysis"
+date: 2024-10-01
+permalink: /data-cleaning-process/
+categories: [Data Science, Data Cleaning]
+tags: [data cleaning, pandas, Python, consistency, duplicates, standardization, visualizations]
 author_profile: true
-read_time: true
-comments: true
 toc: false
-toc_sticky: true
+toc_sticky: false
+read_time: true
 header:
-  teaser: /assets/images/messy_data_cleanup/messy_data_splash.webp
-excerpt: "A detailed project on cleaning the FIFA 21 dataset using Python."
-# last_modified_at: 2023-05-25T12:00:00-05:00
-categories:
-  - Data Science
-tags:
-  - data cleaning
-  - python
-  - pandas
+  teaser: /assets/images/messy_data_cleanupmessy_data_splash.webp
 featured: false
 ---
+
 ## Introduction
 
-Data cleaning is a crucial step in data analysis and machine learning, ensuring that the data is accurate, consistent, and usable. This guide walks through a detailed data cleaning process using Python, addressing common data issues and demonstrating best practices to prepare the dataset for analysis. The dataset, containing FIFA 21 player statistics scraped from sofifa.com, is messy and raw, presenting an excellent opportunity to learn about data cleaning. Problems include missing values, inconsistent data types, duplicates, and non-standard formats.
+Data cleaning is a critical first step in any data science project, and it becomes even more essential when working with large, complex datasets like the FIFA soccer dataset. This project is focused exclusively on the data cleaning process, ensuring that the dataset is ready for future use in analysis or modeling. The cleaning process involves addressing missing data, removing duplicates, and ensuring that all fields are formatted correctly and consistently.
 
-## Step-by-Step Data Cleaning Process
+## Leveraging Experience
 
-### Importing Necessary Libraries
+With over 25 years of experience in accounting, revenue recognition, and data science, my background has provided me with unique insights and skills that were integral to this project. My career transition from accounting into data science has been heavily supported by my technical expertise in Python, SQL, and data processing, enabling me to manage large datasets efficiently and ensure their quality for accurate analysis. Here are some specific ways in which my experience benefited this project:
 
-First, I imported essential libraries for data manipulation, numerical operations, and visualization.
+- **Data Integrity and Automation**: Having managed revenue and data systems for large software and SaaS companies, I have extensive experience implementing data governance and ensuring compliance with industry standards. This expertise translated seamlessly into ensuring that the data in this project was clean, accurate, and ready for analysis. My ability to automate processes using Python helped streamline the data cleaning tasks in this project, reducing manual intervention and improving overall efficiency.
+  
+- **Handling Complex Financial Data**: My long-standing experience in financial management, particularly with ERP systems and revenue recognition, has been crucial in handling and interpreting financial metrics such as `market_value_euros` and `weekly_wage_euros`. By applying my understanding of financial analysis to soccer player data, I ensured that key economic variables were processed correctly and that any missing or inconsistent values were properly addressed.
 
-### Loading the Dataset
-Next, I loaded the dataset into a pandas DataFrame. This allowed me to perform various operations and manipulations on the data.
+- **Technical Expertise in Data Science**: With a Master’s degree in Data Science and practical experience in machine learning and statistical modeling, I utilized advanced data manipulation techniques to clean and standardize this dataset. My proficiency in Python, including libraries such as `pandas` and `NumPy`, allowed me to efficiently identify and resolve data quality issues, such as missing values and duplicates, setting the foundation for deeper analysis and modeling.
 
-```python
-df = pd.read_csv('path_to_your_dataset.csv', low_memory=False)
-```
+## Overview of the Dataset
 
-### Initial Data Exploration
-I explored the dataset initially to understand its structure and the nature of the data. Checking the first few rows and getting a summary of the dataset, including data types and the presence of missing values, helped in identifying potential issues.
+The dataset comprises detailed statistics for thousands of soccer players, including:
 
-```python
-df.head()
-df.info()
-df.describe
-```
+- **Player Demographics**: Attributes such as nationality, height, weight, and age.
+- **Performance Metrics**: Player ratings, potential, and various performance-based metrics like dribbling, defending, and physicality ratings.
+- **Financial Metrics**: Market value in euros, weekly wages, and release clauses.
+- **Club Information**: Player team information, contract start/end dates, and loan status.
 
-### Handling Missing Values
-Missing values can significantly affect analysis and model performance. I identified columns with missing values and decided on an appropriate strategy to handle them. For instance, the loan_date_end column had many missing values, as not all players are on loan. The hits column, which might indicate popularity or performance metrics, had missing values that could skew analysis.
+The raw dataset contains inconsistencies, missing values, and duplicates that must be addressed before any meaningful analysis or modeling can be performed. This post details the entire cleaning process to ensure the data is ready for future use.
 
-```python
-missing_values = df.isnull().sum()
-print(missing_values)
-```
+## 1. Importing Libraries
 
-To handle missing values, I filled numerical columns with the mean and categorical columns with the mode. For more specific cases:
+Before starting the cleaning process, I first imported necessary libraries such as `pandas`, `numpy`, and others for data manipulation, and set pandas display options to ensure that all data rows and columns are visible for thorough inspection.
 
-```python
-df.fillna(df.mean(), inplace=True)
-df['Position'].fillna(df['Position'].mode()[0], inplace=True)
-df['loan_date_end'].fillna(method='bfill', inplace=True)
-df['hits'].fillna(df['hits'].median(), inplace=True)
-```
+    # Import libraries
+    import numpy as np
+    import pandas as pd
+    import matplotlib.pyplot as plt
+    import seaborn as sns
+    import re
 
-### Renaming Columns
-To standardize column names, I converted them to snake_case. This makes it easier to work with the data programmatically and ensures consistency.
+    # Set pandas options to display all rows and columns
+    pd.set_option('display.max_rows', None)
+    pd.set_option('display.max_columns', None)
 
-```python
-df.columns = [col.strip().replace(' ', '_').lower() for col in df.columns]
-```
+## 2. Reviewing and Handling Missing Values
 
-### Removing Duplicates
-Duplicate entries can skew analysis and lead to inaccurate results. I checked for duplicates and removed them to ensure each entry in the dataset was unique. Full and partial duplicates were removed based on specific columns like Name, Age, and club_name.
+### 2.1 Identifying Missing Data
 
-```python
-duplicates = df.duplicated().sum()
-print(f"Number of duplicate rows: {duplicates}")
+In this dataset, some key columns like `release_clause_amount_euros` and `loan_date_end` had missing values. This is a significant issue because missing values in important fields like `release_clause_amount_euros` could distort financial insights when analyzing players' market values.
 
-df.drop_duplicates(inplace=True)
-df = df.drop_duplicates(subset=['name', 'age', 'club_name'])
-```
+    # Check for missing values
+    df.isna().sum().sort_values(ascending=False).head(10)
 
-### Data Type Conversion
-Ensuring each column has the correct data type is essential for accurate analysis. I converted data types where necessary, such as transforming date columns to datetime objects and ensuring numerical columns were in the correct format. Converting units like height and weight to a consistent format was also crucial.
+### 2.2 Filling Missing Values
 
-```python
-df['dob'] = pd.to_datetime(df['dob'])
-df['weight_kg'] = df['weight_kg'].astype(float)
+To address this, I imputed missing values in numerical columns like `release_clause_amount_euros` with the median of the column, which avoids bias introduced by extreme values. For categorical fields like `loan_date_end`, missing values were filled with 'N/A' since they did not affect further analysis but needed placeholders.
 
-# Converting height to cm and weight to kg
-df['height_cm'] = df['height'].apply(lambda x: x if 'cm' in x else float(x) * 2.54)
-df['weight_kg'] = df['weight'].apply(lambda x: x if 'kg' in x else float(x) * 0.453592)
-```
+    # Fill missing values with appropriate values
+    df['release_clause_amount_euros'].fillna(df['release_clause_amount_euros'].median(), inplace=True)
+    df['loan_date_end'].fillna('N/A', inplace=True)
 
-### Handling Outliers
-Outliers can distort statistical analyses and model predictions. I identified outliers using statistical methods and visualizations like box plots and handled them appropriately. Outliers can be removed or transformed depending on the context and analysis requirements.
+**Explanation**: Imputing missing values is essential for ensuring that future analysis or model predictions based on player value data remain accurate. In this project, financial information such as release clauses directly impacts valuation modeling, so ensuring no gaps in this data is critical.
 
-```python
-plt.boxplot(df['age'])
-plt.show()
+## 3. Dropping Irrelevant Columns
 
-from scipy.stats import zscore
-df = df[(np.abs(zscore(df['age'])) < 3)]
-```
+Some columns, like URLs or player IDs (`sofifa_id`), were not relevant to the project’s objective, which focused on player performance and market value. These columns added no value and were dropped to streamline the dataset.
 
-### Feature Engineering
-Feature engineering involved creating new features from existing data to enhance model performance. This step included combining columns, creating interaction terms, or extracting information from date columns.
+    # Drop irrelevant columns
+    df.drop(['sofifa_id'], axis=1, inplace=True)
 
-```python
-df['BMI'] = df['weight_kg'] / (df['height_cm']/100)**2
-df['birth_year'] = df['dob'].dt.year
-```
+**Explanation**: Removing unnecessary columns improves the efficiency of analysis by focusing only on data relevant to player performance and market valuation. This also reduces memory usage and computational overhead during model building.
 
-### Data Normalization and Scaling
-Normalization and scaling are important for algorithms that are sensitive to the scale of data, such as distance-based algorithms. Techniques like Min-Max scaling or Z-score normalization were used.
+## 4. Renaming Columns for Clarity
 
-```python
-from sklearn.preprocessing import MinMaxScaler
+The dataset included several abbreviated or unclear column names that were renamed to more descriptive terms, making the data easier to understand during analysis.
 
-scaler = MinMaxScaler()
-df[['age', 'overall']] = scaler.fit_transform(df[['age', 'overall']])
-```
+    # Rename columns for clarity
+    column_renaming = {
+        'sofifa_id': 'player_id',
+        'club': 'team_name',
+        'market_value': 'market_value_euros',
+        'height': 'height_in_inches',
+        'weight': 'weight_in_pounds'
+    }
 
-### Formatting Club Names with Foreign Characters
-Club names with foreign characters were standardized to maintain consistency across the dataset.
+    df.rename(columns=column_renaming, inplace=True)
 
-```python
-df['club_name'] = df['club_name'].str.normalize('NFKD').str.encode('ascii', errors='ignore').str.decode('utf-8')
-```
+**Explanation**: Renaming columns like `sofifa_id` to `player_id` and `market_value` to `market_value_euros` helps provide clarity, especially when working with financial metrics. This clarity is important when making data-driven decisions about player contracts or transfers, as it reduces ambiguity during analysis.
 
-### Standardizing Formats
-Standardizing formats, such as date formats, ensures consistency in the dataset.
+## 5. Handling Duplicates
 
-```python
-df['contract_valid_until'] = pd.to_datetime(df['contract_valid_until'], format='%Y')
-```
+### 5.1 Removing Full Duplicates
+
+The presence of duplicate rows could skew any aggregation or predictive modeling results, particularly when calculating player statistics like average market value or weekly wages. Therefore, I removed full duplicates to ensure each player appeared only once in the dataset.
+
+    # Remove duplicate rows
+    df.drop_duplicates(inplace=True)
+
+    # Confirm the removal of duplicates
+    print(f"Number of duplicate rows: {df.duplicated().sum()}")
+
+**Explanation**: Full duplicates can distort analyses like average market value by inflating the number of records for certain players. For this project, ensuring that each player has only one entry is crucial for correctly calculating overall statistics.
+
+### 5.2 Investigating Partial Duplicates
+
+I also checked for partial duplicates, especially in fields like `longname` (player name). Some players may have the same name but different IDs (e.g., common names like "John Smith"), so I ensured that only legitimate duplicates were removed.
+
+    # Find duplicates based on 'longname' and 'player_id'
+    longname_id_counts = df.groupby('longname')['player_id'].nunique()
+    duplicate_longnames = longname_id_counts[longname_id_counts > 1]
+
+    # Display longnames with multiple IDs
+    print("Duplicate longnames and their ID counts:", duplicate_longnames)
+
+**Explanation**: For this project, identifying and resolving cases where multiple players share the same name but have different IDs is critical for accuracy. These scenarios could lead to faulty player valuation or transfer analysis, especially when dealing with high-profile players.
+
+## 6. Standardizing Formats
+
+### 6.1 Standardizing Numeric Data (Height and Weight)
+
+Player height and weight were expressed in different units (e.g., feet, inches, kilograms). To ensure consistency across the dataset, I converted all height values to inches and all weight values to pounds.
+
+    # Convert height to inches and weight to pounds
+    def convert_units():
+        ...
+
+    df['height_in_inches'] = df.apply(lambda row: convert_height_to_inches(row['height_value'], row['height_unit']), axis=1)
+    df['weight_in_pounds'] = df.apply(lambda row: convert_weight_to_pounds(row['weight_value'], row['weight_unit']), axis=1)
+
+**Explanation**: This conversion is crucial for ensuring consistency across the dataset. When analyzing player performance metrics in relation to physical attributes, having all height and weight values in the same unit is essential for accurate comparisons and predictions.
+
+### 6.2 Rounding Height and Weight
+
+To further standardize the data, I rounded height and weight to two decimal places, ensuring uniform precision across all player records.
+
+    # Round height and weight to 2 decimal places
+    df['height_in_inches'] = df['height_in_inches'].round(2)
+    df['weight_in_pounds'] = df['weight_in_pounds'].round(2)
+
+    # Visualize distribution of heights and weights
+    plt.figure(figsize=(10, 6))
+    sns.histplot(df['height_in_inches'], kde=True, bins=50)
+    plt.title('Distribution of Heights (in inches)')
+    plt.show()
+
+    plt.figure(figsize=(10, 6))
+    sns.histplot(df['weight_in_pounds'], kde=True, bins=50)
+    plt.title('Distribution of Weights (in pounds)')
+    plt.show()
+
+**Explanation**: Rounding ensures uniformity in the data presentation. This is important when comparing players' physical attributes, as small differences in rounding can introduce inconsistency when analyzing height or weight in relation to player performance.
+
+### 6.3 Standardizing Text Data
+
+Text columns like `nationality` were standardized to ensure consistent spelling and capitalization. This step was particularly important for filtering and grouping players based on nationality during analysis.
+
+    # Standardize the 'nationality' column
+    df['nationality'] = df['nationality'].str.title()
+
+**Explanation**: Ensuring consistency in text columns like `nationality` is crucial for accurate analysis, especially when comparing players across different countries. For example, misspelled or inconsistently capitalized country names can result in incorrect grouping, which would affect insights drawn from nationality-specific analyses.
+
+## Reflecting on the Journey
+
+### Overcoming Challenges and Personal Growth
+
+This project presented several challenges, especially when dealing with inconsistencies in player attributes like height, weight, and market value across multiple leagues. Addressing these issues has not only enhanced my technical skills in data cleaning and processing but also provided a deeper understanding of how to prepare complex, real-world datasets for analysis. Through this project, I have gained valuable experience in handling large datasets that involve both numerical and categorical data.
+
+### Project Impact and Future Directions
+
+Completing this comprehensive data cleaning project has significantly impacted how I approach dataset preparation for analysis. The ability to transform raw, inconsistent data into a well-organized, reliable dataset is critical in any data science workflow, and this project has helped refine my skills in this area. Looking ahead, I am excited to apply this cleaned dataset to predictive modeling techniques and further explore insights related to player performance and market value.
 
 ## Conclusion
-Data cleaning is an iterative and detailed process. By following the steps outlined above, the dataset was prepared for analysis and modeling. Clean data leads to more accurate insights and better-performing models. Investing time in data cleaning is crucial for the success of any data-driven project.
 
-To explore the full analysis with all executed code, outputs, and visualizations, see [the complete notebook on NBViewer](https://nbviewer.org/github/timothyrobbinscpa/messy_data_cleaning/blob/master/src/data_cleaning_FINAL_FINAL.ipynb?flush_cache=true).
+The data cleaning process undertaken in this project has successfully prepared a raw dataset for more advanced analyses and predictive modeling. By handling missing values, removing duplicates, standardizing formats, and ensuring consistency across all features, the dataset is now well-suited for future use.
+
+## Discover the Full Story
+
+To explore the full analysis with all executed code, outputs, and visualizations, see [the complete notebook on NBViewer](https://nbviewer.org/github/timothyrobbinscpa/data_cleaning/blob/master/src/data_cleaning.ipynb).

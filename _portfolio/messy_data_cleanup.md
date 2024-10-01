@@ -1,112 +1,73 @@
 ---
-title: "Transforming Raw Data: A Comprehensive Data Cleaning Project"
-date: 2024-05-31
+title: "Ensuring Data Integrity for Soccer Performance Insights"
+date: 2024-10-01
+permalink: /data-cleaning-portfolio/
 layout: single
 classes: wide
-published: false
 author_profile: true
 read_time: false
 comments: false
 header:
-  teaser: /assets/images/messy_data_cleanup/messy_data_splash.webp
-excerpt: "Discover how extensive data cleaning techniques can transform messy, raw datasets into clean, ready-to-analyze data."
+  teaser: /assets/images/messy_data_cleanup/data_cleaning.jpg
+excerpt: "Discover how I applied advanced data cleaning techniques to prepare a comprehensive dataset of soccer players' statistics, ensuring data integrity and reliability for future analysi"
+tags:
+  - Data Cleaning
+  - Data Science
+  - Soccer
+  - FIFA
+  - Python
+  - Pandas
+  - Data Preparation
+featured: true
 ---
-## Introduction
-
-This project leverages my extensive experience in data cleaning to prepare a dataset for analysis using Python. With over two decades of experience as an accountant and CPA, primarily as a Revenue Manager, I have prepared data for several accounting system implementations, including NetSuite, SAP, and Oracle. This background has equipped me with robust data cleaning techniques that ensure the dataset's integrity and readiness for further analysis.
 
 ## Overview
 
-The aim of this project is to clean and preprocess a dataset sourced from Kaggle, containing player statistics from EA Sports' FIFA 21 game. This messy and raw dataset, scraped from sofifa.com, provides an excellent opportunity to demonstrate comprehensive data cleaning techniques.
+This project focuses exclusively on **data cleaning**, transforming a raw dataset of soccer players’ statistics from FIFA into a clean, consistent, and reliable form. The dataset includes information on player demographics, performance metrics, and financial details. My goal was to ensure that the dataset is prepared for any future analysis or modeling, removing inconsistencies, duplicates, and handling missing values efficiently.
+
+With over 25 years of experience in both accounting and data science, I leveraged my strong technical expertise to ensure the highest standards of data integrity and accuracy for this project.
 
 ## Technologies and Tools Used
 
-I utilized the following technologies and tools:
-- **Python**: The primary programming language used for data cleaning.
-- **Pandas**: For data manipulation and cleaning.
-- **NumPy**: For numerical operations.
-- **Matplotlib and Seaborn**: For data visualization.
+The project was developed in Python, using:
+- **Pandas**: For data manipulation and cleaning tasks such as handling missing values and duplicates.
+- **NumPy**: For handling numerical data and calculations.
+- **Matplotlib/Seaborn**: To visualize the distributions of key variables after cleaning for consistency checks.
 
-## Data Cleaning Steps
+## Data Preprocessing
 
-**Handling Missing Values**: Identifying and filling or removing missing values to ensure data completeness. My experience with NetSuite, SAP, and Oracle has honed my ability to manage large datasets effectively.
+The primary focus of this project was on cleaning the dataset and ensuring consistency across the data:
+- **Handling Missing Data**: Missing values in financial fields like `market_value_euros` and categorical fields like `loan_date_end` were handled carefully using imputation techniques.
+- **Removing Duplicates**: Both full and partial duplicates were identified and removed to ensure that each player only appeared once in the dataset, critical for accurate future analysis.
+- **Standardizing Formats**: Height and weight, which were expressed in different units, were standardized to inches and pounds, while player names and nationalities were capitalized for consistency.
 
-**Correcting Data Types**: Converting columns to appropriate data types to maintain data integrity.
+<figure>
+  <img src="/assets/images/data_cleaning/height_distribution.png" alt="Height Distribution After Cleaning">
+  <figcaption style="text-align:left;"><em>Figure 1: Distribution of Player Heights After Data Cleaning - This histogram shows the consistent range of player heights after units were standardized to inches.</em></figcaption>
+</figure>
 
-**Cleaning Text and Categorical Data**: Ensuring proper formatting and consistency in text and categorical data.
+## Key Steps
 
-```python
-def clean_and_split_contract(entry):
-'''
-    - Two Years Found: Sets both years respectively.
-    - One Year Found: Assumes it is the start year and also the end year unless 'On Loan' is present.
-    - Contains 'Free': Marks both years as 'Free'.
-    - Contains 'On Loan': Always sets end year to 'On Loan', regardless of the number of years extracted.
-    - No or More than Two Years (or malformed format): Uses NaN for start year and sets end year to 'On Loan' if specified.
-    '''
-    
-    # First, check for 'Free' to handle these separately
-    if 'Free' in entry:
-        return pd.Series(['Free', 'Free'])
+This project followed a structured approach to data cleaning:
+1. **Data Inspection**: Initial exploration of the dataset to identify missing values, inconsistencies, and duplicates.
+2. **Handling Missing Values**: Filling missing values based on the nature of the data, using median values for numerical fields and 'N/A' for categorical fields.
+3. **Duplicate Removal**: Identifying both full and partial duplicates, especially for players with identical names but different IDs, and ensuring only legitimate records remained.
+4. **Data Standardization**: Ensuring consistency in numeric and categorical data, with fields like height and weight standardized to uniform units, and text columns like nationality and player names properly capitalized.
 
-    # Check if 'On Loan' is part of the entry
-    on_loan_present = 'On Loan' in entry
+## Insights
 
-    # Extract all year numbers
-    years = pd.Series(entry).str.extractall(r'(\d{4})')[0].unique()
+By cleaning the dataset, I ensured that it is well-structured and ready for future analysis or predictive modeling. The clean dataset will allow for more accurate and reliable conclusions, whether it's for player valuation, performance analysis, or other applications. Ensuring data integrity at this stage prevents errors and biases from carrying over into future steps.
 
-    # Determine what to return based on the number of years found and 'On Loan' status
-    if len(years) == 2:
-        return pd.Series([years[0], years[1]])
-    elif len(years) == 1:
-        if on_loan_present:
-            return pd.Series([years[0], 'On Loan'])
-        else:
-            return pd.Series([years[0], years[0]])  # Use the same year for both start and end
-    elif on_loan_present:
-        return pd.Series([np.nan, 'On Loan'])
-    else:
-        return pd.Series([np.nan, np.nan])
-```
+## Challenges
 
-**Handling Special Characters**: Removing or replacing special characters to maintain data integrity and prevent errors in analysis.
-
-```python
-# Accent mapping for normalizing non-ASCII characters
-accent_mapping = {
-    'á': 'a', 'é': 'e', 'í': 'i', 'ó': 'o', 'ú': 'u', 'ü': 'u', 'ñ': 'n', 'ß': 'ss', 'ö': 'o', 'ä': 'a',
-    'ë': 'e', 'ç': 'c', 'ą': 'a', 'ę': 'e', 'ł': 'l', 'ś': 's', 'ź': 'z', 'ż': 'z', 'ø': 'o', 'å': 'a',
-    'œ': 'oe', 'ė': 'e', 'ȯ': 'o', 'ű': 'u', 'ơ': 'o', 'ķ': 'k', 'ņ': 'n', 'ģ': 'g', 'š': 's', 'ž': 'z',
-    'č': 'c', 'ř': 'r', 'đ': 'd', 'ț': 't', 'ļ': 'l', 'ğ': 'g', 'ı': 'i', 'Č': 'C', 'Ž': 'Z', 'Ş': 'S'
-}
-
-def manual_normalize_club_names(club_names, mapping):
-    """Replace non-ASCII characters in club names using above mapping."""
-    normalized_names = {}
-    for name in club_names:
-        new_name = ''.join([mapping.get(char, char) for char in name])
-        normalized_names[name] = new_name
-    return normalized_names
-```
-
-**Dealing with Outliers**: Identifying and handling outliers to improve data quality.
-
-**Dropping Irrelevant Columns**: Removing columns that are not needed for analysis to simplify the dataset and focus on relevant data.
-
-**Ensuring Consistency**: Standardizing data formats and values to ensure uniformity across the dataset.
-
-## Results
-
-The cleaned dataset is now ready for analysis, with no missing values, consistent column names, correct data types, and standardized formatting.
+One of the main challenges was managing the varied formats of numeric and categorical data. For example, players' heights and weights were given in inconsistent units, which required careful conversion and validation. Similarly, handling partial duplicates for players with common names presented a unique challenge, ensuring no important data was lost in the cleaning process.
 
 ## Conclusion
 
-Handling complex data structures and ensuring the integrity of the dataset required sophisticated data manipulation strategies. My previous experience working closely with IT teams and managing large-scale data implementations proved invaluable in navigating these challenges. This data cleaning project demonstrates essential preprocessing steps to prepare data for analysis and machine learning tasks. The structured approach ensures that the dataset is clean, consistent, and ready for advanced analytical tasks.
+This project highlights my expertise in preparing complex datasets for analysis, leveraging both my experience in accounting and technical data science skills. The FIFA soccer dataset is now clean, consistent, and reliable, making it a solid foundation for future exploration and analysis.
 
 ## Discover the Full Story
 
-Explore the detailed analysis [here](/messy-data-post/).
+For a detailed look at the data cleaning process, including code snippets, methodology, and insights, view the full project breakdown [here](/data-cleaning-post/).
 
-## Explore the Technical Journey
-
-For more on the project, including detailed code snippets and visuals, visit the notebook on [NBViewer](https://nbviewer.org/github/timothyrobbinscpa/messy_data_cleaning/blob/master/src/data_cleaning_FINAL_FINAL.ipynb?flush_cache=true).
+If you’re interested in exploring the complete notebook with all the technical details, view it on [NBViewer](https://nbviewer.org/github/timothyrobbinscpa/data_cleaning/blob/master/src/data_cleaning.ipynb).
