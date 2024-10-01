@@ -1,5 +1,5 @@
 ---
-title: "Ensuring Data Integrity for Soccer Performance Insights"
+title: "Transforming Messy Soccer Data into Reliable Insights"
 date: 2024-10-01
 permalink: /data-cleaning-portfolio/
 layout: single
@@ -8,8 +8,7 @@ author_profile: true
 read_time: false
 comments: false
 header:
-  teaser: /assets/images/messy_data_cleanup/data_cleaning.jpg
-excerpt: "Discover how I applied advanced data cleaning techniques to prepare a comprehensive dataset of soccer players' statistics, ensuring data integrity and reliability for future analysi"
+  teaser: /assets/images/messy_data_cleanup/messy_data_splash.webp
 tags:
   - Data Cleaning
   - Data Science

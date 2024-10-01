@@ -1,17 +1,23 @@
 ---
+title: "Transforming Messy Soccer Data into Reliable Insights"
+date: 2024-10-01
+permalink: /data-cleaning-portfolio/
 layout: single
 classes: wide
-title: "Comprehensive Data Cleaning for Consistent and Reliable Analysis"
-date: 2024-10-01
-permalink: /data-cleaning-process/
-categories: [Data Science, Data Cleaning]
-tags: [data cleaning, pandas, Python, consistency, duplicates, standardization, visualizations]
 author_profile: true
-toc: false
-toc_sticky: false
-read_time: true
+read_time: false
+comments: false
 header:
-  teaser: /assets/images/messy_data_cleanupmessy_data_splash.webp
+  teaser: /assets/images/data_cleaning/teaser_image.png
+excerpt: "Discover how advanced data cleaning techniques unraveled inconsistencies in a complex soccer dataset, ensuring integrity for future analysis."
+tags:
+  - Data Cleaning
+  - Data Science
+  - Soccer
+  - FIFA
+  - Python
+  - Pandas
+  - Data Preparation
 featured: false
 ---
 
