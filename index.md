@@ -14,8 +14,8 @@ header:
   #    class: "button button-outline"
 # excerpt: "Empowering data-driven decisions with a unique blend of finance and data science expertise."
 ---
-## About Me
-I’m Tim Robbins, a data scientist with a rich background in finance. My transition from a CPA to a data scientist has allowed me to develop a unique perspective on financial data, helping businesses make informed, data-driven decisions. I specialize in leveraging machine learning and advanced analytics to solve complex business problems.
+## Professional Summary
+Welcome! I'm Timothy Robbins, CPA, a seasoned revenue accounting professional with over 25 years of experience specializing in ASC 606 compliance and revenue recognition for SaaS and technology companies. I excel in automating accounting processes, leading ERP implementations, and ensuring financial compliance in fast-paced, high-tech environments.
 
 ### Data Science Certification
 In March 2024, I earned the **Certified Data Science Professional in Python** certification from DataCamp. This certification, equivalent to 2 years of Python programming experience, validates my proficiency in Python for data science, including hands-on experience with key tools and techniques in the field. It marks my formal transition into data science, building upon my extensive experience in finance and accounting.
