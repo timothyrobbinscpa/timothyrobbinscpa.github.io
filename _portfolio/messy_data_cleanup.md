@@ -9,6 +9,7 @@ read_time: false
 comments: false
 header:
   teaser: /assets/images/messy_data_cleanup/messy_data_splash.webp
+excerpt: Transforming extremely messy data into a clean, reliable dataset, ready for analysis and future insights.
 tags:
   - Data Cleaning
   - Data Science
@@ -17,7 +18,7 @@ tags:
   - Python
   - Pandas
   - Data Preparation
-featured: true
+featured: false
 ---
 
 ## Overview
