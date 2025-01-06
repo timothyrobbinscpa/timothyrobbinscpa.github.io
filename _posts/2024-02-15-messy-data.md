@@ -1,7 +1,7 @@
 ---
 title: "Transforming Messy Soccer Data into Reliable Insights"
 date: 2024-10-01
-permalink: /data-cleaning-portfolio/
+permalink: /data-cleaning-post/
 layout: single
 classes: wide
 author_profile: true
